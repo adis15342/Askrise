@@ -1,0 +1,474 @@
+/**** Common to all variations of this component ****/
+.env-sticky-download-active .env-sticky-download {
+  bottom: 0;
+  position: fixed;
+  z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  width: 100%;
+  max-width: 315px;
+  right: 0;
+}
+@media (max-width: 767px) {
+  .env-sticky-download-active .env-sticky-download {
+    display: none !important;
+  }
+}
+@media (min-width: 768px) {
+  .env-sticky-download-active .env-sticky-download {
+    max-width: 280px;
+  }
+}
+.env-sticky-download-active .env-sticky-download.fade-in {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: visible;
+}
+.env-sticky-download-active .env-sticky-download .env-sticky-download__link-wrap {
+  padding: 15px 20px;
+  min-height: 110px;
+  display: block;
+  text-decoration: none;
+}
+.env-sticky-download-active .env-sticky-download .env-sticky-download__link-wrap:link, .env-sticky-download-active .env-sticky-download .env-sticky-download__link-wrap:visited {
+  background: #eb8c00;
+  border-top: 1px solid #eb8c00;
+  border-right: 1px solid #eb8c00;
+  color: #ffffff;
+}
+.env-sticky-download-active .env-sticky-download .env-sticky-download__link-wrap:link .env-sticky-download-teaser__title-icon, .env-sticky-download-active .env-sticky-download .env-sticky-download__link-wrap:visited .env-sticky-download-teaser__title-icon {
+  display: flex;
+  height: 26px;
+  margin-bottom: 2px;
+  width: 26px;
+  display: none;
+}
+.env-sticky-download-active .env-sticky-download .env-sticky-download__link-wrap:link .env-sticky-download-teaser__title-icon svg, .env-sticky-download-active .env-sticky-download .env-sticky-download__link-wrap:visited .env-sticky-download-teaser__title-icon svg {
+  height: 26px;
+  width: 26px;
+}
+.env-sticky-download-active .env-sticky-download .env-sticky-download__link-wrap:link .env-sticky-download-teaser__title-icon svg path, .env-sticky-download-active .env-sticky-download .env-sticky-download__link-wrap:visited .env-sticky-download-teaser__title-icon svg path {
+  fill: #ffffff;
+}
+.env-sticky-download-active .env-sticky-download .env-sticky-download__link-wrap:link .env-sticky-download-teaser__title, .env-sticky-download-active .env-sticky-download .env-sticky-download__link-wrap:visited .env-sticky-download-teaser__title {
+  color: #2d2d2d;
+  margin-top: 10px;
+}
+.env-sticky-download-active .env-sticky-download .env-sticky-download__link-wrap:link .env-sticky-download-teaser__description p, .env-sticky-download-active .env-sticky-download .env-sticky-download__link-wrap:visited .env-sticky-download-teaser__description p {
+  color: #2d2d2d;
+}
+.env-sticky-download-active .env-sticky-download .env-sticky-download__link-wrap:hover, .env-sticky-download-active .env-sticky-download .env-sticky-download__link-wrap:focus {
+  background: #f2f2f2;
+  border-top: 1px solid #ffffff;
+  border-right: 1px solid #ffffff;
+}
+.env-sticky-download-active .env-sticky-download .env-sticky-download__link-wrap:hover .env-sticky-download__dismiss-btn-icon, .env-sticky-download-active .env-sticky-download .env-sticky-download__link-wrap:focus .env-sticky-download__dismiss-btn-icon {
+  border: 1px solid #ffffff;
+}
+.env-sticky-download-active .env-sticky-download .env-sticky-download__link-wrap:hover .env-sticky-download-teaser__title, .env-sticky-download-active .env-sticky-download .env-sticky-download__link-wrap:focus .env-sticky-download-teaser__title {
+  color: #2d2d2d;
+}
+.env-sticky-download-active .env-sticky-download .env-sticky-download__link-wrap:hover .env-sticky-download__dismiss-btn-icon-line, .env-sticky-download-active .env-sticky-download .env-sticky-download__link-wrap:focus .env-sticky-download__dismiss-btn-icon-line {
+  background-color: #2d2d2d;
+}
+.env-sticky-download-active .env-sticky-download .env-sticky-download__link-wrap:hover .env-sticky-download-teaser__description p, .env-sticky-download-active .env-sticky-download .env-sticky-download__link-wrap:focus .env-sticky-download-teaser__description p {
+  color: #2d2d2d;
+}
+.env-sticky-download-active .env-sticky-download .env-sticky-download__link-wrap:hover .env-sticky-download-teaser__description::after, .env-sticky-download-active .env-sticky-download .env-sticky-download__link-wrap:focus .env-sticky-download-teaser__description::after {
+  background-image: url("images/chevronWhite.html");
+  transform: translateX(10px);
+}
+.env-sticky-download-active .env-sticky-download .env-sticky-download__link-wrap .env-sticky-download__dismiss-btn-icon-symbol svg path {
+  fill: #ffffff;
+}
+.env-sticky-download-active .env-sticky-download .env-sticky-download__link-wrap .env-sticky-download-teaser__title {
+  font-family: "PwC Helvetica Neue", "Helvetica Neue", helvetica, arial, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.6;
+  margin: 0;
+}
+.env-sticky-download-active .env-sticky-download .env-sticky-download__link-wrap .env-sticky-download-teaser__description {
+  display: flex;
+  align-items: center;
+  margin-top: 0;
+}
+.env-sticky-download-active .env-sticky-download .env-sticky-download__link-wrap .env-sticky-download-teaser__description p {
+  font-family: "PwC Helvetica Neue", "Helvetica Neue", helvetica, arial, sans-serif;
+  font-size: 0.933rem;
+  font-weight: normal;
+  line-height: 1.57;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+@media (min-width: 768px) {
+  .env-sticky-download-active .env-sticky-download .env-sticky-download__link-wrap .env-sticky-download-teaser__description p {
+    font-size: 0.875rem;
+  }
+}
+.env-sticky-download-active .env-sticky-download .env-sticky-download__link-wrap .env-sticky-download-teaser__description::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  background-image: url("images/chevron.html");
+  background-repeat: no-repeat;
+  background-position: center center;
+  top: 2px;
+  left: 5px;
+  position: relative;
+  transform: translateX(0);
+  transition: transform 0.2s ease;
+}
+
+/**** Expandable version of component ****/
+.env-sticky-download.env-sticky-download--expandable {
+  min-height: 48px;
+  max-width: 282px;
+  min-width: 48px;
+  overflow: hidden;
+}
+.env-sticky-download.env-sticky-download--expandable .env-sticky-download__dismiss-btn {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: none;
+  border: none;
+  color: #ffffff;
+  display: flex;
+  flex-direction: row-reverse;
+  font-size: 1rem;
+  line-height: 1.467em;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.env-sticky-download.env-sticky-download--expandable .env-sticky-download__dismiss-btn-icon {
+  align-items: center;
+  border: 1px solid #2d2d2d;
+  border-radius: 50%;
+  display: flex;
+  flex: 0 0 auto;
+  height: 24px;
+  justify-content: center;
+  margin: 8px;
+  position: relative;
+  transform: rotate(45deg);
+  width: 24px;
+}
+.env-sticky-download.env-sticky-download--expandable .env-sticky-download__dismiss-btn-icon-line {
+  background: #2d2d2d;
+  height: 1px;
+  left: 4px;
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+.env-sticky-download.env-sticky-download--expandable .env-sticky-download__dismiss-btn-icon-symbol {
+  height: 26px;
+  opacity: 0;
+  width: 26px;
+  background: url(../../issues/tla/assets/staging/assets/img/icon-edit-black.svg) 50% 50% no-repeat;
+  background-size: contain;
+  height: 24px;
+  opacity: 0;
+  width: 24px;
+}
+.env-sticky-download.env-sticky-download--expandable .env-sticky-download__dismiss-btn-icon-symbol svg {
+  height: 26px;
+  width: 26px;
+  display: none;
+}
+.env-sticky-download.env-sticky-download--expandable .env-sticky-download__dismiss-btn-icon-symbol svg path {
+  fill: #2d2d2d;
+}
+.env-sticky-download.env-sticky-download--expandable .env-sticky-download__dismiss-btn-icon-line-2 {
+  transform: translate(0, -50%) rotate(-90deg);
+}
+@media (hover: hover) {
+  .env-sticky-download.env-sticky-download--expandable .env-sticky-download__link-wrap:hover + .env-sticky-download__dismiss-btn .env-sticky-download__dismiss-btn-icon {
+    background-color: #2d2d2d;
+    border-color: #ffffff;
+  }
+  .env-sticky-download.env-sticky-download--expandable .env-sticky-download__link-wrap:hover + .env-sticky-download__dismiss-btn .env-sticky-download__dismiss-btn-icon-line {
+    background-color: #ffffff;
+  }
+}
+.env-sticky-download.env-sticky-download--expandable .env-sticky-download__link-wrap:focus + .env-sticky-download__dismiss-btn .env-sticky-download__dismiss-btn-icon {
+  background-color: #2d2d2d;
+  border-color: #ffffff;
+}
+.env-sticky-download.env-sticky-download--expandable .env-sticky-download__link-wrap:focus + .env-sticky-download__dismiss-btn .env-sticky-download__dismiss-btn-icon-line {
+  background-color: #ffffff;
+}
+.env-sticky-download.env-sticky-download--expandable.env-sticky-download--expanded .env-sticky-download__dismiss-btn-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+.env-sticky-download.env-sticky-download--expandable.env-sticky-download--collapsed {
+  background: #eb8c00;
+  height: 48px;
+  width: 48px;
+}
+.env-sticky-download.env-sticky-download--expandable.env-sticky-download--collapsed .env-sticky-download__dismiss-btn-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+.env-sticky-download.env-sticky-download--expandable.env-sticky-download--collapsed .env-sticky-download__dismiss-btn {
+  border-top: 1px solid #eb8c00;
+  border-right: 1px solid #eb8c00;
+}
+@media (hover: hover) {
+  .env-sticky-download.env-sticky-download--expandable.env-sticky-download--collapsed .env-sticky-download__dismiss-btn:hover {
+    border-top: 1px solid #2d2d2d;
+    border-right: 1px solid #2d2d2d;
+  }
+}
+.env-sticky-download.env-sticky-download--expandable.env-sticky-download--collapsed .env-sticky-download__dismiss-btn-icon--symbol {
+  border: none;
+  border-radius: 0;
+  height: 48px;
+  margin: 0;
+  padding: 8px;
+  transform: rotate(0);
+  width: 48px;
+}
+.env-sticky-download.env-sticky-download--expandable.env-sticky-download--collapsed .env-sticky-download__dismiss-btn-icon--symbol .env-sticky-download__dismiss-btn-icon-symbol {
+  opacity: 1;
+}
+.env-sticky-download.env-sticky-download--expandable.env-sticky-download--collapsed .env-sticky-download__dismiss-btn-icon--symbol .env-sticky-download__dismiss-btn-icon-line {
+  opacity: 0;
+}
+.env-sticky-download.env-sticky-download--expandable.env-sticky-download--collapsed .env-sticky-download__link-wrap {
+  display: none;
+  pointer-events: none;
+}
+
+.env-report-interactive-cta {
+  border-bottom: 1px solid #eb8c00;
+  border-top: 4px solid #eb8c00;
+}
+.page-primary-col--red .env-report-interactive-cta {
+  border-bottom: 1px solid #d93954;
+  border-top: 4px solid #d04a02;
+}
+.page-primary-col--orange .env-report-interactive-cta {
+  border-bottom: 1px solid #d04a02;
+  border-top: 4px solid #d04a02;
+}
+.page-primary-col--rose .env-report-interactive-cta {
+  border-bottom: 1px solid #eb8c00;
+  border-top: 4px solid #eb8c00;
+}
+
+.page-primary-col--rose .cta-webtile {
+  background-color: #eb8c00;
+}
+
+@media (min-width: 768px) {
+  #cta-2 {
+    display: none;
+  }
+  .cq-Editable-dom #cta-2 {
+    display: block;
+  }
+}
+.env-report-interactive-cta__inner {
+  display: flex;
+}
+@media (max-width: 991px) {
+  .env-report-interactive-cta__inner {
+    flex-direction: column;
+  }
+}
+@media (min-width: 992px) {
+  .env-report-interactive-cta__inner {
+    flex-direction: row;
+  }
+}
+
+.env-report-interactive-cta__panel {
+  display: flex;
+}
+@media (max-width: 991px) {
+  .env-report-interactive-cta__panel {
+    width: 100%;
+  }
+}
+@media (min-width: 992px) {
+  .env-report-interactive-cta__panel {
+    width: 50%;
+  }
+}
+
+@media (min-width: 992px) {
+  .env-report-interactive-cta__panel--text {
+    padding-bottom: 40px;
+    padding-top: 40px;
+  }
+}
+
+.env-report-interactive-cta__text {
+  display: flex;
+  flex-direction: column;
+}
+.env-report-interactive-cta__text h3.env-report-interactive-cta__text-title {
+  font-family: "PwC Helvetica Neue Light", "Helvetica Neue Light", helvetica, arial, sans-serif;
+  font-weight: normal;
+  margin: 0 0 10px;
+}
+.env-report-interactive-cta__text .env-report-interactive-cta__text-description p {
+  font-family: "PwC Helvetica Neue", "Helvetica Neue", helvetica, arial, sans-serif;
+  font-weight: normal;
+  margin: 0;
+}
+.env-report-interactive-cta__text .env-report-interactive-cta__text-description p + p {
+  margin-top: 10px;
+}
+@media (max-width: 767px) {
+  .env-report-interactive-cta__text h3.env-report-interactive-cta__text-title {
+    font-size: 1.73rem;
+    line-height: 1.3;
+  }
+  .env-report-interactive-cta__text p.env-report-interactive-cta__text-description {
+    font-size: 1.067rem;
+    line-height: 1.56;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .env-report-interactive-cta__text h3.env-report-interactive-cta__text-title {
+    font-size: 1.625rem;
+    line-height: 1.3;
+  }
+  .env-report-interactive-cta__text p.env-report-interactive-cta__text-description {
+    font-size: 1rem;
+    line-height: 1.56;
+  }
+}
+@media (max-width: 991px) {
+  .env-report-interactive-cta__text {
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
+}
+@media (min-width: 992px) {
+  .env-report-interactive-cta__text {
+    align-self: center;
+    padding-right: 55.416666px;
+  }
+  .env-report-interactive-cta__text h3.env-report-interactive-cta__text-title {
+    font-size: 2.125rem;
+    line-height: 1.29;
+  }
+  .env-report-interactive-cta__text p.env-report-interactive-cta__text-description {
+    font-size: 1.125rem;
+    line-height: 1.72;
+  }
+}
+@media (min-width: 1200px) {
+  .env-report-interactive-cta__text {
+    padding-right: 63.75px;
+  }
+}
+@media (min-width: 1400px) {
+  .env-report-interactive-cta__text {
+    padding-right: 72.08333px;
+  }
+}
+
+.env-report-interactive-cta__launch-button {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  border-radius: 0;
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+
+.env-report-interactive-cta__launch-thumb {
+  display: flex;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+}
+
+.env-report-interactive-cta__launch-label {
+  bottom: 0;
+  display: flex;
+  flex-wrap: nowrap;
+  height: 40px;
+  position: absolute;
+  right: 0;
+  z-index: 2;
+}
+@media (min-width: 992px) {
+  .env-report-interactive-cta__launch-label {
+    height: 69px;
+  }
+}
+
+.env-report-interactive-cta__launch-text {
+  align-items: center;
+  background: #2d2d2d;
+  color: #ffffff;
+  display: flex;
+  font-weight: 700;
+  height: 100%;
+  padding: 0 15px;
+}
+@media (min-width: 992px) {
+  .env-report-interactive-cta__launch-text {
+    padding: 0 24px;
+  }
+}
+
+.env-report-interactive-cta__launch-icon {
+  align-items: center;
+  aspect-ratio: 1/1;
+  background: #d04a02;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+}
+.env-report-interactive-cta__launch-icon svg {
+  height: 18px;
+  transform: rotate(180deg);
+  width: 10px;
+}
+@media (min-width: 992px) {
+  .env-report-interactive-cta__launch-icon svg {
+    height: 31px;
+    width: 17px;
+  }
+}
+
+.env-report-interactive-cta__launch-button:focus .env-report-interactive-cta__launch-text {
+  background: #d04a02;
+}
+@media (hover: hover) {
+  .env-report-interactive-cta__launch-button:hover .env-report-interactive-cta__launch-text {
+    background: #d04a02;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+}

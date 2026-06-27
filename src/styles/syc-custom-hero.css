@@ -1,0 +1,57 @@
+// syc-custom-hero.css – minimal styles to replicate Blade custom hero layout
+.syc-custom-hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.syc-custom-hero__sticky-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  padding: 2rem;
+}
+
+.syc-custom-hero__progressbar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: rgba(255,255,255,0.2);
+}
+
+.syc-custom-hero__progressbar span {
+  display: block;
+  width: 0%;
+  height: 100%;
+  background: #6351ce;
+  transition: width 0.2s ease;
+}
+
+/* Layer specific classes */
+.layer1-title,
+.layer2-copy,
+.layer4-catchphrases {
+  font-family: 'Outfit', sans-serif;
+}
+
+.layer4-video-container video {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+/* Ensure video player wrapper has proper z-index */
+.videoplayer-v3 {
+  position: relative;
+  z-index: 10;
+}

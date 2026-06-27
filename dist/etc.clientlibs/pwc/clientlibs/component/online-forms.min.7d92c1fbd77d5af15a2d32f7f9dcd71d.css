@@ -1,0 +1,98 @@
+* html form{position:relative;z-index:-1}
+form h2{font-weight:normal}
+.formbox{background-color:#f1f1f1;padding:15px;margin-bottom:20px;display:block;font-size:9pt}
+.formbox *{outline:0;box-sizing:border-box}
+.formbox p{font-size:1em !important}
+* html .formbox{padding:5px;display:inline-block}
+.formdouble{width:363px;float:left;position:static}
+* html .formdouble{width:365px}
+.forminline .formfield{float:left;margin-right:10px}
+.formfield{display:inherit}
+.formrequired{color:#e0301e;font-size:1.5em;display:inline}
+.formfield label{display:block;float:left;line-height:1em;margin-right:5px}
+* html .formfield label{width:145px}
+.labelval{color:#e0301e}
+.formfield input,.formfield select{font-size:1em;line-height:22px;width:153px;padding:0;margin:0;margin-right:2px;vertical-align:middle}
+.formfield select{height:24px;margin-right:2px;-moz-appearance:none;-webkit-appearance:none;border-radius:0;width:100%;background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAYAAADEUlfTAAAAG0lEQVR42mNgwAfKy8v/48I4FeA0AacVDFQBAP9wJkE/KhUMAAAAAElFTkSuQmCC") no-repeat scroll right 7px top 8px #fff}
+.formfield select::-ms-expand{display:none}
+.formfield textarea{width:310px;font-size:1em;margin-right:2px;margin-top:2px;clear:all}
+.formsingle .formfield textarea{width:670px}
+.formsingle2 .formfield textarea{width:480px}
+.fieldhelp img{margin-bottom:-5px;border:0;display:none}
+*html .fieldhelp img{margin-bottom:0}
+*:first-child+html .fieldhelp img{margin-bottom:0}
+.fieldhelpon{display:inline !important}
+.formfield .pwcrad{margin-right:2px;width:15px;border:0;vertical-align:middle;width:auto !important}
+.formfield .pwcchk{margin-right:5px;width:15px;border:0;vertical-align:middle;width:auto !important}
+.formfield .fieldjustify{margin-left:162px}
+* html .formfield .fieldjustify{margin-left:160px}
+.formsingle2 .formfield .fieldjustify{margin-left:242px}
+* html .formsingle2 .formfield .fieldjustify{margin-left:247px}
+.formfield .form-yy,.formfield .form-mm,.formfield .form-dd{width:47px;text-align:center;margin-right:4px}
+.formfield .form-phone{text-align:center}
+.formfield .fieldhalf{width:77px}
+.labelhalf{width:60px !important}
+* html .labelhalf{width:55px !important}
+.labelmulti{margin-top:0 !important}
+label.radlabel,label.chklabel{display:inline;width:auto;float:none;line-height:1em;margin-right:2px}
+.labelabove{width:100% !important}
+.formsingle2 .labelabove{width:480px !important;margin-right:30px}
+* html .formsingle2 .labelabove{width:450px !important;margin-right:30px}
+* html .formsingle .labelabove{width:650px !important}
+div.form2column div{float:left;width:49%}
+div.form3column div{float:left;width:32%}
+.formfield .buttonsubmit,.formfield .buttonreset{width:auto;height:auto;color:#fff;font-size:1.2em;font-weight:normal;padding:5px 10px;border:0}
+.formfield .buttonreset{background-color:#c7c8ca !important;border:1px solid #3c393a !important;color:#3c393a;margin-left:10px}
+#formbuttons{padding:0 !important;margin:0 !important;background-color:#fff !important}
+* html #formbuttons{position:relative;z-index:+1 !important}
+.fieldhighlighton{border:1px solid #c7c8ca;padding:2px}
+.fieldhighlightval{background-color:#fff;border:1px solid red;padding:2px}
+.fieldhighlightval2{border:1px solid #f00 !important;background-color:#fbeef0}
+.fieldhighlightoff{background-color:#e7e7e8;border:0;padding:3px}
+.fieldvalidateoff{background-color:#fff}
+.clear{clear:both;display:block;overflow:hidden;visibility:hidden;width:0;height:0}
+a.fieldhelp{position:relative;z-index:24}
+a.fieldhelp span{display:none}
+a.fieldhelp:hover{z-index:25;text-decoration:none !important}
+a.fieldhelp:hover span.tooltip{display:block;position:absolute;bottom:25px;right:0;padding:15px 0 0 0;width:160px;color:#000;font-weight:normal;filter:alpha(opacity:90);KHTMLOpacity:.90;MozOpacity:.90;opacity:.90}
+* html a.fieldhelp:hover span.tooltip{left:-140px;bottom:100%}
+a.fieldhelp:hover span.top{display:block;padding:5px 5px 0;background:url(../../../../en_GX/webadmin/assets/image/formbubble.html) no-repeat top;height:0}
+a.fieldhelp:hover span.middle{display:block;padding:0 5px;background:url(../../../../en_GX/webadmin/assets/image/formbubble-filler.html) repeat bottom}
+a.fieldhelp:hover span.bottom{display:block;padding:5px 5px 15px;color:#548912;background:url(../../../../en_GX/webadmin/assets/image/formbubble.html) no-repeat bottom;height:0}
+#left .form_rightcol,#right .form_rightcol{width:100%}
+#left .form_captcha_img,#right .form_captcha_img{width:125px}
+#left .form_captcha_refresh,#right .form_captcha_refresh{top:-42px;left:137px}
+.tooltip{margin:0 !important;background-color:none !important}
+span.tooltip{display:block;width:160px !important;padding:15px 0 0 0 !important;background-image:none !important}
+body{font:Arial,Helvetica,sans-serif}
+.form_leftcolmark{color:#e0301e;font-size:12pt}
+.form_row{position:relative}
+.form_row:after{content:' ';display:table;clear:both;margin-bottom:10px}
+.form_leftcol{width:40%;min-width:150px;float:left}
+.form_rightcol{width:59%;float:left}
+.upload .form_rightcol,.radio .form_rightcol,.checkbox .form_rightcol{margin-top:6px}
+.upload .form_rightcol input{padding:0}
+.form_field form_field_textarea textarea{font-size:1em;margin-right:2px;margin-top:2px;width:310px;border:1px solid #dc6900}
+.formbox .parbase{background-color:#e0301e}
+.formsingle2 .formfield input[type=radio],.formsingle2 .formfield input[type=checkbox]{width:auto;height:auto;margin-top:-1px}
+.radio .online-form input[type="radio"],.radio-inline .online-form input[type="radio"],.checkbox .online-form input[type="checkbox"],.checkbox-inline .online-form input[type="checkbox"]{position:relative !important;margin-left:0 !important}
+.required{color:#e0301e;font-size:1.5em;line-height:140%;font-family:Arial,Helvetica,sans-serif;padding-left:5px;vertical-align:top;display:none}
+.radio .online-form label,.checkbox .online-form label{padding-left:0 !important}
+.form_leftcollabel{margin-top:6px}
+.form_leftcollabel label{font-weight:bold}
+.formfield input[type='file'],input[type="file"].form_field{border:0}
+.form_field_multivalued{margin-bottom:7px !important}
+.option-text{padding-left:5px;padding-right:5px}
+#cq_captchaimg{height:80%;width:80%}
+.form_captcha_img{background-color:white;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAANklEQVQYV2NkIAIwEqHmPyFF/4GGMBJSBLYIlyKwCTCnYFOEogCfSSj+QTYJwwR063AqACkEAGnjBgmbf5VOAAAAAElFTkSuQmCC);width:150px;text-align:center;margin:10px 0;height:40px;line-height:40px;padding-bottom:5px}
+.form_captcha_refresh{position:relative;display:inline-block;top:-35px;left:160px}
+.form_captcha_input input[type="text"]{width:100px !important}
+.form_captcha_refresh input[type="button"]{content:'';width:25px;height:25px;border:0;background-image:url('online-forms/images/refresh.png');text-indent:-999px;font-size:0;line-height:0;background-repeat:no-repeat;background-color:transparent}
+.formfield input,.formfield select,.formfield select,.formfield input[type="text"],.formfield textarea{border:1px solid #dcdcdc;padding:0 10px}
+.formfield select:focus,.formfield input[type="text"]:focus,.formfield textarea:focus{border-bottom-color:#f3bd38;box-shadow:0 1px #f3bd38}
+select,input[type='text'],input[type='file']{width:100%}
+textarea{max-width:480px}
+.form_field_file{display:inline-block !important}
+.dropdown{margin-left:0}
+.form_error{color:red}
+.mandatoryHField{display:none}

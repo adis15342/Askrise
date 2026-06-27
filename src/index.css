@@ -1,0 +1,68 @@
+/* ====== GLOBAL CSS ====== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --font-primary: 'Roboto', sans-serif;
+  --font-heading: 'Outfit', sans-serif;
+  
+  --color-dark: #1c2331;
+  --color-primary: #6351ce;
+  --color-secondary: #47c5f2;
+  --color-bg-light: #fafafa;
+  --color-text-dark: #333;
+  --color-text-light: #666;
+  --color-border: #e2e8f0;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--color-bg-light);
+  color: var(--color-text-dark);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--color-dark);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Base structural layout overrides from default template */
+#root {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  border: none;
+}
+
+.site-main {
+  flex-grow: 1;
+}
+
+/* Utility styles */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}

@@ -1,0 +1,77 @@
+/* ==============================
+   HOME PAGE FULL STYLES
+   ============================== */
+
+/* ----- Global ----- */
+.home-page { background: #fafafa; color: #1c2331; font-family: 'Outfit', sans-serif; }
+
+/* ----- Hero / Promotion (section #promotion) ----- */
+.home-hero { position: relative; height: 80vh; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+.home-hero .video-background { position: absolute; inset: 0; overflow: hidden; }
+.home-hero .video-background video { width: 100%; height: 100%; object-fit: cover; }
+.home-hero__overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(28,35,49,0.95), rgba(99,81,206,0.7)); z-index: 1; }
+.home-hero__content { position: relative; z-index: 2; text-align: center; max-width: 900px; padding: 2rem; color: #fff; }
+.hero-animated-title { font-size: 3rem; line-height: 1.2; }
+.title-subtitle { display: block; font-size: 1.2rem; opacity: 0.9; }
+.title-headline { display: block; font-size: 2.5rem; font-weight: 800; margin: 0.5rem 0; }
+.title-action { display: block; font-size: 1.1rem; opacity: 0.8; }
+
+/* ----- Featured Video (section #featured) ----- */
+.home-featured-video { position: relative; height: 60vh; overflow: hidden; }
+.home-featured-video .video-background video { width: 100%; height: 100%; object-fit: cover; }
+
+/* ----- Custom Hero / Greenhouse (section #content-free-1-d0a7) ----- */
+.home-greenhouse { display: flex; align-items: center; gap: 2rem; padding: 4rem 2rem; background: #fff; }
+.home-greenhouse .greenhouse-image { max-width: 45%; border-radius: 8px; }
+.home-greenhouse .greenhouse-content { flex: 1; }
+.home-greenhouse .text-h2 { font-size: 1.3rem; line-height: 1.6; margin-bottom: 1rem; }
+.home-greenhouse .stat-count-container { margin-top: 1rem; font-size: 1.2rem; }
+.home-greenhouse .stat-number { font-weight: 800; color: #6351ce; }
+.home-greenhouse .stat-count-spinner { margin-right: 0.25rem; }
+.home-greenhouse .stat-suffix { margin-left: 0.25rem; }
+.home-greenhouse .stat-description { display: block; margin-top: 0.5rem; color: #555; }
+
+/* ----- CTA Layer (section .home-cta) ----- */
+.home-cta { background: linear-gradient(135deg, #1c2331, #2d3748); color: #fff; text-align: center; padding: 5rem 2rem; }
+.hero-cta-headline { font-size: 2.5rem; font-weight: 800; margin-bottom: 1rem; }
+.cta-flip-words .word-active { display: block; }
+.home-cta .video-background { margin-top: 2rem; }
+.home-cta .video-background video { width: 100%; max-width: 800px; border-radius: 8px; }
+
+/* ----- Connect Section ----- */
+.home-connect-section { padding: 4rem 2rem; background: #f8fafc; }
+.home-section-banner { font-size: 1.5rem; font-weight: 700; text-align: center; margin-bottom: 2rem; }
+.home-connect-grid { display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center; }
+.connect-card { background: #fff; padding: 1.5rem; border-radius: 12px; width: 220px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.05); transition: transform 0.3s; }
+.connect-card:hover { transform: translateY(-4px); }
+.connect-card img { width: 64px; margin-bottom: 0.75rem; }
+
+/* ----- About Section ----- */
+.home-about-section { padding: 4rem 2rem; background: #fff; }
+.home-about-content p { margin-bottom: 1rem; line-height: 1.6; color: #444; }
+
+/* ----- Featured Industries ----- */
+.home-featured-industries .featured-industry-row { display: flex; gap: 1.5rem; margin-bottom: 2rem; align-items: center; }
+.industry-row-image img { width: 200px; border-radius: 8px; }
+.industry-row-text h3 { margin: 0.5rem 0; }
+.industry-row-text p { margin: 0; }
+
+/* ----- Insights Section ----- */
+.home-insights-section { padding: 4rem 2rem; background: #f1f5f9; }
+.insights-flex-container { display: flex; gap: 2rem; flex-wrap: wrap; }
+.insights-text-col { flex: 1; }
+.insights-media-col { flex: 1; }
+.insights-video-container video { width: 100%; border-radius: 8px; }
+.insights-learn-btn { display: inline-block; margin-top: 1rem; padding: 0.75rem 1.5rem; background: #6351ce; color: #fff; border-radius: 6px; text-decoration: none; transition: background 0.2s; }
+.insights-learn-btn:hover { background: #4a3db8; }
+
+/* ----- Responsive ----- */
+@media (max-width: 900px) {
+  .home-hero__content { font-size: 0.9rem; }
+  .home-hero__headline { font-size: 2.5rem; }
+  .home-greenhouse { flex-direction: column; }
+  .home-greenhouse .greenhouse-image { max-width: 100%; }
+  .home-connect-grid { flex-direction: column; align-items: center; }
+  .home-featured-industries .featured-industry-row { flex-direction: column; align-items: center; }
+  .insights-flex-container { flex-direction: column; }
+}

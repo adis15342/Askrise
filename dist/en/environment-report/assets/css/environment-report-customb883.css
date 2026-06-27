@@ -1,0 +1,249 @@
+/**** Common to all variations of this component ****/
+.env-sticky-download-active .env-sticky-download {
+  bottom: 0;
+  position: fixed;
+  z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  width: 100%;
+  max-width: 315px;
+  right: 0;
+}
+@media (min-width: 768px) {
+  .env-sticky-download-active .env-sticky-download {
+    max-width: 280px;
+  }
+}
+.env-sticky-download-active .env-sticky-download.fade-in {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: visible;
+}
+.env-sticky-download-active .env-sticky-download .env-sticky-download__link-wrap {
+  padding: 15px 20px;
+  min-height: 110px;
+  display: block;
+  text-decoration: none;
+}
+.env-sticky-download-active .env-sticky-download .env-sticky-download__link-wrap:link, .env-sticky-download-active .env-sticky-download .env-sticky-download__link-wrap:visited {
+  background: #d93954;
+  border-top: 1px solid #d93954;
+  border-right: 1px solid #d93954;
+  color: #ffffff;
+}
+.env-sticky-download-active .env-sticky-download .env-sticky-download__link-wrap:link .env-sticky-download-teaser__title-icon, .env-sticky-download-active .env-sticky-download .env-sticky-download__link-wrap:visited .env-sticky-download-teaser__title-icon {
+  display: flex;
+  height: 26px;
+  margin-bottom: 2px;
+  width: 26px;
+}
+.env-sticky-download-active .env-sticky-download .env-sticky-download__link-wrap:link .env-sticky-download-teaser__title-icon svg, .env-sticky-download-active .env-sticky-download .env-sticky-download__link-wrap:visited .env-sticky-download-teaser__title-icon svg {
+  height: 26px;
+  width: 26px;
+}
+.env-sticky-download-active .env-sticky-download .env-sticky-download__link-wrap:link .env-sticky-download-teaser__title-icon svg path, .env-sticky-download-active .env-sticky-download .env-sticky-download__link-wrap:visited .env-sticky-download-teaser__title-icon svg path {
+  fill: #ffffff;
+}
+.env-sticky-download-active .env-sticky-download .env-sticky-download__link-wrap:link .env-sticky-download-teaser__title, .env-sticky-download-active .env-sticky-download .env-sticky-download__link-wrap:visited .env-sticky-download-teaser__title {
+  color: #ffffff;
+}
+.env-sticky-download-active .env-sticky-download .env-sticky-download__link-wrap:link .env-sticky-download-teaser__description p, .env-sticky-download-active .env-sticky-download .env-sticky-download__link-wrap:visited .env-sticky-download-teaser__description p {
+  color: #ffffff;
+}
+.env-sticky-download-active .env-sticky-download .env-sticky-download__link-wrap:hover, .env-sticky-download-active .env-sticky-download .env-sticky-download__link-wrap:focus {
+  background: #2d2d2d;
+  border-top: 1px solid #ffffff;
+  border-right: 1px solid #ffffff;
+}
+.env-sticky-download-active .env-sticky-download .env-sticky-download__link-wrap:hover .env-sticky-download-teaser__title, .env-sticky-download-active .env-sticky-download .env-sticky-download__link-wrap:focus .env-sticky-download-teaser__title {
+  color: #ffffff;
+}
+.env-sticky-download-active .env-sticky-download .env-sticky-download__link-wrap:hover .env-sticky-download-teaser__description p, .env-sticky-download-active .env-sticky-download .env-sticky-download__link-wrap:focus .env-sticky-download-teaser__description p {
+  color: #ffffff;
+}
+.env-sticky-download-active .env-sticky-download .env-sticky-download__link-wrap:hover .env-sticky-download-teaser__description::after, .env-sticky-download-active .env-sticky-download .env-sticky-download__link-wrap:focus .env-sticky-download-teaser__description::after {
+  background-image: url("images/chevronWhite.html");
+  transform: translateX(10px);
+}
+.env-sticky-download-active .env-sticky-download .env-sticky-download__link-wrap .env-sticky-download-teaser__title {
+  font-family: "PwC Helvetica Neue", "Helvetica Neue", helvetica, arial, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.6;
+  margin: 0;
+}
+.env-sticky-download-active .env-sticky-download .env-sticky-download__link-wrap .env-sticky-download-teaser__description {
+  display: flex;
+  align-items: center;
+  margin-top: 0;
+}
+.env-sticky-download-active .env-sticky-download .env-sticky-download__link-wrap .env-sticky-download-teaser__description p {
+  font-family: "PwC Helvetica Neue", "Helvetica Neue", helvetica, arial, sans-serif;
+  font-size: 0.933rem;
+  font-weight: normal;
+  line-height: 1.57;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+@media (min-width: 768px) {
+  .env-sticky-download-active .env-sticky-download .env-sticky-download__link-wrap .env-sticky-download-teaser__description p {
+    font-size: 0.875rem;
+  }
+}
+.env-sticky-download-active .env-sticky-download .env-sticky-download__link-wrap .env-sticky-download-teaser__description::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  background-image: url("images/chevron.html");
+  background-repeat: no-repeat;
+  background-position: center center;
+  top: 2px;
+  left: 5px;
+  position: relative;
+  transform: translateX(0);
+  transition: transform 0.2s ease;
+}
+
+/**** Expandable version of component ****/
+.env-sticky-download.env-sticky-download--expandable {
+  min-height: 48px;
+  max-width: 312px;
+  min-width: 48px;
+  overflow: hidden;
+}
+.env-sticky-download.env-sticky-download--expandable .env-sticky-download__dismiss-btn {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: none;
+  border: none;
+  color: #ffffff;
+  display: flex;
+  flex-direction: row-reverse;
+  font-size: 1rem;
+  line-height: 1.467em;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.env-sticky-download.env-sticky-download--expandable .env-sticky-download__dismiss-btn-icon {
+  align-items: center;
+  border: 1px solid #ffffff;
+  border-radius: 50%;
+  display: flex;
+  flex: 0 0 auto;
+  height: 24px;
+  justify-content: center;
+  margin: 8px;
+  position: relative;
+  transform: rotate(45deg);
+  width: 24px;
+}
+.env-sticky-download.env-sticky-download--expandable .env-sticky-download__dismiss-btn-icon-line {
+  background: #ffffff;
+  height: 1px;
+  left: 4px;
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+.env-sticky-download.env-sticky-download--expandable .env-sticky-download__dismiss-btn-icon-symbol {
+  height: 26px;
+  opacity: 0;
+  width: 26px;
+}
+.env-sticky-download.env-sticky-download--expandable .env-sticky-download__dismiss-btn-icon-symbol svg {
+  height: 26px;
+  width: 26px;
+}
+.env-sticky-download.env-sticky-download--expandable .env-sticky-download__dismiss-btn-icon-symbol svg path {
+  fill: #ffffff;
+}
+@media (hover: hover) {
+  .env-sticky-download.env-sticky-download--expandable .env-sticky-download__dismiss-btn:hover .env-sticky-download__dismiss-btn-icon {
+    background-color: #2d2d2d;
+    border-color: #2d2d2d;
+  }
+  .env-sticky-download.env-sticky-download--expandable .env-sticky-download__dismiss-btn:hover .env-sticky-download__dismiss-btn-icon-line {
+    background-color: #ffffff;
+  }
+}
+.env-sticky-download.env-sticky-download--expandable .env-sticky-download__dismiss-btn-icon-line-2 {
+  transform: translate(0, -50%) rotate(-90deg);
+}
+@media (hover: hover) {
+  .env-sticky-download.env-sticky-download--expandable .env-sticky-download__link-wrap:hover + .env-sticky-download__dismiss-btn .env-sticky-download__dismiss-btn-icon {
+    background-color: #2d2d2d;
+    border-color: #ffffff;
+  }
+  .env-sticky-download.env-sticky-download--expandable .env-sticky-download__link-wrap:hover + .env-sticky-download__dismiss-btn .env-sticky-download__dismiss-btn-icon-line {
+    background-color: #ffffff;
+  }
+}
+.env-sticky-download.env-sticky-download--expandable .env-sticky-download__link-wrap:focus + .env-sticky-download__dismiss-btn .env-sticky-download__dismiss-btn-icon {
+  background-color: #2d2d2d;
+  border-color: #ffffff;
+}
+.env-sticky-download.env-sticky-download--expandable .env-sticky-download__link-wrap:focus + .env-sticky-download__dismiss-btn .env-sticky-download__dismiss-btn-icon-line {
+  background-color: #ffffff;
+}
+.env-sticky-download.env-sticky-download--expandable.env-sticky-download--expanded .env-sticky-download__dismiss-btn-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+.env-sticky-download.env-sticky-download--expandable.env-sticky-download--collapsed {
+  background: #d93954;
+  height: 48px;
+  width: 48px;
+}
+.env-sticky-download.env-sticky-download--expandable.env-sticky-download--collapsed .env-sticky-download__dismiss-btn-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+.env-sticky-download.env-sticky-download--expandable.env-sticky-download--collapsed .env-sticky-download__dismiss-btn {
+  border-top: 1px solid #d93954;
+  border-right: 1px solid #d93954;
+}
+@media (hover: hover) {
+  .env-sticky-download.env-sticky-download--expandable.env-sticky-download--collapsed .env-sticky-download__dismiss-btn:hover {
+    border-top: 1px solid #2d2d2d;
+    border-right: 1px solid #2d2d2d;
+  }
+}
+.env-sticky-download.env-sticky-download--expandable.env-sticky-download--collapsed .env-sticky-download__dismiss-btn-icon--symbol {
+  border: none;
+  border-radius: 0;
+  height: 48px;
+  margin: 0;
+  padding: 8px;
+  transform: rotate(0);
+  width: 48px;
+}
+.env-sticky-download.env-sticky-download--expandable.env-sticky-download--collapsed .env-sticky-download__dismiss-btn-icon--symbol .env-sticky-download__dismiss-btn-icon-symbol {
+  opacity: 1;
+}
+.env-sticky-download.env-sticky-download--expandable.env-sticky-download--collapsed .env-sticky-download__dismiss-btn-icon--symbol .env-sticky-download__dismiss-btn-icon-line {
+  opacity: 0;
+}
+.env-sticky-download.env-sticky-download--expandable.env-sticky-download--collapsed .env-sticky-download__link-wrap {
+  display: none;
+  pointer-events: none;
+}

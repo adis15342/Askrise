@@ -1,0 +1,33 @@
+/* syc.css – minimal global styles for the Blade components */
+
+/* Ensure videos fill their containers */
+.video-background video,
+.insights-video-container video,
+.layer4-video video {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Simple utility for hidden elements */
+.hidden {
+  display: none !important;
+}
+
+/* Basic styling for video player wrapper (from Blade) */
+.videoplayer-v3 {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Close button styling (placeholder) */
+.syc-custom-hero-video-player-wrapper__close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}

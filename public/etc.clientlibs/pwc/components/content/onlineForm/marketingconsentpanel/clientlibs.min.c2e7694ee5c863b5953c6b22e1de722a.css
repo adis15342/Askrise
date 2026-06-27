@@ -1,0 +1,7 @@
+.hideLabel{display:none !important}
+.marketingConsentType .control__indicator{top:6px;background-size:cover !important}
+.marketingConsentType .help-block{display:none}
+.marketingConsentType .control--radio{font-size:16px;margin-top:20px;margin-bottom:0}
+.marketingConsentType__subheading{margin-top:20px;margin-bottom:0;font-size:16px}
+.marketingConsentType .field-label{margin-bottom:0}
+.marketingConsentType .control--checkbox{font-size:16px;margin-top:20px;margin-bottom:0;font-family:"PwC Helvetica Neue",Arial,Sans-Serif;line-height:2rem}

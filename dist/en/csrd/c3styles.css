@@ -1,0 +1,762 @@
+@charset "UTF-8";
+/* CSS Document */
+/* ------------------------------------------------------- */
+/* --------------- Quick colours ------------------------- */
+/* ------------------------------------------------------- */
+
+.c3_text_yellow { color: #ffb600 !important; }
+.c3_box_yellow { background-color: #ffb600 !important; }
+.c3_fill_yellow { fill: #ffb600 !important; }
+.c3_stroke_yellow { stroke: #ffb600 !important; }
+.c3_border_yellow { border-color: #ffb600 !important; }
+
+.c3_text_tangerine { color: #eb8c00 !important; }
+.c3_box_tangerine { background-color: #eb8c00 !important; }
+.c3_fill_tangerine { fill: #eb8c00 !important; }
+.c3_stroke_tangerine { stroke: #eb8c00 !important; }
+.c3_border_tangerine { border-color: #eb8c00 !important; }
+
+.c3_text_orange { color: #d04a02 !important; }
+.c3_box_orange { background-color: #d04a02 !important; }
+.c3_fill_orange { fill: #d04a02 !important; }
+.c3_stroke_orange { stroke: #d04a02 !important; }
+.c3_border_orange { border-color: #d04a02 !important; }
+
+.c3_text_rose { color: #D93954 !important; }
+.c3_box_rose { background-color: #D93954 !important; }
+.c3_fill_rose { fill: #D93954 !important; }
+.c3_stroke_rose { stroke: #D93954 !important; }
+.c3_border_rose { border-color: #D93954 !important; }
+
+.c3_text_red { color: #e0301e !important; }
+.c3_box_red { background-color: #e0301e !important; }
+.c3_fill_red { fill: #e0301e !important; }
+.c3_stroke_red { stroke: #e0301e !important; }
+.c3_border_red { border-color: #e0301e !important; }
+
+.c3_text_lightgrey { color: #dedede !important; }
+.c3_box_lightgrey { background-color: #dedede !important; }
+.c3_fill_lightgrey { fill: #dedede !important; }
+.c3_stroke_lightgrey { stroke: #dedede !important; }
+.c3_border_lightgrey { border-color: #dedede !important; }
+
+.c3_text_grey { color: #7d7d7d !important; }
+.c3_box_grey { background-color: #7d7d7d !important; }
+.c3_fill_grey { fill: #7d7d7d !important; }
+.c3_stroke_grey { stroke: #7d7d7d !important; }
+.c3_border_grey { border-color: #7d7d7d !important; }
+
+.c3_text_mediumgrey { color: #464646 !important; }
+.c3_box_mediumgrey { background-color: #464646 !important; }
+.c3_fill_mediumgrey { fill: #464646 !important; }
+.c3_stroke_mediumgrey { stroke: #464646 !important; }
+.c3_border_mediumgrey { border-color: #464646 !important; }
+
+.c3_text_darkgrey { color: #2d2d2d !important; }
+.c3_box_darkgrey { background-color: #2d2d2d !important; }
+.c3_fill_darkgrey { fill: #2d2d2d !important; }
+.c3_stroke_darkgrey { stroke: #2d2d2d !important; }
+.c3_border_darkgrey { border-color: #2d2d2d !important; }
+
+.c3_text_black { color: #000000 !important; }
+.c3_box_black { background-color: #000000 !important; }
+.c3_fill_black { fill: #000000 !important; }
+.c3_stroke_black { stroke: #000000 !important; }
+.c3_border_black { border-color: #000000 !important; }
+
+.c3_text_white { color: #FFFFFF !important; }
+.c3_box_white { background-color: #FFFFFF !important; }
+.c3_fill_white { fill: #FFFFFF !important; }
+.c3_stroke_white { stroke: #FFFFFF !important; }
+.c3_border_white { border-color: #FFFFFF !important; }
+
+/* ------------------------------------------------------- */
+/* ---------------------- Tables ------------------------- */
+/* ------------------------------------------------------- */
+
+
+/* ------------------------------------------------------- */
+/* --------------- Outer Structures ---------------------- */
+/* ------------------------------------------------------- */
+
+div#c3_outercontainer {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+    width: 100%;
+    max-width: 1370px;
+    margin: auto;
+}
+
+div#c3_outercontainer > sup {
+    display: block;
+    font-size: 12px;
+    line-height: 16px;
+    margin-bottom: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+}
+
+form.c3_form, form.c3_form_contact {
+    background-color: #dedede;
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 20px;
+    border-radius: 0px 0px 15px 15px;
+    margin-bottom: 45px;
+}
+
+form.c3_form_contact {
+    margin-bottom: 0px;
+}
+
+form.c3_form select, form.c3_form_contact select {
+    display: block;
+    width: 100%;
+}
+
+div.c3_row {
+    display: flex;
+    flex: 0;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+    padding: 20px;
+    padding-left: 40px;
+    margin-bottom: 70px;
+}
+
+div.c3_question {
+    position: relative;
+    background-color: #dedede;
+    border-radius: 15px 15px 15px 15px;
+    padding-bottom: 0px;
+    float: left;
+    flex: 0 0 auto;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+div.c3_question_33 {
+    width: calc(33.333% - 20px);
+}
+
+div.c3_question_66 {
+    width: calc(66.666% - 20px);
+}
+
+div.c3_question strong {
+    display: block;
+    position: relative;
+    color: #ffffff;
+    padding: 15px;
+    background-color: #D93954;
+    border-radius: 15px 15px 0px 0px;
+    font-size: 18px;
+    line-height: 26px;
+}
+
+div.c3_question p {
+    display: block;
+    position: relative;
+    padding: 15px;
+    font-size: 16px;
+    line-height: 24px;
+    padding-bottom: 25px;
+}
+
+div.c3_row_2 div.c3_question p {
+    padding-bottom: 0px;
+}
+
+div.c3_options {
+    margin-top: auto;
+}
+
+div.c3_question a.c3_option {
+    display: block;
+    position: relative;
+    width: calc(100% - 30px);
+    margin: 15px;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 10px;
+    padding-left: 50px;
+    transition: all 0.5s ease;
+}
+
+div.c3_question a.c3_option:hover {
+    text-decoration: none !important;
+    background-color: #E6E6E6;
+    cursor: pointer;
+}
+
+div.c3_question a.c3_option::before {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-color: #7d7d7d;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    border-radius: 50%;
+    transition: all 0.5s ease;
+    background-image: url(https://www.pwc.com/content/dam/pwc/gx/en/csrd/c3_tick_cross.svg);
+    background-size: 185%;
+    background-position: -29.5px 5px;
+    background-repeat: no-repeat;
+}
+
+div.c3_question a.c3_option.c3_selected::before {
+    background-color: #D93954;
+    background-position: 3.5px 5px;
+}
+
+div.c3_question a.c3_done {
+    display: block;
+    position: relative;
+    width: calc(100% - 30px);
+    margin: 15px;
+    background-color: #7d7d7d;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+    transition: all 0.5s ease;
+}
+
+div.c3_question a.c3_done:hover {
+    cursor: pointer;
+    text-decoration: none;
+    background-color: #D93954;
+}
+
+div.c3_question a.c3_yes {
+    display: block;
+    width: 50px;
+    height: 50px;
+    font-size: 0px;
+    line-height: 0px;
+    background-color: #D93954;
+    position: absolute;
+    border-radius: 50%;
+    border: 3px solid #dedede;
+    bottom: -25px;
+    left: calc(50% - 75px);
+    background-image: url(https://www.pwc.com/content/dam/pwc/gx/en/csrd/c3_tick.svg);
+    background-position: center;
+    background-size: 80%;
+    transition: all 0.5s ease;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+div.c3_question a.c3_no {
+    display: block;
+    width: 50px;
+    height: 50px;
+    font-size: 0px;
+    line-height: 0px;
+    background-color: #7d7d7d;
+    position: absolute;
+    border-radius: 50%;
+    border: 3px solid #dedede;
+    bottom: -25px;
+    right: calc(50% - 75px);
+    background-image: url(https://www.pwc.com/content/dam/pwc/gx/en/csrd/c3_cross.svg);
+    background-position: center;
+    background-size: 80%;
+    transition: all 0.5s ease;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+div.c3_question_66 a.c3_yes {
+    left: calc(25% - 28px);
+}
+
+div.c3_question_66 a.c3_no {
+    right: calc(25% - 31px);
+}
+
+div.c3_question a.c3_yes:hover, div.c3_question a.c3_no:hover {
+    background-size: 60%;
+}
+
+div.c3_eu_q1_1::before, div.c3_company_q1_1::before {
+    content: "";
+    display: block;
+    width: 0px;
+    height: 65px;
+    border-left: 2px dotted #999999;
+    position: absolute;
+    left: 50%;
+    top: -65px;
+}
+
+div.c3_company_q2_1::before, div.c3_company_q2_2::before {
+    content: "";
+    display: block;
+    width: 0px;
+    height: 110px;
+    border-left: 2px dotted #999999;
+    position: absolute;
+    left: 50%;
+    top: -110px;
+}
+
+div.c3_company_q3_1::before {
+    content: "";
+    display: block;
+    width: 0px;
+    height: 110px;
+    border-left: 2px dotted #999999;
+    position: absolute;
+    left: calc(25% - 4px);
+    top: -110px;
+}
+
+div.c3_company_q3_1::after {
+    content: "";
+    display: block;
+    width: 0px;
+    height: 110px;
+    border-left: 2px dotted #999999;
+    position: absolute;
+    right: calc(25% - 6px);
+    top: -110px;
+}
+/*
+div.c3_eu_q2_1::before, div.c3_eu_q3_1::before {
+    content: "";
+    display: block;
+    width: 0px;
+    height: 110px;
+    border-left: 2px dotted #999999;
+    position: absolute;
+    left: calc(50% - 52px);
+    top: -110px;
+}
+*/
+div.c3_eu_q2_1::after, div.c3_eu_q3_1::after {
+    content: "";
+    display: block;
+    width: 0px;
+    height: 110px;
+    border-left: 2px dotted #999999;
+    position: absolute;
+    right: calc(50% - 50px);
+    top: -110px;
+}
+
+div.c3_eu_q3_1::after {
+    right: calc(50% + 50px);
+}
+
+div.c3_result {
+    position: relative;
+    background-color: #dedede;
+    border-radius: 15px 15px 15px 15px;
+    padding-bottom: 0px;
+    float: left;
+    margin-right: 20px;
+    display: block;
+    width: 100%;
+}
+
+div.c3_result_1::before {
+    content: "";
+    display: block;
+    width: 0px;
+    height: 110px;
+    border-left: 2px dotted #999999;
+    position: absolute;
+    left: calc(17% - 62px);
+    top: -110px;
+}
+
+div.c3_result_1::after {
+    content: "";
+    display: block;
+    width: 0px;
+    height: 110px;
+    border-left: 2px dotted #999999;
+    position: absolute;
+    left: calc(50% + 0px);
+    top: -110px;
+}
+
+div.c3_result_2::before {
+    content: "";
+    display: block;
+    width: 0px;
+    height: 110px;
+    border-left: 2px dotted #999999;
+    position: absolute;
+    left: calc(17% + 38px);
+    top: -110px;
+}
+
+div.c3_result_2::after {
+    content: "";
+    display: block;
+    width: 0px;
+    height: 110px;
+    border-left: 2px dotted #999999;
+    position: absolute;
+    right: calc(16% + 0px);
+    top: -110px;
+}
+
+div.c3_result strong {
+    display: block;
+    position: relative;
+    color: #ffffff;
+    padding: 15px;
+    background-color: #D93954;
+    border-radius: 15px 15px 0px 0px;
+    font-size: 30px;
+    line-height: 36px;
+    text-align: center;
+}
+
+div.c3_result_2 strong {
+    background-color: #7d7d7d;
+}
+
+div.c3_result_1 strong span, div.c3_result_2 strong span {
+    display: block;
+    position: relative;
+    font-size: 14px;
+    font-weight: 200;
+    line-height: 20px;
+}
+
+div.c3_result div.c3_contact {
+    display: flex;
+    display: none;
+}
+
+div.c3_result div.c3_contact > div {
+    position: relative;
+    float: left;
+    width: 42.5%;
+    overflow: hidden;
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+}
+
+div.c3_result div.c3_contact div.c3_contact_details {
+    width: 30%;
+}
+
+div.c3_result div.c3_contact div.c3_contact_message {
+    width: 55%;
+    background-color: #E6E6E6;
+}
+
+div.c3_result div.c3_contact div.c3_contact_image {
+    background-color: #BDBDBD;
+    width: 15%;
+    padding: 0px;
+}
+
+div.c3_result div.c3_contact div.c3_contact_image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+}
+
+div.c3_result div.c3_contact div.c3_contact_message p {
+    display: block;
+    font-size: 26px;
+    line-height: 36px;
+    font-family: "PwC Helvetica Neue", Helvetica, Arial, Sans-Serif;
+    font-weight: 200;
+}
+
+div.c3_result div.c3_contact div.c3_contact_details p.c3_talk_to, div.c3_result div.c3_contact div.c3_contact_message p.c3_what_next {
+    font-family: "PwC Helvetica Neue", Helvetica, Arial, Sans-Serif;
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 36px;
+    margin-bottom: 20px;
+}
+
+div.c3_result div.c3_contact div.c3_contact_details p {
+    margin-bottom: 0px;
+    color: #2d2d2d !important;
+}
+
+div.c3_result div.c3_contact div.c3_contact_details p.c3_name {
+    font-family: "PwC ITC Charter", Georgia, Serif;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 40px;
+    color: #000000;
+}
+
+div.c3_result div.c3_contact div.c3_contact_details p.c3_email a {
+    font-family: "PwC Helvetica Neue", Helvetica, Arial, Sans-Serif;
+    font-weight: 600;
+}
+
+section.c3_header {
+    padding-left: 40px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    margin-top: 50px;
+}
+
+section.c3_header h1 span {
+    background: #D93954 !important;
+    box-shadow: 15px 0 0 #D93954, -15px 0 0 #D93954 !important;
+    padding-top: 12px !important;
+    line-height: 1.6em !important;
+}
+
+section.c3_header p.sub-heading {
+    padding-top: 3px;
+    line-height: 2.3em !important;
+}
+
+section.c3_header p.sub-heading span {
+    padding-top: 12px;
+    background: #2d2d2d;
+    box-shadow: 15px 0 0 #2d2d2d, -15px 0 0 #2d2d2d;
+}
+
+section.c3_header .hero-title {
+    background-color: transparent !important;
+}
+
+/* SUPRESSION AND LOGIC CONTROL */
+
+
+div.c3_question {
+    opacity: 0.4;
+    transition: all 0.5s ease;
+}
+
+.c3_active {
+   opacity: 1 !important; 
+}
+
+div.c3_row {
+    display: none;
+}
+
+.c3_hide_before::before, .c3_hide_after::after {
+    display: none !important;
+}
+
+.c3_after_right::after {
+    left: 84% !important;
+}
+
+.c3_after_left::after {
+    left: 50% !important;
+}
+
+div.c3_row_1 {
+   z-index: 6;
+}
+
+div.c3_row_2 {
+   z-index: 5;
+}
+
+div.c3_row_3 {
+   z-index: 4;
+}
+
+div.c3_row_4 {
+   z-index: 3;
+}
+
+div.c3_row_5 {
+   z-index: 2;
+}
+
+div.c3_suppress_before::before {
+   opacity: 0.4; 
+}
+
+div.c3_suppress_after::after {
+   opacity: 0.4; 
+}
+
+div.c3_call_to_action {
+    display: block;
+    clear: both;
+    padding: 10px;
+    background-color: #D93954;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+div.c3_call_to_action p {
+    color: #ffffff;
+    margin-bottom: 0px;
+    text-align: center;
+}
+
+div.c3_call_to_action p a {
+    font-weight: 600;
+}
+
+/* line animation */
+
+div.c3_row > div::after, div.c3_row > div::before {
+    height: 0px;
+    transition: all 0.5s ease;
+    transition-delay: 0s;
+}
+
+div.c3_row.c3_show_lines > div::after, div.c3_row.c3_show_lines  > div::before {
+    height: 110px;
+    transition-delay: 0.5s;
+}
+
+/* MOBILE STYLES */
+
+
+@media only screen and (max-width: 767px) {
+    .c3_mobile_hide {
+        display: none !important;
+    }
+    
+    div.c3_row {
+        padding-left: 5px;
+        padding-right: 5px;  
+    }
+    
+    div.c3_question {
+        width: 100%;   
+    }
+    
+    div.c3_eu_q2_1 {
+        padding-bottom: 20px;   
+    }
+    
+    div.c3_result {
+        margin-right: 0px;   
+    }
+    
+    div.c3_company_q2_1, div.c3_company_q2_2 {
+        width: calc(50% - 2.5px);
+        margin-right: 5px !important;
+    }
+    
+    section.c3_header {
+        padding-left: 0px;   
+    }
+    
+    div.c3_question p {
+        font-size: 14px !important;
+        line-height: 18px !important;
+    }
+    
+    div.c3_question a.c3_option {
+        padding: 5px;
+        padding-left: 40px;
+        min-height: 50px;
+    }
+    
+    div.c3_question a.c3_option::before {
+        left: 5px;   
+    }
+    
+    div.c3_company_q2_1::before {
+        left: calc(50% - 2.5px) !important;
+    }
+    
+    div.c3_company_q2_2::before {
+        left: calc(50% + 2.5px) !important;
+    }
+    
+    div.c3_result_2::after {
+        right: calc(25% - 7.5px);   
+    }
+    
+    div.c3_result_1::after {
+        left: calc(25% - 5px);
+    }
+    
+    div.c3_result_1::before {
+        left: calc(50% - 52px);
+    }
+    
+    div.c3_result_2::before {
+        left: calc(50% + 48px);
+    }
+    
+    .c3_after_left::after {
+        left: 25% !important;
+    }
+    
+    .c3_after_right::after {
+        left: 75% !important;
+    }
+    
+    div.c3_result div.c3_contact {
+        display: none;
+    }
+    
+    div.c3_result div.c3_contact > div {
+        padding: 15px;   
+    }
+    
+    div.c3_result div.c3_contact div.c3_contact_details {
+        width: 50%;
+        float: left;
+    }
+    
+    div.c3_result div.c3_contact div.c3_contact_image {
+        width: 50%;
+        float: left;
+    }
+    
+    div.c3_result div.c3_contact div.c3_contact_image img {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    
+    div.c3_result div.c3_contact div.c3_contact_message {
+         width: 100%;   
+    }
+    
+    div.c3_result div.c3_contact div.c3_contact_details p.c3_name {
+        font-size: 22px;
+        line-height: 28px;
+    }
+    
+    div.c3_result div.c3_contact div.c3_contact_message p {
+        font-size: 20px;
+        line-height: 26px;
+    }
+    
+}
+
+.c3_linkedin a {
+    display: block;
+    font-size: 0px;
+    width: 28px;
+    height: 28px;
+    background-image: url(../../../content/pwc/script/network/follow/follow_linkedin.png);
+    background-size: cover;
+}
+
+
+
+
+
+

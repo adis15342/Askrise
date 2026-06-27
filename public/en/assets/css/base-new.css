@@ -1,0 +1,92 @@
+/* Base section classes */
+
+.base__text_color_white .videoplayerv2 .video-paragraph,
+.base__text_color_white h1,
+.base__text_color_white h2,
+.base__text_color_white h3,
+.base__text_color_white h4,
+.base__text_color_white h5,
+.base__text_color_white h6,
+.base__text_color_white p,
+.base__text_color_white li,
+.base__text_color_white {
+    color: #fff
+}
+
+.base__text_color_white .stats span.statline,
+.base__text_color_white .stats p,
+.base__text_color_white .linkexplorer * {
+    color: #fff !important;
+}
+
+.base__text_color_white .stats span.statline::before {
+    background: #fff !important;
+}
+
+.base__text_color_white .collection__item-content h1,
+.base__text_color_white .collection__item-content h2,
+.base__text_color_white .collection__item-content h3,
+.base__text_color_white .collection__item-content h4,
+.base__text_color_white .collection__item-content h5,
+.base__text_color_white .collection__item-content h6,
+.base__text_color_white .collection__item-content p,
+.base__text_color_white .collection__item-content span.statline,
+.base__section_background-color_darkgrey .summaryexplorerv2 .summary-explorerv2__table-row .summary-explorerv2__column.summary-explorerv2__tabs-column .summary-explorerv2__link-listing li[tabindex="-1"]:hover,
+.base__text_color_white,
+.base__section_background-color_darkgrey.base__text_color_white .dvHighlights .dv-article.hl-article a * {
+    color: #2d2d2d !important;
+}
+
+.base__section_background-color_darkgrey,
+.page-secondary-col--orange .base__section_background-color_darkgrey .stat-bar,
+.page-secondary-col--rose .base__section_background-color_darkgrey .stat-bar,
+.page-secondary-col--red .base__section_background-color_darkgrey .stat-bar,
+.base__section_background-color_darkgrey.page-section--col-light-grey .collection-v3-listing .collectionv2-component,
+.base__section_background-color_darkgrey.page-section--col-light-grey .collection-v3-listing .collection-v3-listing__background,
+.base__section_background-color_darkgrey.page-section--col-white .collection-v3-listing .collectionv2-component,
+.base__section_background-color_darkgrey.page-section--col-white .collection-v3-listing .collection-v3-listing__background {
+    background-color: #2d2d2d !important;
+}
+
+.base__section_background-color_darkgrey.base__text_color_white .dvHighlights .dv-article.hl-article,
+.base__button_color_white .btn--transparent:not(.btn-cta):not(:hover) {
+    background: #fff !important;
+}
+.base__section_background-color_darkgrey h5.collection-v3-listing__heading {
+    color: #fff !important;
+}
+
+.base__text_color_white .hl-content *, 
+.base__text_color_white .hl-modal-content * {
+    color: inherit;
+}
+
+/* Remove duplicate icons in CTA buttons */
+.btn-cta i + i {
+    display: none !important;
+}
+
+/* Breadcrumb width fix */
+@media (min-width: 768px) {
+	#wrapper .headerv2-container .slimnav-breadcrumb .slimnav-v2-breadcrumbs {
+		max-width: 100%;
+	}
+}
+
+/* Fix duplicate icons in buttons */
+#wrapper a.btn i + i {
+    display: none;
+}
+
+/* OneTrust */
+p.ot-warning {
+	text-align: center;
+	font: normal normal 1.5rem/3rem "PwC Helvetica Neue Light", "PwC Helvetica Neue", Arial, sans-serif;
+	background: url(https://www.pwc.com/content/dam/pwc/gx/en/brand-simplified/picto-images-132/red-for-pwc-only/picto-risk-red.svg) top center no-repeat;
+	background-size: 48px;
+	padding-top: 60px;
+}
+p.ot-warning.ot-warning--smaller {
+	font-size: 1.375rem;
+	line-height: 2rem;
+}

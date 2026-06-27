@@ -1,0 +1,156 @@
+body.page-primary-col--red section {
+    --theme-color-primary: #e0301e;    
+}
+body.page-primary-col--orange section {
+    --theme-color-primary: #d04a02;    
+}
+body.page-primary-col--rose section {
+    --theme-color-primary: #d93954;    
+}
+#title .title .card__primary-wrap {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+#title .title .hero-card__primary-title {
+    margin-top: 0px;
+}
+
+#title .title .hero-card__primary-eyebrow {
+    font-weight: bold;
+}
+
+.columnControl hr {
+    border-top: 4px solid var(--theme-color-primary);
+}
+
+/* Constraint content to the single column */
+.html .text .flourish-embed,
+#wrapper .cta-card-wrapper,
+#wrapper .videoplayer-v2,
+#wrapper .section-separator  {
+    width: 100%;
+    margin: 40px auto;
+    padding-right: 0;
+    padding-left: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media (min-width: 768px) {
+    #wrapper .cta-card-wrapper,
+    #wrapper .videoplayer-v2 {
+        width: 720px; 
+    } 
+}
+@media (min-width: 992px) {
+    #wrapper .cta-card-wrapper {
+        width: 778px; 
+    } 
+}
+@media (min-width: 1200px) {
+    #wrapper .cta-card-wrapper,
+    #wrapper .videoplayer-v2 {
+        width: 750px; 
+    } 
+}
+@media (min-width: 1400px) {
+    #wrapper .cta-card-wrapper,
+    #wrapper .videoplayer-v2 {
+        width: 770px;
+    } 
+}
+
+#wrapper .cta-card {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.html .text.flourish-narrow,
+.pwccol1-longform-c0 .chart.chart-v2 {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px;
+}
+
+/* Fixed width for embedded charts */
+@media (min-width: 768px) {
+    .html .text .flourish-embed,
+    .html .text.ceros-embed,
+    #wrapper .section-separator {
+        max-width:750px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 992px) {
+    .html .text .flourish-embed,
+    .html .text.ceros-embed,
+    #wrapper .section-separator {
+        padding:0 15px;
+        max-width: 810px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .html .text .flourish-embed,
+    .html .text.ceros-embed,
+    #wrapper .section-separator {
+        max-width:975px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .html .text .flourish-embed,
+    .html .text.ceros-embed,
+    #wrapper .section-separator {
+        max-width:1140px;
+    }
+}
+
+/* Text */
+#wrapper .text-component-lead .text-component p,
+#wrapper .text-component-lead .text-component li {
+    font-family: "PwC Helvetica Neue Light", "Helvetica Neue Light", helvetica, arial, sans-serif;
+}
+
+@media (width >= 768px) {
+    #wrapper .text-component p, 
+    #wrapper .text-component li {
+        font-size: 1.25rem;
+        line-height: 1.6em;
+    }
+    #wrapper .text-component-lead .text-component p,
+    #wrapper .text-component-lead .text-component li {
+        font-size: 1.625rem;
+        line-height: 1.54em;
+    }
+}
+
+#wrapper h2.collections-title, 
+#wrapper h2.rightrailcontact-heading {
+    color: #000;
+    font-weight: normal;
+    font-size: 1.625rem;
+    line-height: 1.53;
+}
+
+/* Section separator */
+#wrapper .section-separator hr {
+    border-top: 4px solid var(--theme-color-primary);
+}
+
+/*Show Ref XF in author */
+html.aem-AuthorLayer-Edit .html-xf {
+    display: block;
+    background: #f0f0f0;
+    text-align: center;
+    color: #ccc;
+    height: 3rem;
+    position: relative;
+}
+html.aem-AuthorLayer-Edit .html-xf.html-xf--tla::before {
+    content: 'RF template tweaks';
+    display: block;
+    color: #7d7d7d;
+}
