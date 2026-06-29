@@ -65,7 +65,12 @@ const Footer = () => {
 
       {/* Copyright */}
       <div className="site-footer__bottom">
-        <p>© 2025 All Rights Reserved. Website designed by Techno Items</p>
+        <p>© 2025 All Rights Reserved. Website designed by  
+          <span className="footer-tooltip-wrapper">
+             Techno Items
+            <span className="footer-tooltip-text">+91 78800 80817 / 94667 03459</span>
+          </span>
+        </p>
       </div>
     </footer>
   );

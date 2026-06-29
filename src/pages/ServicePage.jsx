@@ -24,7 +24,7 @@ const ServicePage = () => {
       <section className="service-content">
         <div className="service-content__text">
           <p>{data.paragraphs[0]}</p>
-          <p>{data.paragraphs[1]}</p>
+          {/* <p>{data.paragraphs[1]}</p> */}
         </div>
         <div className="service-content__image">
           <img src={data.images[1]} alt={data.heading} />
@@ -38,8 +38,8 @@ const ServicePage = () => {
         </div>
         <div className="service-content__text">
           <h2>{data.heading}</h2>
-          <p>{data.paragraphs[2]}</p>
-          <p>{data.paragraphs[3]}</p>
+          <p>{data.paragraphs[1]}</p>
+          {/* <p>{data.paragraphs[3]}</p> */}
         </div>
       </section>
 

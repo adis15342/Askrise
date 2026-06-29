@@ -10,7 +10,7 @@
 }
 
 .industry-hero__subtitle {
-  font-size: 1rem;
+  font-size: 20px;
   color: #666;
   margin-bottom: 8px;
 }
@@ -51,7 +51,7 @@
 }
 
 .industry-overview__text p {
-  font-size: 1rem;
+  font-size: 1.2rem;
   line-height: 1.8;
   color: #555;
   margin-bottom: 16px;
@@ -95,26 +95,29 @@
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
   overflow: hidden;
+  display: flex;
 }
 
 .industry-tabs__nav {
   display: flex;
-  border-bottom: 2px solid #f0f0f0;
+  flex-direction: column;
+  border-right: 2px solid #f0f0f0;
+  width: 250px;
+  flex-shrink: 0;
 }
 
 .industry-tabs__tab {
-  flex: 1;
   padding: 16px 20px;
   border: none;
   background: none;
-  font-size: 0.9rem;
+  font-size: 1.125rem;
   font-weight: 600;
   color: #888;
   cursor: pointer;
   transition: all 0.3s ease;
   font-family: inherit;
-  border-bottom: 3px solid transparent;
-  margin-bottom: -2px;
+  border-left: 3px solid transparent;
+  text-align: left;
 }
 
 .industry-tabs__tab:hover {
@@ -124,12 +127,13 @@
 
 .industry-tabs__tab.active {
   color: #6351ce;
-  border-bottom-color: #6351ce;
+  border-left-color: #6351ce;
   background: rgba(99, 81, 206, 0.04);
 }
 
 .industry-tabs__content {
   padding: 32px;
+  flex: 1;
 }
 
 .industry-tabs__content h3 {
@@ -139,7 +143,7 @@
 }
 
 .industry-tabs__content p {
-  font-size: 1rem;
+  font-size: 1.2rem;
   line-height: 1.8;
   color: #555;
 }
@@ -158,18 +162,13 @@
     width: 100%;
   }
 
-  .industry-tabs__nav {
+  .industry-tabs {
     flex-direction: column;
   }
 
-  .industry-tabs__tab {
-    border-bottom: none;
-    border-left: 3px solid transparent;
-    text-align: left;
-  }
-
-  .industry-tabs__tab.active {
-    border-bottom: none;
-    border-left-color: #6351ce;
+  .industry-tabs__nav {
+    width: 100%;
+    border-right: none;
+    border-bottom: 2px solid #f0f0f0;
   }
 }

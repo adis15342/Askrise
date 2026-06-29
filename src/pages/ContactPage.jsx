@@ -37,25 +37,29 @@ const ContactPage = () => {
             srcSet="https://static.vecteezy.com/system/resources/previews/011/705/128/large_2x/close-up-of-contact-us-word-photo.jpg"
           />
           <img
-            src="https://img.freepik.com/premium-photo/contact-us-customer-support-hotline-people-connect-businessman-touching-phone-application-check-email_36325-4250.jpg"
+            src="https://static.vecteezy.com/system/resources/previews/011/705/128/large_2x/close-up-of-contact-us-word-photo.jpg"
             alt="Contact Us"
             className="contact-hero__image"
           />
         </picture>
+        <div className="contact-hero__overlay">
+          <h1>Contact Us</h1>
+          <p>We're here to help and answer any question you might have.</p>
+        </div>
       </section>
 
       {/* Contact Details */}
       <section className="contact-details">
         <div className="contact-details__container">
           <div className="contact-detail-item">
-            <i className="fas fa-map-marker-alt"></i>
+            <i className="bx bx-map"></i>
             <div>
               <h3>Our Address</h3>
               <p>C-38A, UGF, Sewak Park, Uttam Nagar, New Delhi – 110059</p>
             </div>
           </div>
           <div className="contact-detail-item">
-            <i className="fas fa-phone-alt"></i>
+            <i className="bx bx-phone"></i>
             <div>
               <h3>Call Us</h3>
               <p>+91 9466773327</p>
@@ -63,14 +67,14 @@ const ContactPage = () => {
             </div>
           </div>
           <div className="contact-detail-item">
-            <i className="fas fa-envelope"></i>
+            <i className="bx bx-envelope"></i>
             <div>
               <h3>Email Us</h3>
               <p>ASKRISECONSULTANTS@GMAIL.COM</p>
             </div>
           </div>
           <div className="contact-detail-item">
-            <i className="fas fa-clock"></i>
+            <i className="bx bx-time"></i>
             <div>
               <h3>Opening Hours</h3>
               <p>Open 24*7</p>
@@ -82,7 +86,7 @@ const ContactPage = () => {
       {/* Contact Form */}
       <section className="contact-form-section">
         <div className="contact-form-container">
-          <h2>Get in Touch</h2>
+          <h2 className="section-title">Send Us a Message</h2>
           <form onSubmit={handleSubmit}>
             <div className="form-group">
               <label htmlFor="name">Your Name<span className="required">*</span></label>
@@ -90,7 +94,7 @@ const ContactPage = () => {
                 type="text"
                 id="name"
                 name="name"
-                placeholder="Jane Doe"
+                placeholder="Enter your name"
                 value={formData.name}
                 onChange={handleChange}
                 required
@@ -102,7 +106,7 @@ const ContactPage = () => {
                 type="email"
                 id="email"
                 name="email"
-                placeholder="jane.doe@example.com"
+                placeholder="Enter your email"
                 value={formData.email}
                 onChange={handleChange}
                 required
@@ -114,7 +118,7 @@ const ContactPage = () => {
                 type="text"
                 id="phone"
                 name="phone"
-                placeholder="+1 (555) 123-4567"
+                placeholder="Enter your phone number"
                 value={formData.phone}
                 onChange={handleChange}
               />
@@ -125,7 +129,7 @@ const ContactPage = () => {
                 id="message"
                 name="message"
                 rows="5"
-                placeholder="I'm interested in learning more about your services..."
+                placeholder="How can we help you?"
                 value={formData.message}
                 onChange={handleChange}
                 required

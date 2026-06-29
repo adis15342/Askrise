@@ -8,7 +8,7 @@ const NewsPage = () => {
       {/* Hero Section */}
       <section className="news-hero">
         <img
-          src="https://images.unsplash.com/photo-1504711434969-e33886168d6c?w=1600&q=80"
+          src=".\images\testing.jpg"
           alt="News & Events"
           className="news-hero__image"
         />

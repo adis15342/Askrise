@@ -1,6 +1,10 @@
 /* ====== AEM HEADER DESKTOP OVERRIDES ====== */
 
 @media (min-width: 992px) {
+  .sublevel-container {
+    display: block !important;
+  }
+  
   /* Ensure level 3 (items list) is displayed on desktop even if data-nav-level is "2" */
   .headerv2-container .slimheader-sublevel-slide[data-nav-level="2"] .slimnav-level3 {
     display: flex !important;

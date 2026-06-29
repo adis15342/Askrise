@@ -1,386 +1,386 @@
 export const industryData = {
   Automobile: {
-    title: 'Automobile Industry',
+    title: 'Automobile Industry Advisory – Askrise',
     images: ['https://i.postimg.cc/XqNzgg68/automobiles1.jpg', 'https://i.postimg.cc/0Q04mBFj/automobile2.jpg'],
-    headings: ['Automobile Overview', 'Use Cases', 'Future Trends'],
+    headings: ['Industry Overview', 'How Askrise Helps', 'Future Trends'],
     paragraphs: [
-      "The automobile industry focuses on designing, manufacturing, and selling motor vehicles. It involves integrating mechanical, electrical, and software engineering to create safe and efficient vehicles. The industry is driven by innovation, sustainability, and safety standards and plays a vital role in global transportation and economy.",
-      "Automobiles are used for personal transportation, commercial logistics, and public transport. The industry supports the development of electric vehicles, autonomous driving technologies, and connected car systems. Furthermore, it contributes to the economy through manufacturing jobs and global trade.",
-      "Vehicle manufacturing emphasizes safety and quality, involving rigorous testing and compliance with regulations. Automation and robotics in assembly lines increase efficiency and reduce human error. Innovations like crash avoidance systems advance vehicle safety and reliability.",
-      "Future trends in the automobile industry include electrification, autonomous vehicles, and shared mobility. Developments in battery technology and AI are key drivers. Sustainability efforts focus on reducing emissions and developing eco-friendly materials, aligning with global climate goals."
+      "The automobile industry is a cornerstone of global transportation and innovation, involving the design, manufacturing, and sale of vehicles. It integrates mechanical, electrical, and software engineering, while being shaped by sustainability, electrification, and safety standards.",
+      "At Askrise, we provide specialized advisory and CA services to automobile businesses, ranging from OEMs to dealerships. Our services include compliance management, tax advisory, GST support, audit services, financial restructuring, and transaction advisory. We also assist in setting up cross-border operations, ensuring adherence to regulatory frameworks, and optimizing profitability through financial planning.",
+      "Automobile firms face challenges in cost management, supply chain disruptions, and regulatory compliance. Askrise helps businesses streamline their financial processes, implement internal audits, and establish robust risk management frameworks. We ensure transparency, tax efficiency, and compliance with government regulations while supporting financial sustainability.",
+      "Future trends in the automobile industry such as EVs, autonomous vehicles, and shared mobility create new compliance and investment challenges. Askrise supports clients by providing guidance on EV-related incentives, R&D tax credits, carbon accounting, and ESG reporting. Our advisory ensures that clients remain future-ready in a rapidly evolving industry."
     ],
     summaries: [
-      { heading: 'Electrification', paragraph: "The transition to electric vehicles is transforming the automobile industry. This shift focuses on reducing carbon emissions and dependency on fossil fuels. Improved battery technologies and charging infrastructure are critical to this advancement, offering environmental and economic benefits." },
-      { heading: 'Autonomous Vehicles', paragraph: "Autonomous vehicles leverage AI and sensor technologies to enable self-driving capabilities. This innovation promises to enhance road safety, reduce traffic congestion, and promote efficient transportation. Regulatory and ethical considerations are vital to widespread adoption." },
-      { heading: 'Shared Mobility', paragraph: "Shared mobility services like car-sharing and ride-hailing are reshaping urban transport. These services reduce the need for personal vehicle ownership and offer affordable mobility solutions, contributing to decreased urban congestion and environmental impact." }
+      { heading: 'Financial Advisory for Automobiles', paragraph: "Askrise offers financial structuring, cost optimization, and tax planning services to automobile companies, helping them adapt to industry transformations while improving profitability." },
+      { heading: 'Compliance & Audit Support', paragraph: "We ensure automobile businesses remain compliant with GST, direct taxes, and international regulations. Our audit and assurance services provide transparency and strengthen stakeholder trust." },
+      { heading: 'EV & Sustainability Advisory', paragraph: "With the growing shift towards electrification and sustainability, Askrise helps businesses leverage government incentives, manage carbon reporting, and align with ESG standards." }
     ]
   },
   Chemical: {
-    title: 'Chemical Industry',
+    title: 'Chemical Industry Advisory – Askrise',
     images: ['https://i.postimg.cc/3NLbfDKH/chemical1.jpg', 'https://i.postimg.cc/PxjcCj60/chemical2.jpg'],
-    headings: ['Chemical Overview', 'Use Cases', 'Future Trends'],
+    headings: ['Industry Overview', 'How Askrise Helps', 'Future Trends'],
     paragraphs: [
-      "Chemical engineering is crucial for designing and optimizing large-scale processes, transforming raw materials into valuable products. It integrates chemistry, physics, biology, and math, focusing on environmental protection, safety, and efficiency.",
-      "Chemical engineering influences sectors like pharmaceuticals, agriculture, and energy. It ensures safe drug production, boosts crop yields, and supports innovations like biofuels.",
-      "Modern processes emphasize safety, efficiency, and sustainability. This includes risk assessments and safety systems to prevent accidents.",
-      "Future trends involve decarbonization and digitalization. Renewable energy, AI, and digital twins enhance efficiency."
+      "The chemical industry plays a vital role in pharmaceuticals, agriculture, consumer goods, and energy. It requires strict regulatory compliance, innovation, and sustainability efforts to manage environmental and operational risks.",
+      "Askrise supports chemical companies by providing GST and tax advisory, cross-border structuring, compliance with environmental regulations, and financial risk management. We assist in project financing, audit support, and corporate restructuring to improve efficiency and profitability.",
+      "Given the industry’s high regulatory exposure, we provide internal audit services, safety compliance advisory, and help in ESG and sustainability reporting. Our advisory ensures alignment with both Indian and global regulatory frameworks.",
+      "As trends move toward digitalization, green chemistry, and renewable energy integration, Askrise assists chemical businesses with R&D credits, green financing, and sustainable reporting, helping them future-proof their operations."
     ],
     summaries: [
-      { heading: 'Process Optimization', paragraph: "Process optimization enhances efficiency, reliability, and sustainability in chemical manufacturing." },
-      { heading: 'Green Chemistry', paragraph: "Green chemistry aims to create safer and more sustainable chemical processes by minimizing hazardous substances." },
-      { heading: 'Automation', paragraph: "Automation in the chemical industry uses technology to streamline processes with minimal human intervention." }
+      { heading: 'Tax & Compliance Advisory', paragraph: "Askrise ensures chemical companies comply with GST, direct taxes, and global trade rules while minimizing tax liabilities." },
+      { heading: 'Audit & Risk Management', paragraph: "We provide internal audit and risk assessment services, ensuring strong governance, regulatory compliance, and operational safety." },
+      { heading: 'Sustainability Advisory', paragraph: "Askrise helps clients embrace green practices with ESG compliance, carbon accounting, and financing for renewable energy projects." }
     ]
   },
   Defence: {
-    title: 'Defence Industry',
+    title: 'Defence Industry Advisory – Askrise',
     images: ['https://i.postimg.cc/mZVqgK76/defence1.jpg', 'https://i.postimg.cc/pXTShkZV/defence2.jpg'],
-    headings: ['Defence Overview', 'Use Cases', 'Future Trends'],
+    headings: ['Industry Overview', 'How Askrise Helps', 'Future Trends'],
     paragraphs: [
-      "The defence industry specializes in developing and manufacturing military equipment and technologies.",
-      "Defence technologies are used for national security, peacekeeping missions, and international military alliances.",
-      "Safety in defence manufacturing involves stringent testing and risk assessments.",
-      "Future trends focus on unmanned systems, advanced robotics, and hybrid warfare technologies."
+      "The defence industry involves aerospace, naval, and land systems manufacturing, with a focus on security, research, and innovation.",
+      "Askrise assists defence firms by providing compliance support for government contracts, tax advisory, international structuring, audit assurance, and financial consulting. We help businesses manage defense procurement compliances and FDI regulations.",
+      "We support companies in risk management, cybersecurity compliance, and ensuring accountability in financial reporting. Our audit and assurance services strengthen credibility with stakeholders and government agencies.",
+      "Future trends like unmanned systems, AI-driven technologies, and sustainability require updated compliance and reporting. Askrise provides specialized advisory in defence offsets, ESG, and cross-border taxation."
     ],
     summaries: [
-      { heading: 'Unmanned Systems', paragraph: "Unmanned systems, including drones and autonomous vehicles, are transforming military operations." },
-      { heading: 'Cybersecurity', paragraph: "Cybersecurity is crucial in defense to counter intelligence threats and safeguard military networks." },
-      { heading: 'Sustainable Technologies', paragraph: "The defense industry is integrating sustainable technologies to reduce environmental impact and energy consumption." }
+      { heading: 'Government Compliance Support', paragraph: "We assist defence companies in navigating government regulations, procurement contracts, and FDI compliance." },
+      { heading: 'Audit & Financial Transparency', paragraph: "Askrise ensures financial accountability through internal and statutory audits, fostering trust with stakeholders and regulators." },
+      { heading: 'Sustainability & Risk Advisory', paragraph: "We help defence firms adopt sustainable technologies and manage risks associated with cybersecurity and global supply chains." }
     ]
   },
   Electronics: {
-    title: 'Electronics Industry',
+    title: 'Electronics Industry Advisory – Askrise',
     images: ['https://i.postimg.cc/YCLy89ZJ/electronics1.jpg', 'https://i.postimg.cc/DyMMqsjr/electronics2.jpg'],
-    headings: ['Electronics Overview', 'Use Cases', 'Future Trends'],
+    headings: ['Industry Overview', 'How Askrise Helps', 'Future Trends'],
     paragraphs: [
-      "The electronics industry focuses on designing and manufacturing electronic devices and components.",
-      "Electronics are integral to communication devices, computers, and household appliances.",
-      "Manufacturing in electronics involves precision and quality control.",
-      "Trends in electronics include IoT, miniaturization, and artificial intelligence."
+      "The electronics industry drives innovation across consumer devices, semiconductors, and industrial systems. It plays a key role in communication, healthcare, and mobility.",
+      "Askrise supports electronics businesses with taxation, GST compliance, R&D credit advisory, and financial restructuring. We also assist in transfer pricing, global tax structuring, and cross-border operations.",
+      "We provide internal audits, supply chain risk advisory, and ensure compliance with international standards. Our services also extend to M&A advisory for technology-driven companies.",
+      "Trends like IoT, AI, and sustainable electronics require updated financial strategies. Askrise assists with incentives for innovation, carbon reporting, and ESG compliance for electronics manufacturers."
     ],
     summaries: [
-      { heading: 'Internet of Things (IoT)', paragraph: "IoT connects electronic devices, enabling smart home and industrial applications." },
-      { heading: '5G Technology', paragraph: "5G technology revolutionizes communication by providing faster data speeds and lower latency." },
-      { heading: 'Sustainable Electronics', paragraph: "Sustainability in electronics involves designing devices with longer lifecycles and recyclable components." }
+      { heading: 'Global Tax Structuring', paragraph: "Askrise provides transfer pricing and international taxation support to electronics firms with cross-border operations." },
+      { heading: 'Innovation & R&D Advisory', paragraph: "We help businesses claim R&D tax credits and optimize funding for innovation and technology-driven projects." },
+      { heading: 'Sustainable Electronics Advisory', paragraph: "We support compliance with ESG standards, carbon accounting, and sustainable business reporting for electronics companies." }
     ]
   },
   FMCG: {
-    title: 'Fast-Moving Consumer Goods (FMCG)',
+    title: 'FMCG Industry Advisory – Askrise',
     images: ['https://i.postimg.cc/5tcKrJMj/fmcg1.jpg', 'https://i.postimg.cc/W4MYLy28/fmcg2.jpg'],
-    headings: ['FMCG Overview', 'Use Cases', 'Future Trends'],
+    headings: ['Industry Overview', 'How Askrise Helps', 'Future Trends'],
     paragraphs: [
-      "The FMCG industry is vital for producing and distributing essential everyday items.",
-      "FMCG includes sectors like food and beverages, household products, and pharmaceuticals.",
-      "Production in FMCG requires stringent quality controls.",
-      "Future trends include digital transformation, personalization, and sustainable packaging."
+      "The FMCG industry covers food, beverages, and household essentials with high turnover and thin margins.",
+      "Askrise helps FMCG businesses with GST compliance, tax optimization, audit services, and financial planning. We also assist with supply chain advisory and cross-border trade compliance.",
+      "We ensure FMCG companies comply with safety regulations, hygiene standards, and international accounting norms. Our internal audits strengthen efficiency and reduce risk.",
+      "Future trends such as digital transformation, e-commerce, and sustainable packaging create financial complexities. Askrise provides e-commerce tax structuring, ESG reporting, and digital finance advisory."
     ],
     summaries: [
-      { heading: 'Digital Transformation', paragraph: "Digital transformation involves leveraging online platforms and data analytics to enhance consumer engagement." },
-      { heading: 'Sustainable Packaging', paragraph: "Sustainable packaging focuses on reducing plastic waste and using biodegradable materials." },
-      { heading: 'Personalization', paragraph: "Personalization in FMCG involves customizing products and experiences to individual consumer preferences." }
+      { heading: 'Tax & GST Advisory', paragraph: "Askrise ensures FMCG companies remain compliant while minimizing tax liabilities through optimized GST structuring." },
+      { heading: 'Audit & Supply Chain Finance', paragraph: "We provide audits and financial advisory to improve supply chain resilience and working capital efficiency." },
+      { heading: 'Sustainability Advisory', paragraph: "Askrise helps FMCG companies report on ESG compliance, adopt green financing, and reduce environmental impact." }
     ]
   },
   Textile: {
-    title: 'Textile Industry',
+    title: 'Textile Industry Advisory – Askrise',
     images: ['https://i.postimg.cc/WzfXwLnN/textile1.jpg', 'https://i.postimg.cc/c1D9SwNp/textile2-jpeg.jpg'],
-    headings: ['Textile Overview', 'Use Cases', 'Future Trends'],
+    headings: ['Industry Overview', 'How Askrise Helps', 'Future Trends'],
     paragraphs: [
-      "The textile industry involves the design, production, and distribution of fabrics and clothing.",
-      "Textiles are used in fashion, home furnishings, and technical applications.",
-      "Textile manufacturing requires quality control and safety standards.",
-      "Trends include sustainable materials, smart textiles, and digitalization."
+      "The textile industry is crucial for fashion, home furnishing, and technical textiles.",
+      "Askrise supports textile firms with GST refunds, tax advisory, export-import compliance, and financial restructuring. We also provide assistance in managing international supply chains.",
+      "We conduct audits, risk assessments, and compliance reviews to strengthen governance in textile businesses.",
+      "Trends like sustainable fabrics and digitalization are reshaping the industry. Askrise provides ESG advisory, carbon reporting, and technology financing support."
     ],
     summaries: [
-      { heading: 'Sustainable Materials', paragraph: "The textile industry is moving towards using sustainable and biodegradable materials." },
-      { heading: 'Smart Textiles', paragraph: "Smart textiles incorporate technology into fabrics, providing functionalities like temperature regulation." },
-      { heading: 'Digitalization', paragraph: "Digitalization involves using technology such as 3D modeling and data analytics in design." }
+      { heading: 'Export Compliance Support', paragraph: "We assist textile firms with export-import compliance, GST refunds, and global tax structuring." },
+      { heading: 'Audit & Risk Advisory', paragraph: "Askrise provides statutory audits and compliance audits for textile companies, improving credibility and governance." },
+      { heading: 'Sustainable Advisory', paragraph: "We guide textile firms in adopting sustainable practices and ESG reporting for global competitiveness." }
     ]
   },
   Food_Processing: {
-    title: 'Food Processing Industry',
+    title: 'Food Processing Industry Advisory – Askrise',
     images: ['https://i.postimg.cc/wvgf6kMp/Food-Processing1.jpg', 'https://i.postimg.cc/wMBwNTD4/Food-Processing2.jpg'],
-    headings: ['Food Processing Overview', 'Use Cases', 'Future Trends'],
+    headings: ['Industry Overview', 'How Askrise Helps', 'Future Trends'],
     paragraphs: [
-      "The food processing industry transforms raw agricultural products into consumable food items.",
-      "Food processing is essential in creating packaged foods, beverages, and ready-to-eat meals.",
-      "Ensuring food safety and quality is paramount.",
-      "Trends include plant-based alternatives, clean-label products, and smart packaging."
+      "Food processing converts raw agricultural products into consumable goods while ensuring safety and quality.",
+      "Askrise supports food processing businesses with GST, tax structuring, audit services, and compliance with FSSAI and global food standards. We assist companies in securing funding and subsidies for expansion.",
+      "We provide audits, hygiene compliance checks, and financial advisory to maintain transparency and strengthen market trust.",
+      "Future trends like plant-based products, clean-label foods, and smart packaging require advisory on compliance, tax incentives, and ESG reporting. Askrise provides end-to-end support for such transitions."
     ],
     summaries: [
-      { heading: 'Plant-Based Alternatives', paragraph: "The growth of plant-based foods addresses consumer demand for healthier and sustainable diets." },
-      { heading: 'Clean-Label Products', paragraph: "Clean-label products feature natural ingredients and transparent labeling." },
-      { heading: 'Smart Packaging', paragraph: "Smart packaging technology enhances shelf-life and quality monitoring." }
+      { heading: 'Compliance & Food Safety Advisory', paragraph: "We assist businesses in meeting FSSAI standards, hygiene norms, and international compliance requirements." },
+      { heading: 'Audit & Financial Transparency', paragraph: "Askrise provides internal and statutory audits, ensuring credibility with investors, regulators, and consumers." },
+      { heading: 'Sustainability & Innovation Advisory', paragraph: "We help food businesses adopt clean-label practices, claim tax benefits for innovation, and report on ESG compliance." }
     ]
   },
   Oil_Gas: {
-    title: 'Oil & Gas Industry',
+    title: 'Oil & Gas Industry Advisory – Askrise',
     images: ['https://i.postimg.cc/3rqbwF2Q/Oil-Gas1.jpg', 'https://i.postimg.cc/FRBG7hdV/Oil-Gas2.jpg'],
-    headings: ['Oil & Gas Overview', 'Use Cases', 'Future Trends'],
+    headings: ['Industry Overview', 'How Askrise Helps', 'Future Trends'],
     paragraphs: [
-      "The oil and gas industry involves exploration, extraction, refining, and distribution of petroleum products.",
-      "Oil and gas are used for energy production, fueling transportation, and as raw materials.",
-      "Ensuring safety and environmental compliance is crucial.",
-      "Future trends include digital transformation, carbon capture technologies, and sustainable practices."
+      "The oil & gas industry drives global energy supply through exploration, refining, and distribution.",
+      "Askrise provides tax structuring, GST advisory, and cross-border compliance for oil & gas companies. We assist in managing joint ventures, transfer pricing, and investment structuring.",
+      "We offer risk management, audit assurance, and compliance reviews to strengthen financial governance.",
+      "With digital transformation, carbon capture, and renewable integration reshaping the industry, Askrise supports businesses in ESG reporting, sustainability financing, and regulatory compliance."
     ],
     summaries: [
-      { heading: 'Digital Transformation', paragraph: "Digital technologies like IoT and AI are optimizing operations and enhancing safety." },
-      { heading: 'Carbon Capture', paragraph: "Carbon capture technologies are being developed to mitigate emissions from fossil fuel use." },
-      { heading: 'Sustainable Practices', paragraph: "The industry is adopting sustainable practices by investing in renewable energy projects." }
+      { heading: 'Cross-Border Advisory', paragraph: "Askrise helps oil & gas companies manage transfer pricing, joint ventures, and international tax compliance." },
+      { heading: 'Audit & Risk Control', paragraph: "We provide audits, risk assessments, and compliance reviews to ensure financial governance." },
+      { heading: 'Sustainability & ESG', paragraph: "Askrise supports carbon accounting, ESG reporting, and green financing for oil & gas businesses." }
     ]
   },
   Renewable_Energy: {
-    title: 'Renewable Energy Industry',
+    title: 'Renewable Energy Industry Advisory – Askrise',
     images: ['https://i.postimg.cc/T3x8RcXY/Renewable-Energy1.jpg', 'https://i.postimg.cc/F1tZVGxf/Renewable-Energy2.jpg'],
-    headings: ['Renewable Energy Overview', 'Use Cases', 'Future Trends'],
+    headings: ['Industry Overview', 'How Askrise Helps', 'Future Trends'],
     paragraphs: [
-      "The renewable energy industry focuses on producing energy from sustainable sources.",
-      "Renewable energy is used for electricity generation, heating solutions, and powering transportation.",
-      "Ensuring safety and efficiency in renewable installations involves advanced technologies.",
-      "Trends include innovations in energy storage, smart grids, and offshore wind developments."
+      "The renewable energy industry focuses on solar, wind, hydro, and biomass as sustainable energy sources.",
+      "Askrise assists renewable companies with project financing, tax incentives, GST compliance, and subsidy claims. We provide advisory on structuring renewable projects and cross-border investments.",
+      "We conduct audits, risk assessments, and financial reviews to ensure strong governance and compliance with energy regulations.",
+      "Future trends such as energy storage, smart grids, and offshore wind require new financial models. Askrise provides advisory on green bonds, carbon credits, and ESG reporting for renewable projects."
     ],
     summaries: [
-      { heading: 'Energy Storage', paragraph: "Advancements in battery technology and energy storage systems are essential for managing intermittent renewable sources." },
-      { heading: 'Smart Grids', paragraph: "Smart grid technology enhances grid reliability and integration of renewables." },
-      { heading: 'Offshore Wind', paragraph: "Offshore wind development is expanding, capitalizing on stronger and more stable wind resources." }
+      { heading: 'Project Financing Advisory', paragraph: "We help renewable firms secure subsidies, tax incentives, and funding for large-scale projects." },
+      { heading: 'Audit & Compliance Support', paragraph: "Askrise provides statutory audits and compliance reviews for renewable projects, ensuring transparency and accountability." },
+      { heading: 'Sustainability & Green Advisory', paragraph: "We assist renewable companies in carbon accounting, ESG reporting, and accessing green financing opportunities." }
     ]
   },
   Financials: {
-    title: 'Financial Services Industry',
+    title: 'Financial Services Industry – Askrise Advisory',
     images: ['https://i.postimg.cc/63518HHt/Financials1.jpg', 'https://i.postimg.cc/Cxk2XnBT/Financials2.jpg'],
-    headings: ['Financial Services Overview', 'Use Cases', 'Future Trends'],
+    headings: ['Financial Services Overview', 'Advisory Applications', 'Future Trends'],
     paragraphs: [
-      "The financial services industry encompasses banking, investment, insurance, and real estate services.",
-      "Financial services facilitate economic transactions, capital allocation, and risk management.",
-      "Ensuring process integrity involves regulatory compliance, cybersecurity, and risk management.",
-      "Trends include fintech innovation, digital currency adoption, and sustainable finance."
+      "The financial services industry encompasses banking, insurance, investment management, and related financial activities. It is central to economic growth, capital formation, and stability. Businesses in this sector must navigate complex regulatory requirements, taxation laws, and accounting standards, all of which require professional guidance for operational efficiency and compliance.",
+      "Askrise supports financial institutions with comprehensive CA services, including tax planning, GST advisory, audit and assurance, regulatory compliance, risk management, and corporate finance advisory. Our team helps clients optimize capital structures, manage financial reporting, and comply with RBI, SEBI, and other statutory frameworks, ensuring business operations are robust and transparent.",
+      "Process integrity is critical in financial services, including adherence to anti-money laundering (AML) regulations, cybersecurity measures, and internal control frameworks. Askrise helps institutions implement strong governance systems, automated financial reporting, and risk assessment tools, enhancing efficiency while mitigating operational and regulatory risks.",
+      "Future trends in the industry include fintech innovations, digital banking, blockchain adoption, and sustainable finance initiatives. Askrise assists clients in leveraging emerging technologies for tax optimization, regulatory compliance, and ESG reporting, positioning them to capitalize on evolving market opportunities while maintaining accountability and compliance."
     ],
     summaries: [
-      { heading: 'Fintech Innovation', paragraph: "Fintech innovations are revolutionizing the financial services landscape." },
-      { heading: 'Digital Currency', paragraph: "Digital currencies and cryptocurrencies are gaining traction." },
-      { heading: 'Sustainable Finance', paragraph: "Sustainable finance involves directing capital toward environmentally friendly projects." }
+      { heading: 'Fintech Advisory', paragraph: "Askrise helps financial institutions adopt fintech solutions, digital banking tools, and payment platforms while ensuring compliance with regulatory frameworks and financial reporting standards." },
+      { heading: 'Digital Currency & Compliance', paragraph: "We provide advisory on digital currency adoption, cryptocurrency regulations, taxation implications, and integration into traditional banking structures, ensuring secure and lawful operations." },
+      { heading: 'Sustainable Finance & ESG', paragraph: "Askrise guides clients on ESG reporting, green finance structuring, and sustainable investment strategies, helping financial institutions align with global sustainability norms and regulatory requirements." }
     ]
   },
   Retail: {
-    title: 'Retail Industry',
+    title: 'Retail Industry – Askrise Advisory',
     images: ['https://i.postimg.cc/pXzbb646/Retail1.jpg', 'https://i.postimg.cc/bYGfLJT8/Retail2.jpg'],
-    headings: ['Retail Overview', 'Use Cases', 'Future Trends'],
+    headings: ['Retail Overview', 'Advisory Applications', 'Future Trends'],
     paragraphs: [
-      "The retail industry involves selling consumer goods and services through physical stores and online platforms.",
-      "Retail services range from fashion and electronics to food and home goods.",
-      "Efficient supply chain management and inventory control are crucial.",
-      "Trends include the rise of e-commerce, personalized shopping experiences, and sustainable retail."
+      "The retail industry spans the sale of consumer goods and services via physical outlets and e-commerce platforms. It plays a key role in economic activity, influenced by consumer behavior, market trends, and supply chain dynamics. Retailers face challenges in taxation, compliance, and financial reporting, all of which require specialized advisory support.",
+      "Askrise assists retail businesses with CA services including GST advisory, direct tax planning, audit and assurance, internal controls, inventory accounting, and financial reporting. We also provide guidance for e-commerce taxation, cross-border operations, and supply chain optimization, helping retailers remain compliant while maximizing profitability.",
+      "Process efficiency and safety in retail involve robust accounting systems, secure digital transactions, and compliance with consumer protection laws. Askrise implements internal audit frameworks, risk assessment strategies, and automated reporting to streamline operations and ensure accuracy in financial statements.",
+      "Future trends include omnichannel retailing, personalized shopping experiences, AI-driven analytics, and sustainable practices. Askrise provides advisory on implementing financial and compliance strategies that align with digital transformation, sustainable sourcing, and evolving taxation norms, enabling retailers to stay ahead of the curve."
     ],
     summaries: [
-      { heading: 'E-commerce', paragraph: "E-commerce platforms enable convenient online shopping experiences." },
-      { heading: 'Personalized Shopping', paragraph: "Personalized shopping leverages data analytics and AI to tailor services." },
-      { heading: 'Sustainable Retail', paragraph: "Sustainable retail initiatives focus on eco-friendly packaging and ethical sourcing." }
+      { heading: 'E-commerce Tax Advisory', paragraph: "We help retailers navigate GST on online sales, cross-border taxation, and compliance with digital transaction regulations, ensuring legal and operational efficiency." },
+      { heading: 'Personalized Financial Management', paragraph: "Askrise advises on budgeting, financial planning, and internal control improvements, enabling retailers to make data-driven decisions and optimize profitability." },
+      { heading: 'Sustainability & Compliance', paragraph: "We guide retail clients on ESG compliance, sustainable sourcing, and reporting frameworks, aligning business practices with global sustainability standards." }
     ]
   },
   Media: {
-    title: 'Media Industry',
+    title: 'Media Industry – Askrise Advisory',
     images: ['https://i.postimg.cc/zv4dPqqG/media1.jpg', 'https://i.postimg.cc/htWyL4CC/media2.jpg'],
-    headings: ['Media Overview', 'Use Cases', 'Future Trends'],
+    headings: ['Media Overview', 'Advisory Applications', 'Future Trends'],
     paragraphs: [
-      "The media industry encompasses the creation, distribution, and monetization of content.",
-      "Media applications include news broadcasting, entertainment programming, and digital content creation.",
-      "Content accuracy, data privacy, and ethical journalism are core components.",
-      "Trends include digital transformation, interactive media, and personalized content."
+      "The media industry involves content creation, distribution, and monetization across television, radio, print, and digital platforms. It plays a significant role in shaping public opinion and generating revenue through advertising, subscriptions, and licensing. Media companies must navigate complex taxation rules, intellectual property compliance, and audit requirements.",
+      "Askrise provides media businesses with CA services such as tax advisory, GST and direct tax compliance, internal audits, corporate structuring, royalty accounting, and financial reporting. We also assist in risk management, revenue recognition compliance, and statutory reporting under Companies Act, ensuring regulatory adherence and operational efficiency.",
+      "Processes in media require robust governance, accuracy in accounting for ad revenues and subscriptions, and adherence to data privacy regulations. Askrise implements internal control systems, audit frameworks, and digital financial reporting solutions, supporting transparency and stakeholder trust.",
+      "Future trends include digital transformation, OTT platforms, AI-based content personalization, and immersive media experiences. Askrise assists media companies in optimizing taxation for digital revenues, implementing compliance frameworks, and leveraging technology-driven financial management solutions for growth."
     ],
     summaries: [
-      { heading: 'Digital Transformation', paragraph: "Digital transformation in media enables content distribution across multiple platforms." },
-      { heading: 'Interactive Media', paragraph: "Interactive media engages audiences through augmented and virtual reality." },
-      { heading: 'Personalized Content', paragraph: "Personalized content leverages AI and big data to tailor experiences." }
+      { heading: 'Digital Transformation Advisory', paragraph: "We guide media companies in adapting to digital distribution, monetization models, and technology-driven revenue tracking while ensuring regulatory compliance." },
+      { heading: 'Audit & Tax Compliance', paragraph: "Askrise provides statutory and internal audits, ensuring accurate reporting for advertising revenues, royalties, and digital subscriptions, minimizing legal and financial risks." },
+      { heading: 'Revenue Structuring & Risk Advisory', paragraph: "We advise media firms on revenue recognition, taxation of intellectual property, and risk management frameworks to strengthen governance and financial integrity." }
     ]
   },
   Tourism: {
-    title: 'Tourism Industry',
-    images: ['https://i.postimg.cc/TwpFk7nQ/tourise2.jpg', 'https://i.postimg.cc/gJQ51VDp/tourise1.jpg'],
-    headings: ['Tourism Overview', 'Use Cases', 'Future Trends'],
+    title: 'Tourism Industry – Askrise Advisory',
+    images: ['https://i.postimg.cc/TwpFk7nQ/tourise2.jpg','https://i.postimg.cc/gJQ51VDp/tourise1.jpg'],
+    headings: ['Tourism Overview', 'Advisory Applications', 'Future Trends'],
     paragraphs: [
-      "The tourism industry involves travel for leisure, business, and cultural exploration.",
-      "Tourism encompasses hospitality services, travel agencies, and attractions.",
-      "Ensuring process efficiency and safety includes implementing health protocols.",
-      "Trends include sustainable tourism, tech-driven travel experiences, and personalized services."
+      "The tourism industry drives travel for leisure, business, and cultural exploration, significantly contributing to employment, foreign exchange, and local economies. Tourism businesses face regulatory, taxation, and financial management challenges requiring professional advisory support.",
+      "Askrise provides comprehensive CA services to tourism operators including GST and direct tax advisory, audit and assurance, financial planning, risk management, and compliance with hospitality regulations. We also assist with budgeting, capital allocation, and investment advisory for hotel, travel, and tour operators.",
+      "Operational efficiency and safety involve accurate accounting, regulatory compliance, and customer safety protocols. Askrise implements audit frameworks, internal controls, and reporting mechanisms to ensure transparency, financial integrity, and compliance with industry standards.",
+      "Future trends include sustainable tourism, tech-enabled travel experiences, and personalized services. Askrise advises on tax-efficient investment strategies, digital platform compliance, ESG reporting, and financial planning for innovative tourism initiatives, supporting growth while ensuring regulatory adherence."
     ],
     summaries: [
-      { heading: 'Sustainable Tourism', paragraph: "Sustainable tourism focuses on minimizing environmental impact and preserving cultural sites." },
-      { heading: 'Tech-Driven Travel', paragraph: "Technology enhances travel experiences through mobile apps, virtual reality, and AI-driven services." },
-      { heading: 'Personalized Services', paragraph: "Personalized services in tourism cater to individual preferences, enhancing guest experiences." }
+      { heading: 'Sustainable Tourism Advisory', paragraph: "We guide tourism companies in adopting sustainable business practices, ESG reporting, and green investment strategies while ensuring regulatory compliance." },
+      { heading: 'Technology & Financial Integration', paragraph: "Askrise supports digital transformation for bookings, payments, and operations while ensuring tax and accounting compliance across online platforms." },
+      { heading: 'Personalized Advisory Services', paragraph: "We offer tailored financial planning, risk management, and audit services to help tourism businesses optimize performance, profitability, and compliance." }
     ]
   },
   Healthcare: {
-    title: 'Healthcare Industry',
+    title: 'Healthcare Industry – Askrise Advisory',
     images: ['https://i.postimg.cc/mDXpCQqM/Healthcare1.jpg', 'https://i.postimg.cc/fRcHB4pM/Healthcare2.jpg'],
-    headings: ['Healthcare Overview', 'Use Cases', 'Future Trends'],
+    headings: ['Healthcare Overview', 'Advisory Applications', 'Future Trends'],
     paragraphs: [
-      "The healthcare industry provides medical services, manufacturing pharmaceuticals, and developing health technology.",
-      "Healthcare applications include clinical services, health insurance, and medical research.",
-      "Ensuring process safety and efficiency in healthcare involves regulatory compliance.",
-      "Future trends include personalized medicine, telehealth, and biotechnology advancements."
+      "The healthcare industry encompasses medical services, pharmaceuticals, hospitals, and health technology solutions. It is critical for public health, patient care, and innovation, while being subject to stringent regulatory, taxation, and compliance requirements.",
+      "Askrise provides healthcare businesses with CA and advisory services including GST and direct tax advisory, audit and assurance, regulatory compliance, financial planning, investment structuring, and risk management. We also assist hospitals, clinics, and pharmaceutical firms in budgeting, cost control, and statutory reporting.",
+      "Ensuring safety and efficiency involves maintaining accurate accounts, adhering to healthcare regulations, and safeguarding patient data. Askrise implements internal audits, control systems, and reporting frameworks to optimize operations, minimize risks, and enhance transparency.",
+      "Future trends include telemedicine, digital healthcare platforms, biotechnology, and personalized medicine. Askrise advises on tax-efficient structures, compliance with digital health regulations, financial strategies for technology adoption, and ESG reporting, enabling sustainable growth and innovation in healthcare services."
     ],
     summaries: [
-      { heading: 'Personalized Medicine', paragraph: "Personalized medicine tailors treatments to individual genetic profiles." },
-      { heading: 'Telehealth', paragraph: "Telehealth expands access to medical services through virtual consultations." },
-      { heading: 'Biotechnology Advancements', paragraph: "Biotechnology innovations include new therapies and diagnostic tools." }
+      { heading: 'Regulatory & Tax Advisory', paragraph: "We guide healthcare providers on compliance with healthcare regulations, GST, and taxation laws, ensuring legally compliant and optimized operations." },
+      { heading: 'Financial Planning & Audit', paragraph: "Askrise provides internal audits, risk assessments, and financial planning solutions to enhance efficiency, transparency, and profitability in healthcare operations." },
+      { heading: 'Digital & Biotech Advisory', paragraph: "We advise healthcare businesses on adopting telemedicine, digital platforms, and biotechnology projects while ensuring regulatory, taxation, and ESG compliance." }
     ]
   },
   Biotech: {
-    title: 'Biotech Industry',
+    title: 'Biotech Industry – Askrise Advisory',
     images: ['https://i.postimg.cc/qqqY5mnj/Biotech1.jpg', 'https://i.postimg.cc/d0RzkZwm/Biotech2.jpg'],
-    headings: ['Biotech Overview', 'Use Cases', 'Future Trends'],
+    headings: ['Biotech Overview', 'Advisory Applications', 'Future Trends'],
     paragraphs: [
-      "The biotech industry focuses on using living organisms for medicinal, agricultural, and environmental applications.",
-      "Biotech applications include genetic engineering, biopharmaceuticals, and diagnostics.",
-      "Ensuring safety in biotech involves rigorous testing, regulatory compliance, and ethical considerations.",
-      "Trends include genomic research, bioinformatics, and synthetic biology."
+      "The biotech industry leverages living organisms for medicinal, agricultural, and environmental applications. Biotech firms face challenges including R&D taxation, funding regulations, intellectual property rights, and compliance with healthcare and environmental laws.",
+      "Askrise supports biotech companies with CA services such as tax planning, R&D incentive advisory, GST compliance, audit and assurance, financial structuring, and investment advisory. We also assist in statutory compliance, IP valuation, grant applications, and financial reporting for both startups and established biotech firms.",
+      "Operational safety and efficiency require accurate accounting for research expenditure, regulatory adherence, and effective financial governance. Askrise implements internal controls, audits, and reporting systems to ensure transparency, minimize risk, and optimize fund utilization.",
+      "Future trends include synthetic biology, genomic research, and bioinformatics. Askrise advises on tax incentives for innovation, compliance with biotechnology regulations, and financial strategies for venture funding and sustainable growth, helping biotech firms capitalize on scientific advancements responsibly."
     ],
     summaries: [
-      { heading: 'Genomic Research', paragraph: "Genomic research is unlocking insights into genetic disorders and treatments." },
-      { heading: 'Bioinformatics', paragraph: "Bioinformatics combines biology and data analysis to understand biological data." },
-      { heading: 'Synthetic Biology', paragraph: "Synthetic biology involves designing organisms for specific purposes." }
+      { heading: 'R&D Tax Incentives', paragraph: "We help biotech firms claim R&D tax credits, exemptions, and other government incentives, optimizing costs and funding research efficiently." },
+      { heading: 'Financial & Compliance Advisory', paragraph: "Askrise provides audit, GST, corporate compliance, and statutory reporting services to biotech companies, ensuring governance and regulatory adherence." },
+      { heading: 'Investment & Growth Strategy', paragraph: "We guide biotech firms on structuring investments, securing funding, and financial planning for long-term growth and innovation sustainability." }
     ]
   },
   Aviation: {
-    title: 'Aviation Industry',
+    title: 'Aviation Industry – Askrise Advisory',
     images: ['https://i.postimg.cc/c42qVNFY/avaition1.jpg', 'https://i.postimg.cc/LXNwvdqJ/avaition2.jpg'],
-    headings: ['Aviation Overview', 'Use Cases', 'Future Trends'],
+    headings: ['Aviation Overview', 'Advisory Applications', 'Future Trends'],
     paragraphs: [
-      "The aviation industry includes manufacturing, air transport services, and airport operations.",
-      "Aviation supports passenger transport, cargo logistics, and military operations.",
-      "Safety is paramount, involving rigorous maintenance, advanced navigation technologies.",
-      "Trends include sustainable aviation fuels, electric aircraft, and enhanced air traffic management."
+      "The aviation industry covers aircraft manufacturing, airline operations, and airport management. It is a highly regulated sector with taxation, compliance, financial, and operational challenges.",
+      "Askrise provides CA services including tax planning, audit and assurance, regulatory compliance, financial reporting, cost management, and investment advisory for airlines, MRO services, and airport operators. We also advise on aircraft leasing, depreciation, and fleet financing structures.",
+      "Operational safety and financial efficiency require adherence to aviation regulations, accurate accounting, and robust internal controls. Askrise implements audit frameworks, compliance checks, and financial monitoring to mitigate risks and improve performance.",
+      "Future trends include sustainable aviation fuels, electric aircraft, and AI-driven air traffic management. We advise aviation clients on cost optimization, compliance with environmental and taxation regulations, and financial strategies for technology adoption and sustainable operations."
     ],
     summaries: [
-      { heading: 'Sustainable Aviation Fuels', paragraph: "Sustainable aviation fuels reduce carbon footprints and improve energy efficiency." },
-      { heading: 'Electric Aircraft', paragraph: "Electric aircraft are a promising advancement for reducing emissions and operational costs." },
-      { heading: 'Air Traffic Management', paragraph: "Enhanced air traffic management involves using advanced technologies to optimize flight paths." }
+      { heading: 'Tax & Compliance Advisory', paragraph: "We guide aviation companies through taxation laws, GST, customs duties, and regulatory compliance, ensuring legal and financial efficiency." },
+      { heading: 'Audit & Financial Reporting', paragraph: "Askrise provides statutory and internal audits, financial reporting, and operational cost management to improve governance and accountability in aviation." },
+      { heading: 'Sustainable & Technological Advisory', paragraph: "We advise aviation businesses on green fuels, electric aircraft adoption, and technology investments while ensuring compliance and financial sustainability." }
     ]
   },
   Railways: {
-    title: 'Railway Industry',
+    title: 'Railway Industry – Askrise Advisory',
     images: ['https://i.postimg.cc/xCCtfXCd/railway1.jpg', 'https://i.postimg.cc/PJvyD01s/railway2.jpg'],
-    headings: ['Railways Overview', 'Use Cases', 'Future Trends'],
+    headings: ['Railways Overview', 'Advisory Applications', 'Future Trends'],
     paragraphs: [
-      "The railway industry includes the design, construction, and operation of rail transport systems.",
-      "Railways are used for mass transit, long-distance travel, and freight transportation.",
-      "Safety involves rigorous maintenance, automated signaling, and advanced train control systems.",
-      "Trends include high-speed rail, smart rail systems, and sustainability initiatives."
+      "The railway industry encompasses the design, construction, and operation of rail transport networks. Rail operators face complex taxation, accounting, infrastructure financing, and regulatory compliance challenges.",
+      "Askrise provides CA services including tax planning, GST and indirect tax advisory, audit and assurance, project finance advisory, cost accounting, and statutory compliance. We also support public and private rail operators in financial modeling, investment analysis, and infrastructure project audits.",
+      "Ensuring process efficiency and safety involves robust accounting systems, regulatory compliance, and internal control mechanisms. Askrise implements audit frameworks, risk assessment, and financial monitoring to enhance transparency and operational efficiency.",
+      "Future trends include high-speed rail, smart rail systems, and sustainability initiatives. We advise clients on investment planning, tax-efficient project structuring, digital transformation, and green infrastructure financing to ensure growth, compliance, and operational excellence."
     ],
     summaries: [
-      { heading: 'High-Speed Rail', paragraph: "High-speed rail networks offer rapid transit solutions, connecting urban centers efficiently." },
-      { heading: 'Smart Rail Systems', paragraph: "Smart rail systems leverage technology for real-time monitoring and predictive maintenance." },
-      { heading: 'Sustainability Initiatives', paragraph: "Sustainability in railways involves energy-efficient trains, reduced emissions, and eco-friendly infrastructure." }
+      { heading: 'Project Finance & Tax Advisory', paragraph: "We provide tax-efficient financial structuring, project finance advisory, and GST compliance solutions for railway infrastructure projects." },
+      { heading: 'Audit & Risk Management', paragraph: "Askrise implements internal audits, cost control systems, and risk assessment frameworks to improve operational reliability and governance." },
+      { heading: 'Sustainability & Smart Systems', paragraph: "We advise on smart rail systems, energy-efficient solutions, and sustainable financing while ensuring compliance and operational efficiency." }
     ]
   },
   Roads: {
-    title: 'Roads Industry',
+    title: 'Road Infrastructure Industry – Askrise Advisory',
     images: ['https://i.postimg.cc/BZd9z0YF/roads1.jpg', 'https://i.postimg.cc/ht1kh7S8/roads2.jpg'],
-    headings: ['Transportation Overview', 'Use Cases', 'Future Trends'],
+    headings: ['Road Infrastructure Overview', 'Advisory Applications', 'Future Trends'],
     paragraphs: [
-      "The roads industry involves the construction, maintenance, and management of road networks.",
-      "Roads are essential for personal transportation, commercial logistics, and public transit.",
-      "Ensuring road safety includes regular maintenance, traffic management systems.",
-      "Trends include smart roads, sustainable materials, and infrastructure resilience."
+      "The roads industry involves construction, maintenance, and management of road networks for transport and logistics. Companies in this sector face taxation, project financing, regulatory, and compliance challenges.",
+      "Askrise provides CA services including GST and indirect tax advisory, statutory and internal audits, financial planning, project financing advisory, cost accounting, and compliance reporting for road construction and infrastructure companies. We also advise on BOT contracts, toll operations, and infrastructure investment structures.",
+      "Operational safety and process efficiency require strong internal controls, accurate accounting, and adherence to safety and regulatory standards. Askrise implements audit mechanisms, compliance checks, and financial monitoring systems to reduce risk and optimize performance.",
+      "Future trends include smart roads, sustainable construction materials, and infrastructure resilience. We advise clients on green financing, digital road monitoring, cost management, and tax planning strategies to achieve efficiency, sustainability, and regulatory compliance."
     ],
     summaries: [
-      { heading: 'Smart Roads', paragraph: "Smart roads incorporate technology for real-time monitoring and traffic management." },
-      { heading: 'Sustainable Materials', paragraph: "The use of sustainable materials in road construction reduces environmental impact." },
-      { heading: 'Infrastructure Resilience', paragraph: "Resilience in road infrastructure involves designing for climate adaptability and disaster recovery." }
+      { heading: 'Tax & Project Advisory', paragraph: "We guide road infrastructure companies on GST, taxation, and project financing solutions, ensuring cost-effective and compliant operations." },
+      { heading: 'Audit & Governance', paragraph: "Askrise provides audit, internal control, and risk assessment services to enhance governance and operational accountability." },
+      { heading: 'Sustainability & Innovation', paragraph: "We advise clients on sustainable road materials, smart infrastructure solutions, and ESG compliance for long-term efficiency and growth." }
     ]
   },
   Ropeway: {
-    title: 'Ropeway Industry',
+    title: 'Ropeway & Cable Transport Industry – Askrise Advisory',
     images: ['https://i.postimg.cc/FKF2SsRM/ropeway1.jpg', 'https://i.postimg.cc/xdsB3DNc/ropeway2.jpg'],
-    headings: ['Ropeway Overview', 'Use Cases', 'Future Trends'],
+    headings: ['Ropeway Overview', 'Advisory Applications', 'Future Trends'],
     paragraphs: [
-      "The ropeway industry involves cable transport systems used for passenger and material transportation.",
-      "Ropeways are utilized in urban transport, tourism, and logistics.",
-      "Safety in ropeway systems involves regular inspections and automation technologies.",
-      "Trends include urban cable car systems, sustainable technologies, and enhanced passenger experiences."
+      "The ropeway industry involves cable transport systems for passengers and goods, often in mountainous or urban environments. Ropeway operators must manage taxation, safety compliance, and financial reporting challenges.",
+      "Askrise supports ropeway and cable transport companies with CA services including GST advisory, tax planning, statutory audits, internal audits, financial reporting, project finance advisory, and compliance with safety and regulatory standards. We also assist in investment planning, operational budgeting, and revenue management.",
+      "Efficiency and safety require accurate accounting, adherence to safety norms, and internal control systems. Askrise implements audits, risk assessments, and reporting frameworks to enhance operational integrity and regulatory compliance.",
+      "Future trends include urban cable transport systems, energy-efficient solutions, and enhanced passenger experience. Askrise advises on financial modeling, tax-efficient operations, sustainable technology adoption, and compliance strategies to promote growth, efficiency, and sustainability."
     ],
     summaries: [
-      { heading: 'Urban Cable Systems', paragraph: "Urban cable systems offer solutions for reducing congestion and expanding transit options." },
-      { heading: 'Sustainable Technologies', paragraph: "Sustainable technologies in ropeways include energy-efficient designs and eco-friendly materials." },
-      { heading: 'Passenger Experiences', paragraph: "Enhancing passenger experiences in ropeways involves improving comfort, accessibility, and service reliability." }
+      { heading: 'Tax & Compliance Advisory', paragraph: "We guide ropeway operators in GST, indirect taxes, and regulatory compliance to ensure lawful and optimized operations." },
+      { heading: 'Audit & Financial Planning', paragraph: "Askrise provides internal audits, financial reporting, and budgeting support to enhance efficiency, transparency, and operational accountability." },
+      { heading: 'Sustainability & Technology Advisory', paragraph: "We advise clients on energy-efficient cable transport solutions, digital monitoring, and sustainable infrastructure financing." }
     ]
   },
   Construction: {
-    title: 'Construction Industry',
+    title: 'Construction Industry – Askrise Advisory',
     images: ['https://i.postimg.cc/KzZCncYX/Construction1.jpg', 'https://i.postimg.cc/59KDCVdG/Construction2.jpg'],
-    headings: ['Construction Overview', 'Use Cases', 'Future Trends'],
+    headings: ['Construction Overview', 'Advisory Applications', 'Future Trends'],
     paragraphs: [
-      "The construction industry involves designing and building infrastructure, buildings, and other structures.",
-      "Construction applications include residential, commercial, and industrial projects.",
-      "Ensuring safety in construction involves regulatory compliance and advanced materials.",
-      "Trends include smart cities, green building technologies, and modular construction."
+      "The construction industry involves designing, building, and maintaining infrastructure and buildings. Companies face complex taxation, compliance, project financing, and audit challenges in a highly regulated environment.",
+      "Askrise supports construction firms with CA services including GST and indirect tax advisory, project finance advisory, statutory and internal audits, cost accounting, financial planning, and regulatory compliance. We also assist in contract management, accounting for BOT projects, and risk assessment.",
+      "Operational efficiency and safety require accurate financial reporting, adherence to statutory regulations, and effective internal controls. Askrise implements audit frameworks, compliance checks, and financial monitoring systems to ensure transparency and optimal project execution.",
+      "Future trends include smart city projects, green building technologies, and modular construction. Askrise advises on sustainable financing, tax-efficient project structuring, digital transformation, and financial strategies for innovative and environmentally responsible construction projects."
     ],
     summaries: [
-      { heading: 'Smart Cities', paragraph: "Smart city initiatives integrate technology to improve urban living." },
-      { heading: 'Green Building', paragraph: "Green building technologies focus on sustainable materials and energy efficiency." },
-      { heading: 'Modular Construction', paragraph: "Modular construction involves prefabricated components to streamline building processes." }
+      { heading: 'Smart City & Green Advisory', paragraph: "We advise construction clients on sustainable building technologies, smart city projects, and green financing to optimize operations and regulatory compliance." },
+      { heading: 'Audit & Financial Planning', paragraph: "Askrise provides internal audits, cost management, financial reporting, and compliance advisory to enhance governance and operational efficiency." },
+      { heading: 'Project Finance & Risk Management', paragraph: "We assist in project financing, BOT contract advisory, and risk assessment to ensure cost-effective and legally compliant construction projects." }
     ]
   },
   Information_Technology: {
-    title: 'Information Technology Industry',
+    title: 'Information Technology Industry – Askrise Advisory',
     images: ['https://i.postimg.cc/431SNCQW/Information-Technology1.jpg', 'https://i.postimg.cc/X7y1BBgG/Information-Technology2.jpg'],
-    headings: ['IT Overview', 'Use Cases', 'Future Trends'],
+    headings: ['IT Overview', 'Advisory Applications', 'Future Trends'],
     paragraphs: [
-      "The IT industry encompasses hardware, software, and services that process and manage information.",
-      "IT supports applications in cloud computing, cybersecurity, and software development.",
-      "Safety involves cybersecurity, data protection, and compliance with digital regulations.",
-      "Trends include artificial intelligence, blockchain, and IoT."
+      "The IT industry includes software development, hardware, cloud services, and digital solutions. IT companies face challenges like indirect taxes, transfer pricing, R&D incentives, and compliance with digital regulations.",
+      "Askrise provides CA services such as GST and tax advisory, audit and assurance, financial planning, cost accounting, R&D tax credit guidance, and regulatory compliance for IT companies. We also advise on software valuation, revenue recognition, international taxation, and corporate structuring.",
+      "Efficient process management requires proper accounting systems, internal controls, and compliance with statutory regulations. Askrise ensures robust financial monitoring, audit frameworks, and governance to optimize IT business operations.",
+      "Future trends include AI, blockchain, and IoT adoption. We advise IT firms on R&D incentives, tax-efficient investment strategies, international compliance, and financial planning for emerging technologies to ensure sustainable growth and innovation."
     ],
     summaries: [
-      { heading: 'Artificial Intelligence', paragraph: "AI technologies drive automation and decision-making across industries." },
-      { heading: 'Blockchain', paragraph: "Blockchain ensures secure data transactions and transparency." },
-      { heading: 'Internet of Things (IoT)', paragraph: "IoT connects devices and systems for enhanced data sharing and automation." }
+      { heading: 'Tax & R&D Advisory', paragraph: "We guide IT companies on GST, corporate tax, and R&D incentive claims to optimize financial efficiency and innovation funding." },
+      { heading: 'Audit & Compliance Services', paragraph: "Askrise provides audit, internal controls, and regulatory compliance services to enhance governance, accountability, and operational efficiency." },
+      { heading: 'Financial Planning for Emerging Tech', paragraph: "We advise IT firms on funding, investment strategies, and international taxation for AI, blockchain, and IoT initiatives." }
     ]
   },
   Education_Technology: {
-    title: 'Education Technology Industry',
+    title: 'Education Technology Industry – Askrise Advisory',
     images: ['https://i.postimg.cc/KYbW2cBK/Education-Technology1.jpg', 'https://i.postimg.cc/zX9MxFfF/Education-Technology2.jpg'],
-    headings: ['EdTech Overview', 'Use Cases', 'Future Trends'],
+    headings: ['EdTech Overview', 'Advisory Applications', 'Future Trends'],
     paragraphs: [
-      "The edtech industry enhances education through technology, improving learning experiences.",
-      "Edtech applications include online courses, learning management systems, and educational content creation.",
-      "Ensuring safety and effectiveness includes data privacy, ethical AI use, and accessibility.",
-      "Trends include AI-driven personalized learning, VR and AR in education, and global online learning platforms."
+      "The EdTech industry leverages digital tools and platforms to enhance learning. Companies face taxation, compliance, and financial challenges while scaling globally.",
+      "Askrise offers CA services including GST advisory, corporate tax planning, audit and assurance, financial reporting, investment advisory, and compliance guidance for EdTech firms. We also advise on grant management, online course monetization, and regulatory approvals.",
+      "Ensuring effective operations requires internal financial controls, statutory compliance, and transparent reporting. Askrise implements robust accounting frameworks and audit systems to mitigate risks and enhance growth.",
+      "Future trends include AI-driven personalized learning, VR/AR education tools, and global online platforms. We provide advisory on tax planning, financial structuring, international expansion, and compliance to support EdTech innovation and sustainable operations."
     ],
     summaries: [
-      { heading: 'Personalized Learning', paragraph: "AI-driven personalized learning tailors content to individual needs." },
-      { heading: 'Virtual and Augmented Reality', paragraph: "VR and AR offer immersive educational experiences." },
-      { heading: 'Global Online Learning Platforms', paragraph: "Global online platforms provide accessible education across geographies." }
+      { heading: 'Tax & Compliance Advisory', paragraph: "We guide EdTech companies on GST, corporate tax, and regulatory compliance for both domestic and international operations." },
+      { heading: 'Audit & Financial Governance', paragraph: "Askrise provides audit, internal controls, financial reporting, and risk assessment services for effective governance." },
+      { heading: 'Investment & Growth Strategy', paragraph: "We advise on fundraising, financial planning, and international expansion to support innovation, scalability, and sustainable growth in EdTech." }
     ]
   },
   E_Business: {
-    title: 'E-Business Industry',
+    title: 'E-Business Industry – Askrise Advisory',
     images: ['https://i.postimg.cc/NfyS8zQ0/E-Business1.jpg', 'https://i.postimg.cc/fyPFnxfZ/E-Business2.jpg'],
-    headings: ['E-Business Overview', 'Use Cases', 'Future Trends'],
+    headings: ['E-Business Overview', 'Advisory Applications', 'Future Trends'],
     paragraphs: [
-      "The e-business industry involves online commercial transactions and digital marketplaces.",
-      "E-business applications include online retail, digital services, and electronic data interchange.",
-      "Ensuring safety involves cybersecurity measures, secure payment systems.",
-      "Trends include mobile commerce, personalized shopping experiences, and integrated digital ecosystems."
+      "The e-business sector covers digital commerce, online services, and electronic marketplaces. Companies face taxation, international trade compliance, GST, and payment gateway regulations.",
+      "Askrise provides CA services including tax planning, GST advisory, audit and assurance, financial reporting, risk assessment, and advisory for cross-border e-commerce. We also assist in digital transaction compliance, payment reconciliation, and financial strategy for online business growth.",
+      "Operational efficiency and financial integrity require internal controls, accurate accounting, and adherence to statutory and international regulations. Askrise implements audit frameworks, compliance checks, and financial monitoring to reduce risks and optimize performance.",
+      "Future trends include mobile commerce, personalized digital experiences, and integrated digital ecosystems. We advise e-business companies on tax optimization, technology investments, compliance, and sustainable growth strategies to strengthen digital operations."
     ],
     summaries: [
-      { heading: 'Mobile Commerce', paragraph: "Mobile commerce is transforming the way consumers shop by providing convenience." },
-      { heading: 'Personalized Customer Experiences', paragraph: "AI enables personalized shopping experiences by analyzing data." },
-      { heading: 'Integrated Digital Ecosystems', paragraph: "Integrated digital ecosystems create seamless connectivity between platforms." }
+      { heading: 'Tax & GST Advisory', paragraph: "We provide guidance on GST, corporate tax, and international e-commerce compliance to optimize operations and reduce financial risks." },
+      { heading: 'Audit & Financial Control', paragraph: "Askrise implements audit systems, internal controls, and financial reporting frameworks to ensure transparency and operational accountability." },
+      { heading: 'Digital & Investment Advisory', paragraph: "We advise on technology investments, mobile commerce strategies, and integrated digital solutions to enhance efficiency, profitability, and sustainability." }
     ]
   },
   Pharma: {
-    title: 'Pharma Industry',
+    title: 'Pharmaceutical Industry – Askrise Advisory',
     images: ['https://i.postimg.cc/5tfsr7WL/pharma1.jpg', 'https://i.postimg.cc/g04gbVG5/pharma2.jpg'],
-    headings: ['Pharma Overview', 'Use Cases', 'Future Trends'],
+    headings: ['Pharma Overview', 'Advisory Applications', 'Future Trends'],
     paragraphs: [
-      "The pharmaceutical industry focuses on discovering, developing, manufacturing, and marketing drugs.",
-      "Pharmaceuticals are used for disease prevention, management, and treatment.",
-      "Safety is paramount, with stringent regulatory compliance, clinical trials, and quality assurance.",
-      "Trends include biologics, precision medicine, and digital therapeutics."
+      "The pharmaceutical industry involves drug discovery, development, manufacturing, and marketing. Pharma companies face taxation, regulatory compliance, R&D funding, and international trade challenges.",
+      "Askrise provides CA services including GST and tax planning, audit and assurance, regulatory compliance, R&D incentive advisory, financial reporting, and investment advisory. We also assist in clinical trial accounting, intellectual property valuation, and funding strategy for pharmaceutical companies.",
+      "Operational and financial efficiency requires compliance with statutory regulations, accurate accounting, and risk management. Askrise implements internal audits, financial monitoring, and governance frameworks to enhance transparency, reduce risk, and optimize investment returns.",
+      "Future trends include biologics, precision medicine, and digital therapeutics. We advise pharma companies on tax incentives, financial structuring, R&D compliance, and strategic investment to foster innovation, regulatory compliance, and sustainable growth."
     ],
     summaries: [
-      { heading: 'Biologics', paragraph: "Biologics involve large molecule drugs derived from living cells." },
-      { heading: 'Precision Medicine', paragraph: "Precision medicine customizes healthcare based on genetic, environmental, and lifestyle factors." },
-      { heading: 'Digital Therapeutics', paragraph: "Digital therapeutics focus on delivering evidence-based therapeutic interventions via software." }
+      { heading: 'R&D & Tax Incentives', paragraph: "We help pharma companies claim R&D tax credits, exemptions, and other incentives to maximize innovation funding and reduce costs." },
+      { heading: 'Audit & Compliance', paragraph: "Askrise provides statutory and internal audits, regulatory compliance advisory, and financial reporting services for pharma companies." },
+      { heading: 'Investment & Growth Strategy', paragraph: "We advise on funding, financial planning, and investment strategies to support innovation, sustainable growth, and international expansion in pharmaceuticals." }
     ]
   }
 };

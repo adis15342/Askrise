@@ -30,7 +30,7 @@ const IndustryPage = () => {
         <div className="industry-overview__text">
           <p>{data.paragraphs[0]}</p>
           <p>{data.paragraphs[1]}</p>
-          <p>{data.paragraphs[2]}</p>
+          {/* <p>{data.paragraphs[2]}</p> */}
         </div>
         <div className="industry-overview__image">
           <img src={data.images[1]} alt={data.title} />

@@ -7,15 +7,15 @@ const AboutPage = () => {
       {/* Hero Section */}
       <section className="about-hero">
         <div className="about-hero__image-container">
+          <div className="about-hero__text-wrapper">
+             <p className="about-hero__eyebrow">Askrise Consultants</p>
+             <h1 className="about-hero__title">Reporting on our impact</h1>
+          </div>
           <img
             src="https://i.postimg.cc/ZKCdqgJS/about.jpg"
             alt="About ASKrise"
             className="about-hero__image"
           />
-          <div className="about-hero__overlay">
-            <p className="about-hero__eyebrow">Askrise Consultants</p>
-            <h1 className="about-hero__title">Reporting on our impact</h1>
-          </div>
         </div>
         <div className="about-hero__summary">
           <h3>Empowering businesses with integrated consulting solutions to drive growth, ensure compliance, and navigate complex regulatory landscapes.</h3>
@@ -25,6 +25,7 @@ const AboutPage = () => {
       {/* Content Section */}
       <section className="about-content">
         <div className="about-content__inner">
+          <img src="/images/company_logo.png" alt="Company Logo" className="about-content__logo" />
           <p>
             ASKrise Consultants is a premier consulting firm delivering end-to-end solutions across India's most dynamic and high-impact industries—including e-commerce, tourism & hospitality, information technology & BPM, manufacturing, healthcare, renewable energy, and infrastructure. With a forward-thinking approach and deep domain expertise, we empower businesses to navigate complexity, drive innovation, and achieve sustained growth.
           </p>

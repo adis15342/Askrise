@@ -269,6 +269,7 @@ const Header = () => {
                   <div 
                     id="industries-subnav-1" 
                     className={`sublevel-container search-hide ${activeNavIndex === 1 ? 'show-subnav' : ''}`}
+                    style={{ display: activeNavIndex === 1 ? 'block' : 'none' }}
                   >
                     <div className="sublevel-navs">
                       <div className={level2Classes}>
@@ -351,6 +352,7 @@ const Header = () => {
                   <div 
                     id="services-subnav-2" 
                     className={`sublevel-container search-hide ${activeNavIndex === 2 ? 'show-subnav' : ''}`}
+                    style={{ display: activeNavIndex === 2 ? 'block' : 'none' }}
                   >
                     <div className="sublevel-navs">
                       <div className={level2Classes}>
