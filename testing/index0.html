@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scrollable Animated Section</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    .three-line-scroll {
+    position: relative;
+    height: 300vh; /* controls scroll duration */
+    }
+
+    .three-line-sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+
+    .bg-layer {
+    position: absolute;
+    inset: 0;
+    background: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1600&q=80') center center / cover no-repeat;
+    transform: scale(1.05);
+    }
+
+    .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    }
+
+    .three-line-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #fff;
+    width: min(1200px, 90%);
+    padding: 20px;
+    }
+
+    .line {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+    will-change: opacity, transform;
+    }
+
+    .line.active {
+    opacity: 1;
+    transform: translateY(0);
+    }
+
+    .small-line {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 3vw, 3.5rem);
+    font-weight: 600;
+    margin-bottom: 25px;
+    }
+
+    .big-line {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(4rem, 9vw, 8rem);
+    font-weight: 700;
+    line-height: 0.95;
+    margin-bottom: 25px;
+    text-transform: lowercase;
+    }
+
+    .medium-line {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 4vw, 4rem);
+    font-weight: 600;
+    line-height: 1.15;
+    }
+
+    @media (max-width: 768px) {
+    .small-line {
+        margin-bottom: 16px;
+    }
+
+    .big-line {
+        margin-bottom: 16px;
+    }
+    }
+  </style>
+</head>
+<body>
+<section class="three-line-scroll" id="threeLineScroll">
+  <div class="three-line-sticky">
+    <div class="bg-layer"></div>
+    <div class="overlay"></div>
+
+    <div class="three-line-content">
+      <h3 class="line small-line">We combine strategy and solutions</h3>
+      <h1 class="line big-line">so you can</h1>
+      <h2 class="line medium-line">adapt, advance, and achieve more</h2>
+    </div>
+  </div>
+</section>
+  <script>
+    const threeLineSection = document.getElementById("threeLineScroll");
+const lines = threeLineSection.querySelectorAll(".line");
+
+function updateThreeLineScroll() {
+  const sectionTop = threeLineSection.offsetTop;
+  const sectionHeight = threeLineSection.offsetHeight;
+  const viewportHeight = window.innerHeight;
+
+  const progress = Math.min(
+    Math.max((window.scrollY - sectionTop) / (sectionHeight - viewportHeight), 0),
+    1
+  );
+
+  lines.forEach(line => line.classList.remove("active"));
+
+  if (progress >= 0.10) lines[0].classList.add("active");
+  if (progress >= 0.38) lines[1].classList.add("active");
+  if (progress >= 0.66) lines[2].classList.add("active");
+}
+
+window.addEventListener("scroll", updateThreeLineScroll);
+window.addEventListener("load", updateThreeLineScroll);
+window.addEventListener("resize", updateThreeLineScroll);
+  </script>
+</body>
+</html>

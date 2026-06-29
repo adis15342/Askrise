@@ -1,229 +1,68 @@
-/* ====== HEADER STYLES ====== */
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: rgba(28, 35, 49, 0.97);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
-}
+/* ====== AEM HEADER DESKTOP OVERRIDES ====== */
 
-.site-header__inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 24px;
-  height: 64px;
-}
-
-.site-header__logo {
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-}
-
-.site-header__logo-text {
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: #fff;
-  letter-spacing: 1px;
-  background: linear-gradient(135deg, #6351ce, #47c5f2);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Hamburger */
-.site-header__hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 4px;
-  z-index: 1001;
-}
-
-.site-header__hamburger span {
-  display: block;
-  width: 24px;
-  height: 2px;
-  background: #fff;
-  border-radius: 2px;
-  transition: all 0.3s ease;
-}
-
-.site-header__hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-
-.site-header__hamburger.active span:nth-child(2) {
-  opacity: 0;
-}
-
-.site-header__hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
-}
-
-/* Nav */
-.site-header__nav {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.site-header__link {
-  color: #e0e0e0;
-  text-decoration: none;
-  padding: 10px 16px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  border-radius: 6px;
-  transition: all 0.2s ease;
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-family: inherit;
-  white-space: nowrap;
-}
-
-.site-header__link:hover {
-  color: #fff;
-  background: rgba(99, 81, 206, 0.2);
-}
-
-.site-header__link--dropdown {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.site-header__caret {
-  font-size: 0.7rem;
-  opacity: 0.7;
-}
-
-/* Dropdown */
-.site-header__dropdown {
-  position: relative;
-}
-
-.site-header__mega-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  min-width: 260px;
-  background: #1c2331;
-  border-radius: 8px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  padding: 8px 0;
-  animation: dropIn 0.2s ease;
-  max-height: 70vh;
-  overflow-y: auto;
-}
-
-@keyframes dropIn {
-  from { opacity: 0; transform: translateY(-8px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.site-header__mega-group {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.site-header__mega-group:last-child {
-  border-bottom: none;
-}
-
-.site-header__mega-category {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  padding: 10px 18px;
-  color: #47c5f2;
-  font-size: 0.85rem;
-  font-weight: 600;
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-family: inherit;
-  text-align: left;
-  transition: background 0.2s;
-}
-
-.site-header__mega-category:hover {
-  background: rgba(71, 197, 242, 0.08);
-}
-
-.site-header__mega-items {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
-}
-
-.site-header__mega-items.open {
-  max-height: 500px;
-}
-
-.site-header__mega-items li a {
-  display: block;
-  padding: 8px 18px 8px 32px;
-  color: #ccc;
-  text-decoration: none;
-  font-size: 0.83rem;
-  transition: all 0.2s;
-}
-
-.site-header__mega-items li a:hover {
-  color: #fff;
-  background: rgba(99, 81, 206, 0.15);
-  padding-left: 36px;
-}
-
-/* Mobile */
-@media (max-width: 900px) {
-  .site-header__hamburger {
-    display: flex;
+@media (min-width: 992px) {
+  /* Ensure level 3 (items list) is displayed on desktop even if data-nav-level is "2" */
+  .headerv2-container .slimheader-sublevel-slide[data-nav-level="2"] .slimnav-level3 {
+    display: flex !important;
   }
 
-  .site-header__nav {
-    position: fixed;
-    top: 64px;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    flex-direction: column;
-    align-items: stretch;
-    background: rgba(28, 35, 49, 0.98);
-    padding: 16px;
-    gap: 2px;
-    overflow-y: auto;
-    transform: translateX(100%);
-    transition: transform 0.3s ease;
+  /* Ensure level 2 (categories list) remains displayed on desktop even if data-nav-level is "3" */
+  .headerv2-container .slimheader-sublevel-slide[data-nav-level="3"] .slimnav-level2 {
+    display: flex !important;
   }
 
-  .site-header__nav.open {
-    transform: translateX(0);
+  /* Ensure active level 3 content inside .slimnav-level3 is fully visible and not shifted/faded out */
+  .headerv2-container .slimheader-sublevel-slide .sublevel-container .slimnav-level3 .slimheader-slide-nav.is-active .slide-nav-contain {
+    opacity: 1 !important;
+    margin-left: 0 !important;
   }
 
-  .site-header__link {
-    padding: 12px 16px;
-    font-size: 1rem;
+  /* Fix for smooth transitions when switching categories on desktop */
+  .headerv2-container .slimheader-sublevel-slide .sublevel-container .slimnav-level3 .slimheader-slide-nav .slide-nav-contain {
+    transition: opacity 0.2s ease-in-out, margin-left 0.2s ease-in-out !important;
   }
 
-  .site-header__mega-menu {
-    position: static;
-    box-shadow: none;
-    border-radius: 0;
-    background: rgba(0, 0, 0, 0.2);
-    max-height: none;
-    overflow-y: visible;
+  /* Center the main nav links (About, Industries, Services, News, Contact) in the exact middle of the header */
+  .headerv2-container header.slimheader-v2 {
+    position: relative !important;
+  }
+
+  .headerv2-container header.slimheader-v2 .slim-navigation .nav-primary {
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    margin: 0 !important;
+    display: flex !important;
+    gap: 32px !important; /* Elegant spacing between nav links */
+    z-index: 100 !important;
+    height: 100% !important;
+    align-items: center !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+  }
+}
+
+/* Mobile fixes */
+@media (max-width: 991px) {
+  .sublevel-container {
+    display: none;
+  }
+  .sublevel-container.show-subnav {
+    display: block;
+  }
+  .levelTwoLink {
+    display: block;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    color: #333;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .levelThreeLink {
+    display: block;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    color: #555;
+    text-decoration: none;
   }
 }

@@ -9,8 +9,7 @@ export const navigationData = {
         { name: 'Electronics', path: '/industry/Electronics' },
         { name: 'FMCG', path: '/industry/FMCG' },
         { name: 'Textile', path: '/industry/Textile' },
-        { name: 'Food Processing', path: '/industry/Food_Processing' },
-        { name: 'Pharma', path: '/industry/Pharma' }
+        { name: 'Food Processing', path: '/industry/Food_Processing' }
       ]
     },
     {
@@ -49,7 +48,8 @@ export const navigationData = {
       category: 'Healthcare',
       items: [
         { name: 'Healthcare', path: '/industry/Healthcare' },
-        { name: 'Biotech', path: '/industry/Biotech' }
+        { name: 'Biotech', path: '/industry/Biotech' },
+        { name: 'Pharma', path: '/industry/Pharma' }
       ]
     },
     {
@@ -99,9 +99,8 @@ export const navigationData = {
     {
       category: 'Business Advisory',
       items: [
-        { name: 'Business Strategy', path: '/service/Business_Strategy' },
         { name: 'Initial Advisory', path: '/service/Initial_Advisory' },
-        { name: 'Merger Acquisitions', path: '/service/Merger_Acquisitions' }
+        { name: 'Merger & Acquisitions', path: '/service/Merger_Acquisitions' }
       ]
     },
     {
@@ -113,14 +112,20 @@ export const navigationData = {
     {
       category: 'Outsourcing & Operations',
       items: [
-        { name: 'Outsourcing Model', path: '/service/Outsourcing_Model' },
-        { name: 'Business Process Solutions', path: '/service/Business_Process_Solutions' }
+        { name: 'Business Process Solutions', path: '/service/Business_Process_Solutions' },
+        { name: 'Outsourcing Model', path: '/service/Outsourcing_Model' }
       ]
     },
     {
       category: 'Reporting & Compliance',
       items: [
         { name: 'Periodic Information Reporting', path: '/service/Periodic_Information_Reporting' }
+      ]
+    },
+    {
+      category: 'Strategic Models & Planning',
+      items: [
+        { name: 'Business Strategy', path: '/service/Business_Strategy' }
       ]
     }
   ]

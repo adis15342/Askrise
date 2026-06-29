@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scroll Over Image Section</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Playfair Display', serif;
+      overflow-x: hidden;
+      background: #fff;
+    }
+
+    /* Whole scroll scene */
+    .scroll-scene {
+      position: relative;
+      height: 220vh; /* more height for scrolling effect */
+    }
+
+    /* Sticky image stays in place */
+    .sticky-image-wrap {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      width: 100%;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .sticky-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Info section overlays image */
+    .info-section {
+      position: absolute;
+      top: 100vh; /* starts after first screen */
+      left: 0;
+      width: 100%;
+      min-height: 100vh;
+      background: #dbe4ff;
+      z-index: 2;
+      padding: 120px 80px;
+    }
+
+    /* top angled shape */
+    .info-section::before {
+      content: "";
+      position: absolute;
+      top: -130px;
+      right: 0;
+      width: 55%;
+      height: 130px;
+      background: #dbe4ff;
+      clip-path: polygon(18% 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    .info-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 60px;
+      align-items: center;
+      min-height: calc(100vh - 240px);
+    }
+
+    .left-content h2 {
+      font-size: clamp(2.5rem, 5vw, 5rem);
+      line-height: 1.05;
+      color: #2c0f12;
+      max-width: 750px;
+    }
+
+    .right-content {
+      display: flex;
+      justify-content: center;
+    }
+
+    .stat-box {
+      max-width: 500px;
+    }
+
+    .counter {
+      display: flex;
+      align-items: flex-end;
+      color: #ff7a2f;
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+
+    .counter .num {
+      font-size: clamp(7rem, 15vw, 14rem);
+      font-weight: 400;
+    }
+
+    .counter .suffix {
+      font-size: clamp(3rem, 7vw, 6rem);
+      margin-left: 10px;
+      margin-bottom: 18px;
+    }
+
+    .stat-box p {
+      font-size: clamp(1.7rem, 3vw, 3.3rem);
+      line-height: 1.05;
+      color: #4b3840;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(80px);
+      transition: all 0.9s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .after-space {
+      height: 60vh;
+      background: #dbe4ff;
+    }
+
+    @media (max-width: 991px) {
+      .info-section {
+        padding: 90px 25px;
+      }
+
+      .info-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .right-content {
+        justify-content: flex-start;
+      }
+
+      .info-section::before {
+        width: 75%;
+        height: 90px;
+        top: -90px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="scroll-scene" id="scene">
+    <div class="sticky-image-wrap">
+      <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80" alt="City Building">
+    </div>
+
+    <div class="info-section" id="infoSection">
+      <div class="info-inner">
+        <div class="left-content reveal">
+          <h2>
+            As industries evolve and market dynamics shift, our consultants help you
+            turn uncertainty into opportunity.
+          </h2>
+        </div>
+
+        <div class="right-content reveal">
+          <div class="stat-box">
+            <div class="counter">
+              <span class="num" id="count">1</span>
+              <span class="suffix">th</span>
+            </div>
+            <p>
+              Delivered a key 2025 project, showcasing expertise and dedication.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="after-space"></section>
+
+  <script>
+    const infoSection = document.getElementById("infoSection");
+    const countEl = document.getElementById("count");
+    const reveals = document.querySelectorAll(".reveal");
+    let animated = false;
+
+    function animateCounter(start, end, duration) {
+      let startTime = null;
+
+      function step(timestamp) {
+        if (!startTime) startTime = timestamp;
+        const progress = Math.min((timestamp - startTime) / duration, 1);
+        const value = Math.floor(start + (end - start) * progress);
+        countEl.textContent = value;
+
+        if (progress < 1) {
+          requestAnimationFrame(step);
+        } else {
+          countEl.textContent = end;
+        }
+      }
+
+      requestAnimationFrame(step);
+    }
+
+    function onScroll() {
+      const rect = infoSection.getBoundingClientRect();
+      const trigger = window.innerHeight * 0.85;
+
+      if (rect.top < trigger) {
+        reveals.forEach(el => el.classList.add("show"));
+
+        if (!animated) {
+          animated = true;
+          animateCounter(1, 6, 1800);
+        }
+      }
+    }
+
+    window.addEventListener("scroll", onScroll);
+    window.addEventListener("load", onScroll);
+  </script>
+
+</body>
+</html>

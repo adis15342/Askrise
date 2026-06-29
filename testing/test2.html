@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Combined Scroll Animation Sections</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --dark-text: #2b0f12;
+      --muted-text: #4e3b42;
+      --light-blue: #dbe4ff;
+      --accent: #ff7a2f;
+      --white: #ffffff;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Playfair Display', serif;
+      overflow-x: hidden;
+      background: #fff;
+      color: var(--dark-text);
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* ===============================
+       SECTION 1: THREE LINE IMAGE
+    =============================== */
+    .three-line-scroll {
+      position: relative;
+      height: 320vh;
+    }
+
+    .three-line-sticky {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .bg-layer {
+      position: absolute;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1600&q=80') center center / cover no-repeat;
+      transform: scale(1.05);
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.48);
+    }
+
+    .three-line-content {
+      position: relative;
+      z-index: 2;
+      width: min(1200px, 92%);
+      text-align: center;
+      padding: 20px;
+    }
+
+    .line {
+      color: white;
+      opacity: 0;
+      transform: translateY(35px) scale(0.98);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+      will-change: opacity, transform;
+    }
+
+    .line.active {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    .line.dim {
+      opacity: 0.28;
+      transform: translateY(-10px) scale(0.99);
+    }
+
+    .small-line {
+      font-size: clamp(1.6rem, 2.8vw, 3.3rem);
+      font-weight: 600;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .big-line {
+      font-size: clamp(3rem, 8vw, 7.4rem);
+      font-weight: 700;
+      line-height: 0.95;
+      margin-bottom: 1rem;
+      text-transform: lowercase;
+    }
+
+    .medium-line {
+      font-size: clamp(1.8rem, 3.6vw, 3.8rem);
+      font-weight: 600;
+      line-height: 1.15;
+    }
+
+    /* ===============================
+       SECTION 2: IMAGE + OVERLAY INFO
+    =============================== */
+    .scroll-scene {
+      position: relative;
+      height: 220vh;
+      background: #fff;
+    }
+
+    .sticky-image-wrap {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      width: 100%;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .sticky-image-wrap img {
+      width: 100%;
+      height: 80%;
+      object-fit: cover;
+    }
+
+    .info-section {
+      position: absolute;
+      top: 100vh;
+      left: 0;
+      width: 100%;
+      min-height: 100vh;
+      background: var(--light-blue);
+      z-index: 2;
+      padding: 7rem 5rem;
+    }
+
+    .info-section::before {
+      content: "";
+      position: absolute;
+      top: -120px;
+      right: 0;
+      width: 55%;
+      height: 120px;
+      background: var(--light-blue);
+      clip-path: polygon(18% 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    .info-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      min-height: calc(100vh - 14rem);
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .left-content h2 {
+      font-size: clamp(2.2rem, 5vw, 5rem);
+      line-height: 1.05;
+      color: var(--dark-text);
+      max-width: 760px;
+    }
+
+    .right-content {
+      display: flex;
+      justify-content: center;
+    }
+
+    .stat-box {
+      max-width: 520px;
+    }
+
+    .counter {
+      display: flex;
+      align-items: flex-end;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+
+    .counter .num {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(6rem, 13vw, 13rem);
+      font-weight: 300;
+    }
+
+    .counter .suffix {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(2.4rem, 6vw, 6rem);
+      margin-left: 0.5rem;
+      margin-bottom: 0.9rem;
+      font-weight: 400;
+    }
+
+    .stat-box p {
+      font-size: clamp(1.5rem, 3vw, 3rem);
+      line-height: 1.08;
+      color: var(--muted-text);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(60px);
+      transition: opacity 0.9s ease, transform 0.9s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===============================
+       SECTION 3: STORY TEXT CHANGER
+    =============================== */
+    .story-section {
+      position: relative;
+      height: 420vh;
+      background: #fff;
+    }
+
+    .story-sticky {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem 1.25rem;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .story-heading-wrap {
+      position: relative;
+      width: 100%;
+      max-width: 1400px;
+      min-height: 180px;
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .story-heading {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 100%;
+      padding: 0 1rem;
+      text-align: center;
+      color: var(--dark-text);
+      font-size: clamp(2.4rem, 5.8vw, 5.8rem);
+      line-height: 1.05;
+      transform: translate(-50%, -50%) translateY(30px);
+      opacity: 0;
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .story-heading.active {
+      opacity: 1;
+      transform: translate(-50%, -50%) translateY(0);
+    }
+
+    .story-heading.prev {
+      opacity: 0.18;
+      transform: translate(-50%, -50%) translateY(-10px);
+    }
+
+    .story-image-wrap {
+      position: relative;
+      width: min(860px, 92vw);
+      height: min(480px, 54vh);
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+      border-radius: 4px;
+    }
+
+    .story-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .story-image-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.45), rgba(0,0,0,0.05));
+    }
+
+    .story-caption-wrap {
+      position: relative;
+      width: min(860px, 92vw);
+      min-height: 90px;
+      margin-top: 1.5rem;
+    }
+
+    .story-caption {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      font-size: clamp(1.05rem, 1.8vw, 1.55rem);
+      line-height: 1.4;
+      color: var(--muted-text);
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.75s ease, transform 0.75s ease;
+      padding: 0 0.5rem;
+    }
+
+    .story-caption.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .story-caption.prev {
+      opacity: 0.18;
+      transform: translateY(-8px);
+    }
+
+    /* ===============================
+       RESPONSIVE
+    =============================== */
+    @media (max-width: 991px) {
+      .info-section {
+        padding: 5rem 1.75rem;
+      }
+
+      .info-section::before {
+        width: 72%;
+        height: 90px;
+        top: -90px;
+      }
+
+      .info-inner {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        min-height: auto;
+      }
+
+      .right-content {
+        justify-content: flex-start;
+      }
+
+      .story-heading-wrap {
+        min-height: 130px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .three-line-scroll {
+        height: 280vh;
+      }
+
+      .story-section {
+        height: 360vh;
+      }
+
+      .info-section {
+        top: 100vh;
+        padding: 4.5rem 1.25rem;
+      }
+
+      .info-section::before {
+        width: 78%;
+        height: 70px;
+        top: -70px;
+      }
+
+      .story-sticky {
+        padding: 1.5rem 1rem;
+      }
+
+      .story-heading-wrap {
+        margin-bottom: 1.2rem;
+      }
+
+      .story-image-wrap {
+        height: 40vh;
+      }
+
+      .story-caption-wrap {
+        min-height: 110px;
+        margin-top: 1rem;
+      }
+
+      .counter .suffix {
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .three-line-content {
+        width: 94%;
+      }
+
+      .info-section {
+        padding: 4rem 1rem;
+      }
+
+      .story-image-wrap {
+        width: 94vw;
+        height: 36vh;
+      }
+
+      .story-caption-wrap {
+        width: 94vw;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SECTION 1 -->
+  <section class="three-line-scroll" id="threeLineScroll">
+    <div class="three-line-sticky">
+      <div class="bg-layer"></div>
+      <div class="overlay"></div>
+
+      <div class="three-line-content">
+        <h3 class="line small-line">We combine strategy and solutions</h3>
+        <h1 class="line big-line">so you can</h1>
+        <h2 class="line medium-line">adapt, advance, and achieve more</h2>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2 -->
+  <section class="scroll-scene" id="scene">
+    <div class="sticky-image-wrap">
+      <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80" alt="City Building">
+    </div>
+
+    <div class="info-section" id="infoSection">
+      <div class="info-inner">
+        <div class="left-content reveal">
+          <h2>
+            As industries evolve and market dynamics shift, our consultants help you
+            turn uncertainty into opportunity.
+          </h2>
+        </div>
+
+        <div class="right-content reveal">
+          <div class="stat-box">
+            <div class="counter">
+              <span class="num" id="count">1</span>
+              <span class="suffix">th</span>
+            </div>
+            <p>
+              Delivered a key 2025 project, showcasing expertise and dedication.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3 -->
+  <section class="story-section" id="storySection">
+    <div class="story-sticky">
+      <div class="story-heading-wrap">
+        <h2 class="story-heading">empower you to drive growth</h2>
+        <h2 class="story-heading">unlock new market opportunities</h2>
+        <h2 class="story-heading">transform strategy into action</h2>
+        <h2 class="story-heading">create impact with confidence</h2>
+      </div>
+
+      <div class="story-image-wrap">
+        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1400&q=80" alt="Office presentation">
+        <div class="story-image-overlay"></div>
+      </div>
+
+      <div class="story-caption-wrap">
+        <p class="story-caption">We help businesses identify the right path forward with clarity.</p>
+        <p class="story-caption">Strategic insights reveal where your next opportunities truly are.</p>
+        <p class="story-caption">Turning planning into measurable execution is where growth happens.</p>
+        <p class="story-caption">With the right guidance, you can move faster and lead with certainty.</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const infoSection = document.getElementById("infoSection");
+    const countEl = document.getElementById("count");
+    const reveals = document.querySelectorAll(".reveal");
+
+    const storySection = document.getElementById("storySection");
+    const headings = document.querySelectorAll(".story-heading");
+    const captions = document.querySelectorAll(".story-caption");
+
+    const threeLineSection = document.getElementById("threeLineScroll");
+    const lines = threeLineSection.querySelectorAll(".line");
+
+    let counterStarted = false;
+
+    function animateCounter(start, end, duration) {
+      let startTime = null;
+
+      function step(timestamp) {
+        if (!startTime) startTime = timestamp;
+        const progress = Math.min((timestamp - startTime) / duration, 1);
+        const value = Math.floor(start + (end - start) * progress);
+        countEl.textContent = value;
+
+        if (progress < 1) {
+          requestAnimationFrame(step);
+        } else {
+          countEl.textContent = end;
+        }
+      }
+
+      requestAnimationFrame(step);
+    }
+
+    function updateInfoSection() {
+      const rect = infoSection.getBoundingClientRect();
+      const trigger = window.innerHeight * 0.85;
+
+      if (rect.top < trigger) {
+        reveals.forEach(el => el.classList.add("show"));
+
+        if (!counterStarted) {
+          counterStarted = true;
+          animateCounter(1, 6, 1800);
+        }
+      }
+    }
+
+    function updateStorySection() {
+      const sectionHeight = storySection.offsetHeight;
+      const viewportHeight = window.innerHeight;
+
+      const progress = Math.min(
+        Math.max((window.scrollY - storySection.offsetTop) / (sectionHeight - viewportHeight), 0),
+        1
+      );
+
+      const totalSlides = headings.length;
+      let activeIndex = Math.floor(progress * totalSlides);
+      if (activeIndex >= totalSlides) activeIndex = totalSlides - 1;
+
+      headings.forEach((heading, index) => {
+        heading.classList.remove("active", "prev");
+        if (index === activeIndex) heading.classList.add("active");
+        else if (index < activeIndex) heading.classList.add("prev");
+      });
+
+      captions.forEach((caption, index) => {
+        caption.classList.remove("active", "prev");
+        if (index === activeIndex) caption.classList.add("active");
+        else if (index < activeIndex) caption.classList.add("prev");
+      });
+    }
+
+    function updateThreeLineSection() {
+      const sectionTop = threeLineSection.offsetTop;
+      const sectionHeight = threeLineSection.offsetHeight;
+      const viewportHeight = window.innerHeight;
+
+      const progress = Math.min(
+        Math.max((window.scrollY - sectionTop) / (sectionHeight - viewportHeight), 0),
+        1
+      );
+
+      lines.forEach(line => line.classList.remove("active", "dim"));
+
+      if (progress < 0.33) {
+        lines[0].classList.add("active");
+      } else if (progress < 0.66) {
+        lines[0].classList.add("dim");
+        lines[1].classList.add("active");
+      } else {
+        lines[0].classList.add("dim");
+        lines[1].classList.add("dim");
+        lines[2].classList.add("active");
+      }
+    }
+
+    function handleScrollAnimations() {
+      updateInfoSection();
+      updateStorySection();
+      updateThreeLineSection();
+    }
+
+    window.addEventListener("scroll", handleScrollAnimations);
+    window.addEventListener("load", handleScrollAnimations);
+    window.addEventListener("resize", handleScrollAnimations);
+  </script>
+
+</body>
+</html>

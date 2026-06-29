@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import '../styles/HomePage.css';
 import '../styles/syc-custom-hero.css';
 import '../styles/syc.css';
+import CombinedScrollSections  from '../components/CombinedScrollSections';
+
 
 // Simple asset helper similar to Laravel's asset()
 const asset = (path) => `/images/${path}`;
@@ -29,74 +31,8 @@ const HomePage = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Load external Blade JS assets (tracking & video player) once
-  useEffect(() => {
-    // Tracking script (mirrors Blade custom code)
-    const trackingScript = document.createElement('script');
-    trackingScript.src = 'https://www.pwc.com/content/pwc/script/gx/en/custom-tracking-analytics.js';
-    trackingScript.async = true;
-    trackingScript.onload = () => {
-      // Initialize tracking if the script defines TargetTracking
-      if (window.TargetTracking) {
-        // eslint-disable-next-line no-undef
-        const targetTracking = new window.TargetTracking({
-          outputDataStucture: ['message'],
-          clickTracking: [
-            {
-              selectors: '.syc-custom-hero a.hero-cta.syc-custom-hero__cta-skip',
-              customResponse: (event, { baseName, purifyString }) => purifyString(event.target?.innerText ?? 'skip-the-intro')
-            },
-            {
-              selectors: '.syc-custom-hero button.hero-cta.js-cta-video',
-              customResponse: 'watch-film'
-            }
-          ],
-          wait: async () => {
-            await new Promise(resolve => document.readyState === 'complete' ? resolve() : window.addEventListener('load', () => resolve()));
-            await new Promise(resolve => setTimeout(resolve, 250));
-            return typeof OptanonActiveGroups === 'undefined' || OptanonActiveGroups.split(',').filter(item => item).find(item => String(item) === '2');
-          }
-        });
-        // Set up observer for video close button (mirrors Blade logic)
-        const observer = new MutationObserver(() => {
-          const closeButton = document.querySelector('.videoplayer-v3 button.syc-custom-hero-video-player-wrapper__close-button');
-          if (closeButton && !closeButton.dataset.tracked) {
-            closeButton.addEventListener('click', () => {
-              targetTracking.initiated && targetTracking.send.call(targetTracking, 'close-video', {});
-            });
-            closeButton.dataset.tracked = 'true';
-          }
-        });
-        observer.observe(document.querySelector('.html:has(.syc-custom-hero) + .videoplayer-v3'), { attributes: true, childList: false, subtree: false });
-      }
-    };
-    document.head.appendChild(trackingScript);
-
-    // Video player script (Blade video player)
-    const videoPlayerScript = document.createElement('script');
-    videoPlayerScript.src = '/etc.clientlibs/pwc/components/modernized/content/videoplayer-v3/video-player.min.js';
-    videoPlayerScript.async = true;
-    document.head.appendChild(videoPlayerScript);
-
-    // syc.js script (animation, counters, video autoplay)
-    const sycScript = document.createElement('script');
-    sycScript.src = '/en/zz-test-brand-assets-pages-25/js/syc.js';
-    sycScript.async = true;
-    document.head.appendChild(sycScript);
-
-    // Custom hero script (syc-custom-hero.js)
-    const heroScript = document.createElement('script');
-    heroScript.src = '/en/zz-test-brand-assets-pages-25/js/syc-custom-hero.js';
-    heroScript.async = true;
-    document.head.appendChild(heroScript);
-
-    return () => {
-      document.head.removeChild(trackingScript);
-      document.head.removeChild(videoPlayerScript);
-      document.head.removeChild(sycScript);
-      document.head.removeChild(heroScript);
-    };
-  }, []);
+  // The local React homepage uses the included assets directly, so external
+  // Blade-only scripts are omitted here to avoid broken requests in Vite.
 
   // Opacity calculations (same as original Blade script)
   let layer1Opacity = 1;
@@ -120,89 +56,17 @@ const HomePage = () => {
   }
 
   return (
+   
     <div className="home-page" ref={containerRef}>
       {/* --------------------------------------------------- */}
       {/* Promotion – Intro video (mirrors Blade #promotion)   */}
       {/* --------------------------------------------------- */}
-      <section
-        id="promotion"
-        className="home-scrolly-layer layer-1"
-        style={{ opacity: layer1Opacity, pointerEvents: layer1Opacity > 0.1 ? 'auto' : 'none' }}
-      >
-        <div className="video-background">
-          <video src={asset('first (1).mp4')} autoPlay loop muted playsInline />
-        </div>
-        <div className="layer-content-overlay">
-          <div className="container text-center">
-            <h1 className="hero-animated-title">
-              <span className="title-subtitle">We combine strategy and solutions</span>
-              <strong className="title-headline">so you can</strong>
-              <span className="title-action">adapt, advance, and achieve more</span>
-            </h1>
+          <div className="page-container">
+            <CombinedScrollSections />
           </div>
-        </div>
-      </section>
 
-      {/* --------------------------------------------------- */}
-      {/* Featured – Full‑width video (Blade #featured)      */}
-      {/* --------------------------------------------------- */}
-      <section
-        id="featured"
-        className="home-scrolly-layer layer-2"
-        style={{ opacity: layer2Opacity, pointerEvents: layer2Opacity > 0.1 ? 'auto' : 'none' }}
-      >
-        <div className="video-background">
-          <video src={asset('first (1).mp4')} autoPlay loop muted playsInline />
-        </div>
-      </section>
 
-      {/* --------------------------------------------------- */}
-      {/* Custom Hero – Greenhouse with stats (Blade #content‑free‑1‑d0a7) */}
-      {/* --------------------------------------------------- */}
-      <section
-        id="content-free-1-d0a7"
-        className="home-scrolly-layer layer-3"
-        style={{ opacity: layer3Opacity, pointerEvents: layer3Opacity > 0.1 ? 'auto' : 'none' }}
-      >
-        <div className="syc-custom-hero home-greenhouse">
-          <img src={asset('frontpage2.jpg')} alt="Askrise Greenhouse" className="greenhouse-image" />
-          <div className="greenhouse-content">
-            <p className="text-h2">
-              As industries evolve and market dynamics shift, our consultants help you turn uncertainty into opportunity.
-            </p>
-            <div
-              className="stat-count-container"
-              style={{ opacity: scrollProgress > 35 ? 1 : 0, transition: 'opacity 0.5s ease' }}
-            >
-              <strong className="stat-number">
-                <span className="stat-count-spinner">{statValue}</span>
-                <span className="stat-suffix">h</span>
-              </strong>
-              <span className="stat-description">
-                Delivered a key 2025 project, showcasing expertise and dedication.
-              </span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* --------------------------------------------------- */}
-      {/* CTA – End video call‑to‑action (Blade #layer‑video‑cta) */}
-      {/* --------------------------------------------------- */}
-      <section className="home-cta">
-        <h2 className="hero-cta-headline">
-          empower you to{' '}
-          <span className="cta-flip-words">
-            <span className="word-active">make smarter moves</span>
-            <span className="word-active">navigate complexity</span>
-            <span className="word-active">drive sustainable growth</span>
-          </span>
-        </h2>
-        <div className="video-background">
-          <video src={asset('frontvedio1 (1).mp4')} autoPlay loop muted playsInline />
-        </div>
-      </section>
-
+      
       {/* --------------------------------------------------- */}
       {/* Why You Connect With Us – Grid of cards     */}
       {/* --------------------------------------------------- */}

@@ -1,13 +1,36 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { navigationData } from '../data/navigationData';
+import '../styles/Header.css';
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeNavIndex, setActiveNavIndex] = useState(null); // 1 = Industries, 2 = Services, null = none
-  const [currentLevel, setCurrentLevel] = useState(""); // "", "2", "3"
+  const [currentLevel, setCurrentLevel] = useState(""); // "", "1", "2", "3"
   const [activeLevelTwoId, setActiveLevelTwoId] = useState("");
   const location = useLocation();
+
+  // Track window resize dynamically for responsive rendering
+  const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1200);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  const isDesktop = windowWidth > 991;
+
+  // Auto-close menu if resizing to desktop
+  useEffect(() => {
+    if (isDesktop) {
+      setMenuOpen(false);
+    }
+  }, [isDesktop]);
 
   // Close menus on route change
   useEffect(() => {
@@ -46,6 +69,7 @@ const Header = () => {
       // Toggle off
       setActiveNavIndex(null);
       setCurrentLevel(menuOpen ? "1" : "");
+      setActiveLevelTwoId("");
     } else {
       setActiveNavIndex(index);
       setCurrentLevel("2");
@@ -61,7 +85,7 @@ const Header = () => {
     e.preventDefault();
     setActiveLevelTwoId(id);
     // On mobile/tablet, go to level 3 screen
-    if (window.innerWidth <= 991) {
+    if (!isDesktop) {
       setCurrentLevel("3");
     }
   };
@@ -109,6 +133,36 @@ const Header = () => {
     "family_business-subnav-2-11"
   ];
 
+  // Compute CSS classes dynamically to match PHP/AEM CSS behaviour
+  const containerClasses = [
+    'headerv2-container',
+    menuOpen ? 'nav-open' : '',
+    activeNavIndex ? 'headerv2--dark' : '',
+    menuOpen && !isDesktop ? 'headerv2--dark headerv2--dark--mobile' : ''
+  ].filter(Boolean).join(' ');
+
+  const hamburgerClasses = [
+    'slim-hamburger-ico',
+    menuOpen ? 'open' : ''
+  ].filter(Boolean).join(' ');
+
+  const sublevelSlideClasses = [
+    'slimheader-sublevel-slide',
+    activeNavIndex ? 'active subnav-fade' : 'subnav-fadeout'
+  ].filter(Boolean).join(' ');
+
+  const level2Classes = [
+    'slimnav-level2',
+    'slimheader-slide-nav',
+    currentLevel === "2" ? 'is-active' : '',
+    currentLevel === "3" ? 'lv2-fade' : ''
+  ].filter(Boolean).join(' ');
+
+  const level3Classes = [
+    'slimnav-level3',
+    currentLevel === "3" ? 'is-active' : ''
+  ].filter(Boolean).join(' ');
+
   return (
     <div className="ixfsection experiencefragment">
       <div className="mod-ixf-page-section"></div>
@@ -117,12 +171,9 @@ const Header = () => {
         <div id="container-a8923941b5" className="cmp-container">
           <div className="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
             <div className="slim-page-header-v2 parbase aem-GridColumn aem-GridColumn--default--12">
-              <nav id="skipNav" aria-label="Skip Links">
-                <a href="#root" className="sr-only sr-only-focusable skip-content" aria-label="Skip to content">Skip to content</a>
-              </nav>
 
               <div 
-                className={`headerv2-container ${menuOpen ? 'nav-open' : ''}`} 
+                className={containerClasses}
                 data-current-level={currentLevel}
               >
                 <header className="slimheader-v2 mod__header-v2">
@@ -140,7 +191,7 @@ const Header = () => {
                   <div 
                     tabIndex="0" 
                     id="slim-hamburger" 
-                    className={`slim-hamburger-ico ${menuOpen ? 'open' : ''}`} 
+                    className={hamburgerClasses}
                     aria-label="Menu"
                     onClick={toggleMenu}
                   >
@@ -153,17 +204,21 @@ const Header = () => {
                   <div 
                     className="slim-navigation" 
                     style={{ 
-                      opacity: menuOpen || window.innerWidth > 991 ? 1 : 0, 
-                      display: menuOpen || window.innerWidth > 991 ? 'block' : 'none', 
-                      marginTop: menuOpen || window.innerWidth > 991 ? '0px' : '24px' 
+                      color: "black",
+                      fontWeight: 600,
+                      opacity: isDesktop || menuOpen ? 1 : 0, 
+                      display: isDesktop || menuOpen ? 'block' : 'none', 
+                      marginTop: isDesktop || menuOpen ? '0px' : '24px',
+                      height: isDesktop ? 'auto' : (menuOpen ? 'calc(100vh - 62px)' : '0px'),
+                      overflow: isDesktop ? 'visible' : 'auto'
                     }}
                   >
                     <nav className="nav-primary search-hide" aria-label="Main Navigation">
-                      <Link to="/about" className="levelOneLink" onClick={closeAll}>About</Link>
+                      <Link to="/about" className={`levelOneLink ${location.pathname === '/about' ? 'is-active active' : ''}`} onClick={closeAll}>About</Link>
                       
                       <a 
                         href="#"
-                        className={`levelOneLink ${activeNavIndex === 1 ? 'active' : ''}`}
+                        className={`levelOneLink ${activeNavIndex === 1 ? 'is-active active' : ''}`}
                         data-has-subnav="true"
                         data-nav-index="1"
                         onClick={(e) => handleLevel1Click(e, 1)}
@@ -173,7 +228,7 @@ const Header = () => {
 
                       <a 
                         href="#"
-                        className={`levelOneLink ${activeNavIndex === 2 ? 'active' : ''}`}
+                        className={`levelOneLink ${activeNavIndex === 2 ? 'is-active active' : ''}`}
                         data-has-subnav="true"
                         data-nav-index="2"
                         onClick={(e) => handleLevel1Click(e, 2)}
@@ -181,8 +236,8 @@ const Header = () => {
                         Services
                       </a>
 
-                      <Link to="/news" className="levelOneLink" onClick={closeAll}>News & Events</Link>
-                      <Link to="/contact" className="levelOneLink" onClick={closeAll}>Contact Us</Link>
+                      <Link to="/news" className={`levelOneLink ${location.pathname === '/news' ? 'is-active active' : ''}`} onClick={closeAll}>News & Events</Link>
+                      <Link to="/contact" className={`levelOneLink ${location.pathname === '/contact' ? 'is-active active' : ''}`} onClick={closeAll}>Contact Us</Link>
                     </nav>
 
                     <nav className="nav-secondary search-hide" aria-label="Secondary Navigation">
@@ -197,16 +252,18 @@ const Header = () => {
 
                 {/* Sublevel slide panel */}
                 <div 
-                  className={`slimheader-sublevel-slide ${activeNavIndex ? 'subnav-fade' : 'subnav-fadeout'}`} 
+                  className={sublevelSlideClasses}
                   data-nav-level={currentLevel === "3" ? "3" : "2"}
                   style={{ 
+                    color: "black",
+                    fontWeight: 600,
                     height: activeNavIndex ? 'auto' : '0px', 
                     display: activeNavIndex ? 'block' : 'none',
                     transition: 'height .3s ease-in-out, opacity .3s ease-in-out'
                   }}
                 >
                   <div className="slide-shadow search-hide"></div>
-                  <div className="slide-bg"></div>
+                  <div className="slide-bg" onClick={closeAll}></div>
 
                   {/* ================= INDUSTRIES SUBLEVEL ================= */}
                   <div 
@@ -214,14 +271,14 @@ const Header = () => {
                     className={`sublevel-container search-hide ${activeNavIndex === 1 ? 'show-subnav' : ''}`}
                   >
                     <div className="sublevel-navs">
-                      <div className="slimnav-level2 slimheader-slide-nav">
+                      <div className={level2Classes}>
                         <div className="slide-nav-contain">
                           <div className="sublevel-title-container search-hide">
                             <div className="slimnav-mobile-header" onClick={handleBackToLevel1}>
-                              <p>Back</p>
+                              <p> Menu</p>
                             </div>
                             <div className="slimheader-breadcrumb is-hidden">
-                              <a href="#" onClick={(e) => e.preventDefault()}>Industries</a>
+                              <a href="#" onClick={handleBackToLevel1}>Industries</a>
                             </div>
                             <a href="#" className="lv2-label" onClick={(e) => e.preventDefault()}>Industries</a>
                           </div>
@@ -232,7 +289,7 @@ const Header = () => {
                               return (
                                 <a 
                                   key={idx}
-                                  className={`levelTwoLink has-lv3 ${activeLevelTwoId === groupID ? 'selected' : ''}`} 
+                                  className={`levelTwoLink has-lv3 ${activeLevelTwoId === groupID ? 'is-active selected' : ''}`} 
                                   data-breadcrumb="Industries"
                                   href="#"
                                   aria-controls={groupID}
@@ -247,12 +304,7 @@ const Header = () => {
                         </div>
                       </div>
 
-                      <span className="slimnav-level3">
-                        {/* Mobile Breadcrumb */}
-                        <div className="slimnav-mobile-header" onClick={handleBackToLevel2} style={{ display: currentLevel === '3' ? 'block' : 'none' }}>
-                          <p>Back</p>
-                        </div>
-
+                      <span className={level3Classes}>
                         {navigationData.industries.map((group, idx) => {
                           const groupID = industriesIds[idx] || `ind-group-${idx}`;
                           const isGroupActive = activeLevelTwoId === groupID;
@@ -260,13 +312,16 @@ const Header = () => {
                             <div 
                               key={idx}
                               id={groupID} 
-                              className="slimheader-slide-nav"
+                              className={`slimheader-slide-nav ${isGroupActive ? 'is-active' : ''} ${isGroupActive && currentLevel === "3" ? 'lv3-fade' : ''}`}
                               style={{ 
-                                display: isGroupActive || (window.innerWidth <= 991 && currentLevel === '3' && isGroupActive) ? 'block' : 'none' 
+                                display: isGroupActive ? 'block' : 'none' 
                               }}
                             >
                               <div className="slide-nav-contain">
                                 <div className="sublevel-title-container search-hide">
+                                  <div className="slimnav-mobile-header" onClick={handleBackToLevel2}>
+                                    <p> Menu</p>
+                                  </div>
                                   <div className="slimheader-breadcrumb">
                                     <a href="#" onClick={handleBackToLevel2}>{group.category}</a>
                                   </div>
@@ -275,7 +330,7 @@ const Header = () => {
                                   {group.items.map((item, i) => (
                                     <Link 
                                       key={i} 
-                                      className="levelThreeLink" 
+                                      className={`levelThreeLink ${location.pathname === item.path ? 'is-active' : ''}`} 
                                       to={item.path}
                                       onClick={closeAll}
                                     >
@@ -288,23 +343,6 @@ const Header = () => {
                           );
                         })}
                       </span>
-
-                      {/* Featured Section */}
-                      <div className="slim-featured search-hide">
-                        <p className="slim-featured-heading">Featured</p>
-                        <div className="slim-featured-item">
-                          <a className="featuredLink" href="https://www.pwc.com/gx/en/issues/value-in-motion.html" target="_blank" rel="noopener noreferrer">
-                            <img src="/en/zz-test-brand-assets-pages-25/value-in-motion/thumb-vim.jpg.pwcimage.150.100.jpg" alt="Value in motion" />
-                            <p>Value in motion</p>
-                          </a>
-                        </div>
-                        <div className="slim-featured-item">
-                          <a className="featuredLink" href="https://www.pwc.com/gx/en/issues/c-suite-insights/ceo-survey.html" target="_blank" rel="noopener noreferrer">
-                            <img src="/en/ceo-survey/2025/ceo-28-hero-thumbnail.jpeg.pwcimage.150.100.jpg" alt="CEO Survey" />
-                            <p>28th Annual Global CEO Survey</p>
-                          </a>
-                        </div>
-                      </div>
                     </div>
                     <button className="slimheader-close search-hide" aria-label="Menu Close" onClick={closeAll}></button>
                   </div>
@@ -315,14 +353,14 @@ const Header = () => {
                     className={`sublevel-container search-hide ${activeNavIndex === 2 ? 'show-subnav' : ''}`}
                   >
                     <div className="sublevel-navs">
-                      <div className="slimnav-level2 slimheader-slide-nav">
+                      <div className={level2Classes}>
                         <div className="slide-nav-contain">
                           <div className="sublevel-title-container search-hide">
                             <div className="slimnav-mobile-header" onClick={handleBackToLevel1}>
-                              <p>Back</p>
+                              <p> Menu</p>
                             </div>
                             <div className="slimheader-breadcrumb is-hidden">
-                              <a href="#" onClick={(e) => e.preventDefault()}>Services</a>
+                              <a href="#" onClick={handleBackToLevel1}>Services</a>
                             </div>
                             <a href="#" className="lv2-label" onClick={(e) => e.preventDefault()}>Services</a>
                           </div>
@@ -333,7 +371,7 @@ const Header = () => {
                               return (
                                 <a 
                                   key={idx}
-                                  className={`levelTwoLink has-lv3 ${activeLevelTwoId === groupID ? 'selected' : ''}`} 
+                                  className={`levelTwoLink has-lv3 ${activeLevelTwoId === groupID ? 'is-active selected' : ''}`} 
                                   data-breadcrumb="Services"
                                   href="#"
                                   aria-controls={groupID}
@@ -348,12 +386,7 @@ const Header = () => {
                         </div>
                       </div>
 
-                      <span className="slimnav-level3">
-                        {/* Mobile Breadcrumb */}
-                        <div className="slimnav-mobile-header" onClick={handleBackToLevel2} style={{ display: currentLevel === '3' ? 'block' : 'none' }}>
-                          <p>Back</p>
-                        </div>
-
+                      <span className={level3Classes}>
                         {navigationData.services.map((group, idx) => {
                           const groupID = servicesIds[idx] || `svc-group-${idx}`;
                           const isGroupActive = activeLevelTwoId === groupID;
@@ -361,13 +394,16 @@ const Header = () => {
                             <div 
                               key={idx}
                               id={groupID} 
-                              className="slimheader-slide-nav"
+                              className={`slimheader-slide-nav ${isGroupActive ? 'is-active' : ''} ${isGroupActive && currentLevel === "3" ? 'lv3-fade' : ''}`}
                               style={{ 
-                                display: isGroupActive || (window.innerWidth <= 991 && currentLevel === '3' && isGroupActive) ? 'block' : 'none' 
+                                display: isGroupActive ? 'block' : 'none' 
                               }}
                             >
                               <div className="slide-nav-contain">
                                 <div className="sublevel-title-container search-hide">
+                                  <div className="slimnav-mobile-header" onClick={handleBackToLevel2}>
+                                    <p> Menu</p>
+                                  </div>
                                   <div className="slimheader-breadcrumb">
                                     <a href="#" onClick={handleBackToLevel2}>{group.category}</a>
                                   </div>
@@ -376,7 +412,7 @@ const Header = () => {
                                   {group.items.map((item, i) => (
                                     <Link 
                                       key={i} 
-                                      className="levelThreeLink" 
+                                      className={`levelThreeLink ${location.pathname === item.path ? 'is-active' : ''}`} 
                                       to={item.path}
                                       onClick={closeAll}
                                     >
@@ -389,23 +425,6 @@ const Header = () => {
                           );
                         })}
                       </span>
-
-                      {/* Featured Section */}
-                      <div className="slim-featured search-hide">
-                        <p className="slim-featured-heading">Featured</p>
-                        <div className="slim-featured-item">
-                          <a className="featuredLink" href="https://www.pwc.com/gx/en/issues/artificial-intelligence/ai-jobs-barometer.html" target="_blank" rel="noopener noreferrer">
-                            <img src="/en/issues/artificial-intelligence/job-barometer/ai-jobs-barometer-thumb-2025.jpg.pwcimage.150.100.jpg" alt="AI Jobs Barometer" />
-                            <p>AI Jobs Barometer</p>
-                          </a>
-                        </div>
-                        <div className="slim-featured-item">
-                          <a className="featuredLink" href="https://www.pwc.com/gx/en/issues/c-suite-insights/ceo-survey.html" target="_blank" rel="noopener noreferrer">
-                            <img src="/en/ceo-survey/2025/ceo-28-hero-thumbnail.jpeg.pwcimage.150.100.jpg" alt="CEO Survey" />
-                            <p>28th Annual Global CEO Survey</p>
-                          </a>
-                        </div>
-                      </div>
                     </div>
                     <button className="slimheader-close search-hide" aria-label="Menu Close" onClick={closeAll}></button>
                   </div>

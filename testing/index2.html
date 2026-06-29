@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sticky Scroll Text Change</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:'Playfair Display', serif;
+      overflow-x:hidden;
+      background:#fff;
+      color:#24090d;
+    }
+
+    /* previous section demo */
+    .dummy-top{
+      height:100vh;
+      background:linear-gradient(180deg,#d9e3ff,#cfdcff);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:40px;
+    }
+
+    /* scroll story wrapper */
+    .story-section{
+      position:relative;
+      height:400vh; /* controls how long sticky animation stays */
+      background:#fff;
+    }
+
+    /* fixed screen while scrolling */
+    .story-sticky{
+      position:sticky;
+      top:0;
+      height:100vh;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      padding:40px 20px;
+      overflow:hidden;
+    }
+
+    .story-heading-wrap{
+      position:relative;
+      width:100%;
+      max-width:1400px;
+      height:160px;
+      margin-bottom:40px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .story-heading{
+      position:absolute;
+      left:50%;
+      top:50%;
+      transform:translate(-50%, -50%) translateY(40px);
+      font-size:clamp(2.8rem, 6vw, 5.8rem);
+      line-height:1.05;
+      text-align:center;
+      color:#2a0d12;
+      opacity:0;
+      transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+      width:100%;
+      padding:0 20px;
+    }
+
+    .story-heading.active{
+      opacity:1;
+      transform:translate(-50%, -50%) translateY(0);
+    }
+
+    .story-image-wrap{
+      position:relative;
+      width:min(820px, 90vw);
+      height:min(460px, 58vh);
+      overflow:hidden;
+      box-shadow:0 20px 60px rgba(0,0,0,0.12);
+    }
+
+    .story-image-wrap img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    .story-image-overlay{
+      position:absolute;
+      inset:0;
+      background:linear-gradient(to top, rgba(0,0,0,0.45), rgba(0,0,0,0.05));
+      pointer-events:none;
+    }
+
+    .story-caption-wrap{
+      position:relative;
+      width:min(820px, 90vw);
+      height:90px;
+      margin-top:24px;
+    }
+
+    .story-caption{
+      position:absolute;
+      left:0;
+      top:0;
+      width:100%;
+      font-size:clamp(1.1rem, 2vw, 1.6rem);
+      line-height:1.4;
+      color:#4a3a3d;
+      text-align:center;
+      opacity:0;
+      transform:translateY(20px);
+      transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+    }
+
+    .story-caption.active{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    .after-section{
+      height:100vh;
+      background:#f6f6f6;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:38px;
+    }
+
+    @media (max-width: 768px){
+      .story-heading-wrap{
+        height:120px;
+        margin-bottom:24px;
+      }
+
+      .story-image-wrap{
+        height:42vh;
+      }
+
+      .story-caption-wrap{
+        height:120px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- previous section placeholder -->
+  <section class="dummy-top">
+    Previous info-section
+  </section>
+
+  <!-- sticky storytelling section -->
+  <section class="story-section" id="storySection">
+    <div class="story-sticky">
+
+      <div class="story-heading-wrap">
+        <h2 class="story-heading active">empower you to drive growth</h2>
+        <h2 class="story-heading">unlock new market opportunities</h2>
+        <h2 class="story-heading">transform strategy into action</h2>
+        <h2 class="story-heading">create impact with confidence</h2>
+      </div>
+
+      <div class="story-image-wrap">
+        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1400&q=80" alt="Office presentation">
+        <div class="story-image-overlay"></div>
+      </div>
+
+      <div class="story-caption-wrap">
+        <p class="story-caption active">We help businesses identify the right path forward with clarity.</p>
+        <p class="story-caption">Strategic insights reveal where your next opportunities truly are.</p>
+        <p class="story-caption">Turning planning into measurable execution is where growth happens.</p>
+        <p class="story-caption">With the right guidance, you can move faster and lead with certainty.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="after-section">
+    Next content comes here
+  </section>
+
+  <script>
+    const storySection = document.getElementById("storySection");
+    const headings = document.querySelectorAll(".story-heading");
+    const captions = document.querySelectorAll(".story-caption");
+
+    function updateStoryOnScroll() {
+      const rect = storySection.getBoundingClientRect();
+      const sectionHeight = storySection.offsetHeight;
+      const viewportHeight = window.innerHeight;
+
+      // how much sticky section has been scrolled
+      const scrollProgress = Math.min(
+        Math.max((window.scrollY - storySection.offsetTop) / (sectionHeight - viewportHeight), 0),
+        1
+      );
+
+      const totalSlides = headings.length;
+      let activeIndex = Math.floor(scrollProgress * totalSlides);
+
+      if (activeIndex >= totalSlides) activeIndex = totalSlides - 1;
+
+      headings.forEach((heading, index) => {
+        heading.classList.toggle("active", index === activeIndex);
+      });
+
+      captions.forEach((caption, index) => {
+        caption.classList.toggle("active", index === activeIndex);
+      });
+    }
+
+    window.addEventListener("scroll", updateStoryOnScroll);
+    window.addEventListener("load", updateStoryOnScroll);
+    window.addEventListener("resize", updateStoryOnScroll);
+  </script>
+
+</body>
+</html>
