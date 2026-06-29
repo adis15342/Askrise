@@ -1,8 +1,0 @@
-.hideLabel{display:none !important}
-.marketing-consent{margin-bottom:35px !important}
-.marketing-consent .control--radio input:checked ~ .control__indicator{background-size:cover !important}
-.marketing-consent .control__indicator{top:6px}
-.marketing-consent .help-block{display:none}
-.marketing-consent__input-wrapper{margin-top:20px !important;font-size:16px !important;font-family:"PwC Helvetica Neue",Arial,Sans-Serif !important;line-height:2em !important}
-.marketing-consent label,.marketing-consent .field-label{margin-bottom:0 !important}
-.marketing-consent .marketing-consent__subheading{margin-top:20px;margin-bottom:0}

@@ -8,6 +8,7 @@ const Header = () => {
   const [activeNavIndex, setActiveNavIndex] = useState(null); // 1 = Industries, 2 = Services, null = none
   const [currentLevel, setCurrentLevel] = useState(""); // "", "1", "2", "3"
   const [activeLevelTwoId, setActiveLevelTwoId] = useState("");
+  const [hoverTimeout, setHoverTimeout] = useState(null);
   const location = useLocation();
 
   // Track window resize dynamically for responsive rendering
@@ -65,6 +66,9 @@ const Header = () => {
 
   const handleLevel1Click = (e, index) => {
     e.preventDefault();
+    if (hoverTimeout) {
+      clearTimeout(hoverTimeout);
+    }
     if (activeNavIndex === index) {
       // Toggle off
       setActiveNavIndex(null);
@@ -73,32 +77,52 @@ const Header = () => {
     } else {
       setActiveNavIndex(index);
       setCurrentLevel("2");
+      setActiveLevelTwoId("");
+
       if (index === 1) {
-        setActiveLevelTwoId("consumer_markets-subnav-1-2"); // Default level 2 active id
+        setActiveLevelTwoId("consumer_markets-subnav-1-2");
       } else if (index === 2) {
-        setActiveLevelTwoId("alliances-subnav-2-2"); // Default level 2 active id
+        setActiveLevelTwoId("alliances-subnav-2-2");
       }
     }
   };
 
-  const handleLevel2HoverOrClick = (e, id) => {
+  const handleLevel1Hover = (index) => {
+    if (hoverTimeout) {
+      clearTimeout(hoverTimeout);
+    }
+    const timer = setTimeout(() => {
+      setActiveNavIndex(index);
+      setCurrentLevel("2");
+      setActiveLevelTwoId("");
+    }, 200);
+    setHoverTimeout(timer);
+  };
+
+  const handleLevel1Leave = () => {
+    if (hoverTimeout) {
+      clearTimeout(hoverTimeout);
+    }
+    setHoverTimeout(null);
+  };
+
+  const handleCategoryClick = (e, id) => {
     e.preventDefault();
     setActiveLevelTwoId(id);
-    // On mobile/tablet, go to level 3 screen
-    if (!isDesktop) {
-      setCurrentLevel("3");
-    }
+    setCurrentLevel("3");
   };
 
   const handleBackToLevel2 = (e) => {
     e.preventDefault();
     setCurrentLevel("2");
+    setActiveLevelTwoId("");
   };
 
   const handleBackToLevel1 = (e) => {
     e.preventDefault();
     setCurrentLevel("1");
     setActiveNavIndex(null);
+    setActiveLevelTwoId("");
   };
 
   const closeAll = () => {
@@ -163,6 +187,13 @@ const Header = () => {
     currentLevel === "3" ? 'is-active' : ''
   ].filter(Boolean).join(' ');
 
+  const activeSectionTitle = activeNavIndex === 1 ? 'Industries' : activeNavIndex === 2 ? 'Services' : '';
+  const activeGroup = activeNavIndex === 1
+    ? navigationData.industries.find((_, idx) => industriesIds[idx] === activeLevelTwoId) || null
+    : activeNavIndex === 2
+      ? navigationData.services.find((_, idx) => servicesIds[idx] === activeLevelTwoId) || null
+      : null;
+
   return (
     <div className="ixfsection experiencefragment">
       <div className="mod-ixf-page-section"></div>
@@ -208,7 +239,7 @@ const Header = () => {
                       fontWeight: 600,
                       opacity: isDesktop || menuOpen ? 1 : 0, 
                       display: isDesktop || menuOpen ? 'block' : 'none', 
-                      marginTop: isDesktop || menuOpen ? '0px' : '24px',
+                      marginTop: '0px',
                       height: isDesktop ? 'auto' : (menuOpen ? 'calc(100vh - 62px)' : '0px'),
                       overflow: isDesktop ? 'visible' : 'auto'
                     }}
@@ -221,6 +252,8 @@ const Header = () => {
                         className={`levelOneLink ${activeNavIndex === 1 ? 'is-active active' : ''}`}
                         data-has-subnav="true"
                         data-nav-index="1"
+                        onMouseEnter={() => handleLevel1Hover(1)}
+                        onMouseLeave={handleLevel1Leave}
                         onClick={(e) => handleLevel1Click(e, 1)}
                       >
                         Industries
@@ -231,6 +264,8 @@ const Header = () => {
                         className={`levelOneLink ${activeNavIndex === 2 ? 'is-active active' : ''}`}
                         data-has-subnav="true"
                         data-nav-index="2"
+                        onMouseEnter={() => handleLevel1Hover(2)}
+                        onMouseLeave={handleLevel1Leave}
                         onClick={(e) => handleLevel1Click(e, 2)}
                       >
                         Services
@@ -271,81 +306,70 @@ const Header = () => {
                     className={`sublevel-container search-hide ${activeNavIndex === 1 ? 'show-subnav' : ''}`}
                     style={{ display: activeNavIndex === 1 ? 'block' : 'none' }}
                   >
-                    <div className="sublevel-navs">
-                      <div className={level2Classes}>
-                        <div className="slide-nav-contain">
-                          <div className="sublevel-title-container search-hide">
-                            <div className="slimnav-mobile-header" onClick={handleBackToLevel1}>
-                              <p> Menu</p>
-                            </div>
-                            <div className="slimheader-breadcrumb is-hidden">
-                              <a href="#" onClick={handleBackToLevel1}>Industries</a>
-                            </div>
-                            <a href="#" className="lv2-label" onClick={(e) => e.preventDefault()}>Industries</a>
-                          </div>
-                          
-                          <nav>
-                            {navigationData.industries.map((group, idx) => {
-                              const groupID = industriesIds[idx] || `ind-group-${idx}`;
-                              return (
-                                <a 
-                                  key={idx}
-                                  className={`levelTwoLink has-lv3 ${activeLevelTwoId === groupID ? 'is-active selected' : ''}`} 
-                                  data-breadcrumb="Industries"
-                                  href="#"
-                                  aria-controls={groupID}
-                                  onMouseEnter={(e) => handleLevel2HoverOrClick(e, groupID)}
-                                  onClick={(e) => handleLevel2HoverOrClick(e, groupID)}
-                                >
-                                  {group.category}
-                                </a>
-                              );
-                            })}
-                          </nav>
-                        </div>
-                      </div>
+                       <button className="slimheader-close search-hide" aria-label="Menu Close" onClick={closeAll}></button>
 
-                      <span className={level3Classes}>
-                        {navigationData.industries.map((group, idx) => {
-                          const groupID = industriesIds[idx] || `ind-group-${idx}`;
-                          const isGroupActive = activeLevelTwoId === groupID;
-                          return (
-                            <div 
-                              key={idx}
-                              id={groupID} 
-                              className={`slimheader-slide-nav ${isGroupActive ? 'is-active' : ''} ${isGroupActive && currentLevel === "3" ? 'lv3-fade' : ''}`}
-                              style={{ 
-                                display: isGroupActive ? 'block' : 'none' 
-                              }}
-                            >
-                              <div className="slide-nav-contain">
-                                <div className="sublevel-title-container search-hide">
-                                  <div className="slimnav-mobile-header" onClick={handleBackToLevel2}>
-                                    <p> Menu</p>
-                                  </div>
-                                  <div className="slimheader-breadcrumb">
-                                    <a href="#" onClick={handleBackToLevel2}>{group.category}</a>
-                                  </div>
-                                </div>
-                                <nav>
-                                  {group.items.map((item, i) => (
-                                    <Link 
-                                      key={i} 
-                                      className={`levelThreeLink ${location.pathname === item.path ? 'is-active' : ''}`} 
-                                      to={item.path}
-                                      onClick={closeAll}
-                                    >
-                                      {item.name}
-                                    </Link>
-                                  ))}
-                                </nav>
+                    <div className="sublevel-navs">
+                      {currentLevel !== "3" ? (
+                        <div className={level2Classes}>
+                          <div className="slide-nav-contain">
+                            {/* <div className="sublevel-title-container search-hide">
+                              <div className="slimnav-mobile-header" onClick={handleBackToLevel1}>
+                                <p> Menu</p>
+                              </div>
+                              <div className="slimheader-breadcrumb is-hidden">
+                                <a href="#" onClick={handleBackToLevel1}>Industries</a>
+                              </div>
+                              <a href="#" className="lv2-label" onClick={(e) => e.preventDefault()}>Industries</a>
+                            </div>
+                             */}
+                            <nav>
+                              {navigationData.industries.map((group, idx) => {
+                                const groupID = industriesIds[idx] || `ind-group-${idx}`;
+                                return (
+                                  <button
+                                    type="button"
+                                    key={idx}
+                                    className={`levelTwoLink has-lv3 ${activeLevelTwoId === groupID ? 'is-active selected' : ''}`} 
+                                    data-breadcrumb="Industries"
+                                    aria-controls={groupID}
+                                    onClick={(e) => handleCategoryClick(e, groupID)}
+                                  >
+                                    <span>{group.category}</span>
+                                    <span className="nav-arrow" aria-hidden="true">›</span>
+                                  </button>
+                                );
+                              })}
+                            </nav>
+                          </div>
+                        </div>
+                      ) : (
+                        <div className={level3Classes}>
+                          <div className="slide-nav-contain">
+                            <div className="sublevel-title-container search-hide">
+                              <button className="nav-back-button" type="button" onClick={handleBackToLevel2} aria-label={`Back to ${activeSectionTitle}`}>
+                                ←
+                              </button>
+                              <div className="slimheader-breadcrumb">
+                                <a href="#" onClick={handleBackToLevel2}>{activeGroup?.category || 'Industries'}</a>
                               </div>
                             </div>
-                          );
-                        })}
-                      </span>
+                            <nav>
+                              {activeGroup?.items.map((item, i) => (
+                                <Link 
+                                  key={i} 
+                                  className={`levelThreeLink ${location.pathname === item.path ? 'is-active' : ''}`} 
+                                  to={item.path}
+                                  onClick={closeAll}
+                                >
+                                  <span>{item.name}</span>
+                                  <span className="nav-arrow" aria-hidden="true">›</span>
+                                </Link>
+                              ))}
+                            </nav>
+                          </div>
+                        </div>
+                      )}
                     </div>
-                    <button className="slimheader-close search-hide" aria-label="Menu Close" onClick={closeAll}></button>
                   </div>
 
                   {/* ================= SERVICES SUBLEVEL ================= */}
@@ -354,81 +378,71 @@ const Header = () => {
                     className={`sublevel-container search-hide ${activeNavIndex === 2 ? 'show-subnav' : ''}`}
                     style={{ display: activeNavIndex === 2 ? 'block' : 'none' }}
                   >
-                    <div className="sublevel-navs">
-                      <div className={level2Classes}>
-                        <div className="slide-nav-contain">
-                          <div className="sublevel-title-container search-hide">
-                            <div className="slimnav-mobile-header" onClick={handleBackToLevel1}>
-                              <p> Menu</p>
-                            </div>
-                            <div className="slimheader-breadcrumb is-hidden">
-                              <a href="#" onClick={handleBackToLevel1}>Services</a>
-                            </div>
-                            <a href="#" className="lv2-label" onClick={(e) => e.preventDefault()}>Services</a>
-                          </div>
-                          
-                          <nav>
-                            {navigationData.services.map((group, idx) => {
-                              const groupID = servicesIds[idx] || `svc-group-${idx}`;
-                              return (
-                                <a 
-                                  key={idx}
-                                  className={`levelTwoLink has-lv3 ${activeLevelTwoId === groupID ? 'is-active selected' : ''}`} 
-                                  data-breadcrumb="Services"
-                                  href="#"
-                                  aria-controls={groupID}
-                                  onMouseEnter={(e) => handleLevel2HoverOrClick(e, groupID)}
-                                  onClick={(e) => handleLevel2HoverOrClick(e, groupID)}
-                                >
-                                  {group.category}
-                                </a>
-                              );
-                            })}
-                          </nav>
-                        </div>
-                      </div>
+                                        <button className="slimheader-close search-hide" aria-label="Menu Close" onClick={closeAll}></button>
 
-                      <span className={level3Classes}>
-                        {navigationData.services.map((group, idx) => {
-                          const groupID = servicesIds[idx] || `svc-group-${idx}`;
-                          const isGroupActive = activeLevelTwoId === groupID;
-                          return (
-                            <div 
-                              key={idx}
-                              id={groupID} 
-                              className={`slimheader-slide-nav ${isGroupActive ? 'is-active' : ''} ${isGroupActive && currentLevel === "3" ? 'lv3-fade' : ''}`}
-                              style={{ 
-                                display: isGroupActive ? 'block' : 'none' 
-                              }}
-                            >
-                              <div className="slide-nav-contain">
-                                <div className="sublevel-title-container search-hide">
-                                  <div className="slimnav-mobile-header" onClick={handleBackToLevel2}>
-                                    <p> Menu</p>
-                                  </div>
-                                  <div className="slimheader-breadcrumb">
-                                    <a href="#" onClick={handleBackToLevel2}>{group.category}</a>
-                                  </div>
-                                </div>
-                                <nav>
-                                  {group.items.map((item, i) => (
-                                    <Link 
-                                      key={i} 
-                                      className={`levelThreeLink ${location.pathname === item.path ? 'is-active' : ''}`} 
-                                      to={item.path}
-                                      onClick={closeAll}
-                                    >
-                                      {item.name}
-                                    </Link>
-                                  ))}
-                                </nav>
+                    <div className="sublevel-navs">
+                      {currentLevel !== "3" ? (
+                        <div className={level2Classes}>
+                          <div className="slide-nav-contain">
+                            {/* <div className="sublevel-title-container search-hide">
+                              <div className="slimnav-mobile-header" onClick={handleBackToLevel1}>
+                                <p> Menu</p>
+                              </div>
+                              <div className="slimheader-breadcrumb is-hidden">
+                                <a href="#" onClick={handleBackToLevel1}>Services</a>
+                              </div>
+                              <a href="#" className="lv2-label" onClick={(e) => e.preventDefault()}>Services</a>
+                            </div>
+                             */}
+                            <nav>
+                              {navigationData.services.map((group, idx) => {
+                                const groupID = servicesIds[idx] || `svc-group-${idx}`;
+                                return (
+                                  <button
+                                    type="button"
+                                    key={idx}
+                                    className={`levelTwoLink has-lv3 ${activeLevelTwoId === groupID ? 'is-active selected' : ''}`} 
+                                    data-breadcrumb="Services"
+                                    aria-controls={groupID}
+                                    onClick={(e) => handleCategoryClick(e, groupID)}
+                                  >
+                                    <span>{group.category}</span>
+                                    <span className="nav-arrow" aria-hidden="true">›</span>
+                                  </button>
+                                );
+                              })}
+                            </nav>
+                          </div>
+                        </div>
+                      ) : (
+                        <div className={level3Classes}>
+
+                          <div className="slide-nav-contain">
+                            <div className="sublevel-title-container search-hide">
+                              <button className="nav-back-button" type="button" onClick={handleBackToLevel2} aria-label={`Back to ${activeSectionTitle}`}>
+                                ←
+                              </button>
+                              <div className="slimheader-breadcrumb">
+                                <a href="#" onClick={handleBackToLevel2}>{activeGroup?.category || 'Services'}</a>
                               </div>
                             </div>
-                          );
-                        })}
-                      </span>
+                            <nav>
+                              {activeGroup?.items.map((item, i) => (
+                                <Link 
+                                  key={i} 
+                                  className={`levelThreeLink ${location.pathname === item.path ? 'is-active' : ''}`} 
+                                  to={item.path}
+                                  onClick={closeAll}
+                                >
+                                  <span>{item.name}</span>
+                                  <span className="nav-arrow" aria-hidden="true">›</span>
+                                </Link>
+                              ))}
+                            </nav>
+                          </div>
+                        </div>
+                      )}
                     </div>
-                    <button className="slimheader-close search-hide" aria-label="Menu Close" onClick={closeAll}></button>
                   </div>
 
                 </div>
