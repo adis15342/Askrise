@@ -123,7 +123,20 @@ const CombinedScrollSections = () => {
         ref={threeLineSectionRef}
       >
         <div className="three-line-sticky">
-          <div className="bg-layer" />
+          {/* <div className="bg-layer" /> */}
+          <video
+            className="bg-video"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"cd
+            poster="/images/CA.png"
+
+          >
+            <source src="/images/CA.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
           <div className="overlay" />
 
           <div className="three-line-content">
@@ -150,7 +163,7 @@ const CombinedScrollSections = () => {
         <div className="info-section" id="infoSection" ref={infoSectionRef}>
           <div className="info-inner">
             <div className={`left-content reveal ${revealed ? "show" : ""}`}>
-              <h2>
+              <h2 style={{letterSpacing: "-2px",fontWeight: 700,}}>
                 As industries evolve and market dynamics shift, our consultants
                 help you turn uncertainty into opportunity.
               </h2>
@@ -162,7 +175,7 @@ const CombinedScrollSections = () => {
                   <span className="num">{count}</span>
                   <span className="suffix">th</span>
                 </div>
-                <p>
+                <p style={{letterSpacing: "-2px",fontWeight: 700, fontFamily: "Georgia, serif" }}>
                   Delivered a key 2025 project, showcasing expertise and
                   dedication.
                 </p>
@@ -182,7 +195,7 @@ const CombinedScrollSections = () => {
           <div className="story-heading-wrap">
             {storyHeadings.map((heading, index) => (
               <h2
-                key={index}
+                key={index}style={{ letterSpacing: "-2px", fontWeight: 700, }}
                 className={`story-heading ${getStoryClass(index)}`}
               >
                 {heading}
@@ -190,17 +203,34 @@ const CombinedScrollSections = () => {
             ))}
           </div>
 
-          <div className="story-image-wrap">
+          {/* <div className="story-image-wrap">
             <img
               src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1400&q=80"
               alt="Office presentation"
             />
             <div className="story-image-overlay" />
+          </div> */}
+
+          <div className="story-image-wrap">
+            <video
+              className="story-video"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              // poster="/images/office-poster.jpg"
+            >
+              <source src="/images/frontvedio1 (1).mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+
+            <div className="story-image-overlay" />
           </div>
 
           <div className="story-caption-wrap">
             {storyCaptions.map((caption, index) => (
-              <p
+              <p style={{letterSpacing: "1px",fontWeight: 700,}} 
                 key={index}
                 className={`story-caption ${getStoryClass(index)}`}
               >

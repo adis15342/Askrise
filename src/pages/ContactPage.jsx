@@ -34,18 +34,20 @@ const ContactPage = () => {
         <picture>
           <source
             media="(max-width: 768px)"
-            srcSet="https://static.vecteezy.com/system/resources/previews/011/705/128/large_2x/close-up-of-contact-us-word-photo.jpg"
+            srcSet="images/contact.jpeg"
+            // srcSet="https://static.vecteezy.com/system/resources/previews/011/705/128/large_2x/close-up-of-contact-us-word-photo.jpg"
           />
           <img
-            src="https://static.vecteezy.com/system/resources/previews/011/705/128/large_2x/close-up-of-contact-us-word-photo.jpg"
+            srcSet="images/contact.jpeg"
+            // src="https://static.vecteezy.com/system/resources/previews/011/705/128/large_2x/close-up-of-contact-us-word-photo.jpg"
             alt="Contact Us"
             className="contact-hero__image"
           />
         </picture>
-        <div className="contact-hero__overlay">
+        {/* <div className="contact-hero__overlay">
           <h1>Contact Us</h1>
           <p>We're here to help and answer any question you might have.</p>
-        </div>
+        </div> */}
       </section>
 
       {/* Contact Details */}
