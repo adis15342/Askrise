@@ -90,7 +90,7 @@ const HomePage = () => {
           </div>
           <div className="connect-card">
             <img src={asset('membership.png')} alt="Membership Icon" />
-            <h3>Community</h3>
+            <h3 style={{ fontSize: "1rem" }}>Community</h3>
             <p>Collaborate and exchange knowledge with professionals</p>
           </div>
         </div>
