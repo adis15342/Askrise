@@ -75,17 +75,17 @@ const HomePage = () => {
         <div className="home-connect-grid container">
           <div className="connect-card">
             <img src={asset('refresh-page-option.png')} alt="Updates Icon" />
-            <h3>Latest Updates</h3>
+            <h3 style={{ fontSize: "1rem" }}>Latest Updates</h3>
             <p>Essential updates for your business growth</p>
           </div>
           <div className="connect-card">
             <img src={asset('file.png')} alt="RFI/RFQ/RFP Icon" />
-            <h3>RFI/RFQ/RFP</h3>
+            <h3 style={{ fontSize: "1rem" }}>RFI/RFQ/RFP</h3>
             <p>Streamlined process for sourcing and vendor engagement</p>
           </div>
           <div className="connect-card">
             <img src={asset('globe.png')} alt="Global Reach Icon" />
-            <h3>International Network</h3>
+            <h3 style={{ fontSize: "1rem" }}>International Network</h3>
             <p>Engage with global organizations and markets</p>
           </div>
           <div className="connect-card">
