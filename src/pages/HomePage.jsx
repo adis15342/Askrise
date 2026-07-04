@@ -102,16 +102,16 @@ const HomePage = () => {
       <section className="home-about-section">
         <div className="home-section-banner">Who we are</div>
         <div className="home-about-content container">
-          <p style={{ textAlign: "justify" }}>
+          <p style={{ textAlign: "justify", fontSize: "1.2rem" }}>
               Askrise is a global network portal that connects public and private sector industries—including civil aviation, aerospace, defense, homeland security, and space—along with industry forums, chambers of commerce, government agencies, foreign trade councils, professionals, and students worldwide. We provide a safe and secure platform for seamless business communication between you, your customers, and your suppliers.
           </p>
-          <p style={{ textAlign: "justify" }}>
+          <p style={{ textAlign: "justify" , fontSize: "1.2rem" }}>
             Our goal is to help members access relevant information quickly and efficiently, empowering their business decisions. At Askrise, we believe in building strong, long‑term relationships founded on trust, collaboration, and customer satisfaction.
           </p>
-          <p style={{ textAlign: "justify" }}>
+          <p style={{ textAlign: "justify", fontSize: "1.2rem" }}>
             We deliver a wide range of services, including advisory and compliance on regulations and taxation, market research, mergers and acquisitions, consulting, joint venture and foreign collaboration agreements, business process solutions, and outsourcing of functional activities.
           </p>
-          <p style={{ textAlign: "justify" }}>
+          <p style={{ textAlign: "justify", fontSize: "1.2rem" }}>
             Together, we drive innovation, foster collaboration, and create opportunities across industries and borders.
           </p>
         </div>
