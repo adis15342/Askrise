@@ -8566,7 +8566,7 @@ video::-webkit-media-text-track-display{-webkit-transform:translateY(-3em);trans
 .page-primary-col--burgundy .contactCol .contact-name:hover a{border-bottom:2px solid #a32020;color:#e0301e}
 .page-primary-col--rose .contactCol .contact-name:hover a{border-bottom:2px solid rgb(221, 141, 79);color:#e0301e}
 .contactCol .contact-info{font-size:1.125rem;font-family:"PwC Helvetica Neue",Arial,Sans-Serif;line-height:1.5em;color:#464646}
-.contactCol .contact-info p{font-size:1.2rem;margin-bottom:0;line-height:1.5em}
+.contactCol .contact-info p{font-size:1.2rem;margin-bottom:0;line-height:1.5em;text-align: justify;}
 .contactCol .contact-link a{margin:0 5px;display:inline-block;float:left}
 .contactCol .contact-link a:first-child{margin-left:0}
 .contactCol p{border-left:0;padding-left:0}
