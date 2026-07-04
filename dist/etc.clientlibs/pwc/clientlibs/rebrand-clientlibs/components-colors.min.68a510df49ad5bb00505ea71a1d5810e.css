@@ -4530,7 +4530,7 @@ ul.breadcrumb li.breadcrumbHidden{margin:0;padding:0;width:0;height:0;opacity:0;
 .glb-footer .glb-footer__block a.glb-footer__link--l1{font-size:1.5rem}
 .glb-footer .glb-footer__block a.glb-footer__link--l2{font-size:1.0rem}
 .glb-footer .glb-footer__block a.glb-footer__link--l3{font-size:1.0rem}
-.glb-footer .glb-footer__disclaimer p{font-size:1rem}
+.glb-footer .glb-footer__disclaimer p{font-size:1.2rem}
 .glb-footer #footerBreadcrumbWrapper{z-index:1}
 .glb-footer #footerBreadcrumbWrapper ul.breadcrumb{margin-left:0}
 }
@@ -8566,7 +8566,7 @@ video::-webkit-media-text-track-display{-webkit-transform:translateY(-3em);trans
 .page-primary-col--burgundy .contactCol .contact-name:hover a{border-bottom:2px solid #a32020;color:#e0301e}
 .page-primary-col--rose .contactCol .contact-name:hover a{border-bottom:2px solid rgb(221, 141, 79);color:#e0301e}
 .contactCol .contact-info{font-size:1.125rem;font-family:"PwC Helvetica Neue",Arial,Sans-Serif;line-height:1.5em;color:#464646}
-.contactCol .contact-info p{font-size:1rem;margin-bottom:0;line-height:1.5em}
+.contactCol .contact-info p{font-size:1.2rem;margin-bottom:0;line-height:1.5em;text-align: justify;}
 .contactCol .contact-link a{margin:0 5px;display:inline-block;float:left}
 .contactCol .contact-link a:first-child{margin-left:0}
 .contactCol p{border-left:0;padding-left:0}
