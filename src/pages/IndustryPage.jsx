@@ -28,9 +28,15 @@ const IndustryPage = () => {
       {/* Overview Section */}
       <section className="industry-overview">
         <div className="industry-overview__text">
-          <p>{data.paragraphs[0]}</p>
-          <p>{data.paragraphs[1]}</p>
-          {/* <p>{data.paragraphs[2]}</p> */}
+          <p style={{ textAlign: "justify", fontSize: "1.2rem" }}>
+            {data.paragraphs[0]}
+          </p>
+          <p style={{ textAlign: "justify", fontSize: "1.2rem" }}>
+            {data.paragraphs[1]}
+          </p>
+          {/* <p style={{ textAlign: "justify", fontSize: "1.2rem" }}>
+            {data.paragraphs[2]}
+          </p> */}
         </div>
         <div className="industry-overview__image">
           <img src={data.images[1]} alt={data.title} />
@@ -40,7 +46,9 @@ const IndustryPage = () => {
       {/* Trends Section with Tabs */}
       <section className="industry-trends">
         <h2>{data.headings[1]}</h2>
-        <p>{data.paragraphs[3]}</p>
+        <p style={{ textAlign: "justify", fontSize: "1.2rem" }}>
+          {data.paragraphs[3]}
+        </p>
 
         <div className="industry-tabs">
           <div className="industry-tabs__nav">
@@ -56,7 +64,9 @@ const IndustryPage = () => {
           </div>
           <div className="industry-tabs__content">
             <h3>{data.summaries[activeTab].heading}</h3>
-            <p>{data.summaries[activeTab].paragraph}</p>
+            <p style={{ textAlign: "justify", fontSize: "1.2rem" }}>
+              {data.summaries[activeTab].paragraph}
+            </p>
           </div>
         </div>
       </section>

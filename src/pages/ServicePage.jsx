@@ -23,8 +23,12 @@ const ServicePage = () => {
       {/* Content Section 1 */}
       <section className="service-content">
         <div className="service-content__text">
-          <p>{data.paragraphs[0]}</p>
-          {/* <p>{data.paragraphs[1]}</p> */}
+          <p style={{ textAlign: "justify", fontSize: "1.2rem" }}>
+            {data.paragraphs[0]}
+          </p>
+          {/* <p style={{ textAlign: "justify", fontSize: "1.2rem" }}>
+            {data.paragraphs[1]}
+          </p> */}
         </div>
         <div className="service-content__image">
           <img src={data.images[1]} alt={data.heading} />
@@ -38,8 +42,12 @@ const ServicePage = () => {
         </div>
         <div className="service-content__text">
           <h2>{data.heading}</h2>
-          <p>{data.paragraphs[1]}</p>
-          {/* <p>{data.paragraphs[3]}</p> */}
+          <p style={{ textAlign: "justify", fontSize: "1.2rem" }}>
+            {data.paragraphs[1]}
+          </p>
+          {/* <p style={{ textAlign: "justify", fontSize: "1.2rem" }}>
+            {data.paragraphs[3]}
+          </p> */}
         </div>
       </section>
 
@@ -69,7 +77,9 @@ const ServicePage = () => {
               )}
               <div className="service-tabs__text">
                 <h3>{data.summaries[activeTab].heading}</h3>
-                <p>{data.summaries[activeTab].paragraph}</p>
+                <p style={{ textAlign: "justify", fontSize: "1.2rem" }}>
+                  {data.summaries[activeTab].paragraph}
+                </p>
               </div>
             </div>
           </div>

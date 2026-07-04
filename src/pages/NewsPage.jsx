@@ -29,7 +29,9 @@ const NewsPage = () => {
                 </div>
                 <div className="news-card__body">
                   <h4 className="news-card__title">{blog.title}</h4>
-                  <p className="news-card__description">{blog.description}</p>
+                  <p style={{ textAlign: "justify", fontSize: "1.2rem" }} className="news-card__description">
+                    {blog.description}
+                  </p>
                   <a
                     href={blog.link}
                     target="_blank"
