@@ -102,16 +102,16 @@ const HomePage = () => {
       <section className="home-about-section">
         <div className="home-section-banner">Who we are</div>
         <div className="home-about-content container">
-          <p style={{ textAlign: "justify", fontSize: "1.2rem" }}>
+          <p style={{ textAlign: "justify", fontSize: "1.05rem" }}>
               Askrise is a global network portal that connects public and private sector industries—including civil aviation, aerospace, defense, homeland security, and space—along with industry forums, chambers of commerce, government agencies, foreign trade councils, professionals, and students worldwide. We provide a safe and secure platform for seamless business communication between you, your customers, and your suppliers.
           </p>
-          <p style={{ textAlign: "justify" , fontSize: "1.2rem" }}>
+          <p style={{ textAlign: "justify" , fontSize: "1.05rem" }}>
             Our goal is to help members access relevant information quickly and efficiently, empowering their business decisions. At Askrise, we believe in building strong, long‑term relationships founded on trust, collaboration, and customer satisfaction.
           </p>
-          <p style={{ textAlign: "justify", fontSize: "1.2rem" }}>
+          {/* <p style={{ textAlign: "justify", fontSize: "1.05rem" }}>
             We deliver a wide range of services, including advisory and compliance on regulations and taxation, market research, mergers and acquisitions, consulting, joint venture and foreign collaboration agreements, business process solutions, and outsourcing of functional activities.
-          </p>
-          <p style={{ textAlign: "justify", fontSize: "1.2rem" }}>
+          </p> */}
+          <p style={{ textAlign: "justify", fontSize: "1.05rem" }}>
             Together, we drive innovation, foster collaboration, and create opportunities across industries and borders.
           </p>
         </div>
@@ -126,7 +126,7 @@ const HomePage = () => {
             <img src="https://i.postimg.cc/FRBG7hdV/Oil-Gas2.jpg" alt="Oil & Gas" />
           </div>
           <div className="industry-row-text">
-            <h3><Link to="/industry/Oil_Gas">Oil &amp; Gas Industry</Link></h3>
+            <h3 style={{fontWeight: 900, fontSize: "30px"}}><Link to="/industry/Oil_Gas">Oil &amp; Gas Industry</Link></h3>
             <p>Innovative solutions to help you drive the future of Oil &amp; Gas Industry.</p>
           </div>
         </div>
@@ -135,7 +135,7 @@ const HomePage = () => {
             <img src="https://i.postimg.cc/X7y1BBgG/Information-Technology2.jpg" alt="Information Technology" />
           </div>
           <div className="industry-row-text">
-            <h3><Link to="/industry/Information_Technology">Information Technology Industry</Link></h3>
+            <h3 style={{fontWeight: 900, fontSize: "30px"}}><Link to="/industry/Information_Technology">Information Technology Industry</Link></h3>
             <p>Innovative solutions to help you drive the future of Information Technology Industry.</p>
           </div>
         </div>
@@ -144,7 +144,7 @@ const HomePage = () => {
             <img src="https://i.postimg.cc/fRcHB4pM/Healthcare2.jpg" alt="Healthcare" />
           </div>
           <div className="industry-row-text">
-            <h3><Link to="/industry/Healthcare">Healthcare Industry</Link></h3>
+            <h3 style={{fontWeight: 900, fontSize: "30px"}}><Link to="/industry/Healthcare">Healthcare Industry</Link></h3>
             <p>Innovative solutions to help you drive the future of Healthcare Industry.</p>
           </div>
         </div>
@@ -153,7 +153,7 @@ const HomePage = () => {
             <img src="https://i.postimg.cc/gJQ51VDp/tourise1.jpg" alt="Tourism" />
           </div>
           <div className="industry-row-text">
-            <h3><Link to="/industry/Tourism">Tourism Industry</Link></h3>
+            <h3 style={{fontWeight: 900, fontSize: "30px"}}><Link to="/industry/Tourism">Tourism Industry</Link></h3>
             <p>Innovative solutions to help you drive the future of Tourism Industry.</p>
           </div>
         </div>
@@ -165,7 +165,7 @@ const HomePage = () => {
       <section className="home-insights-section">
         <div className="container insights-flex-container">
           <div className="insights-text-col">
-            <h2>We anticipate what’s next so you can lead with confidence</h2>
+            <h2 style={{fontWeight: 900,fontSize: "155%"}}>We anticipate what’s next so you can lead with confidence</h2>
             <p style={{ textAlign: "justify" }}>
               From shifting markets to evolving regulations, the business landscape is being rewritten. Our consultants decode the trends that matter through 2035—so you can act decisively today, seize emerging opportunities, and shape a resilient, forward‑looking enterprise.
             </p>

@@ -10,19 +10,19 @@ const Footer = () => {
         <span>Get connected with us on social networks:</span>
         <div className="site-footer__social-icons">
           <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-            <i className="bx bxl-facebook"></i>
+            <i className="fab fa-facebook-f"></i>
           </a>
           <a href="https://x.com/askrise2005?t=NLGjJO6I3NIyMP2nk1zJBQ&s=08" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-            <i className="bx bxl-twitter"></i>
+            <i className="fab fa-x-twitter"></i>
           </a>
           <a href="https://askriseconsultants.in/" target="_blank" rel="noopener noreferrer" aria-label="Google">
-            <i className="bx bxl-google"></i>
+            <i className="fab fa-google"></i>
           </a>
           <a href="https://www.instagram.com/askrise_consultants?igsh=bWYyeWhmY2tnanlp" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-            <i className="bx bxl-instagram"></i>
+            <i className="fab fa-instagram"></i>
           </a>
           <a href="https://www.linkedin.com/in/askrise-consultants-41aa22374?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-            <i className="bx bxl-linkedin"></i>
+            <i className="fab fa-linkedin-in"></i>
           </a>
         </div>
       </div>

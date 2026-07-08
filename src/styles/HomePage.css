@@ -39,12 +39,89 @@
 .home-cta .video-background video { width: 100%; max-width: 800px; border-radius: 8px; }
 
 /* ----- Connect Section ----- */
-.home-connect-section { padding: 4rem 2rem; background: #f8fafc; }
-.home-section-banner { font-size: 1.5rem; font-weight: 700; text-align: center; margin-bottom: 2rem; }
-.home-connect-grid { display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center; }
-.connect-card { background: #fff; padding: 1.5rem; border-radius: 12px; width: 220px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.05); transition: transform 0.3s; }
-.connect-card:hover { transform: translateY(-4px); }
-.connect-card img { width: 64px; margin-bottom: 0.75rem; }
+.home-connect-section {
+  position: relative;
+  padding: 5rem 2rem 4.5rem;
+  background: linear-gradient(135deg, #f7f9ff 0%, #f1f5ff 48%, #f9fbff 100%);
+  overflow: hidden;
+}
+.home-connect-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top left, rgba(99, 81, 206, 0.12), transparent 32%),
+              radial-gradient(circle at bottom right, rgba(79, 209, 197, 0.14), transparent 28%);
+  pointer-events: none;
+}
+.home-section-banner {
+  position: relative;
+  z-index: 1;
+  font-size: clamp(1.7rem, 2.3vw, 2.2rem);
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 2.2rem;
+  color: #172033;
+}
+.home-section-banner::after {
+  content: "";
+  display: block;
+  width: 82px;
+  height: 3px;
+  margin: 0.7rem auto 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #6351ce, #4fd1c5);
+}
+.home-connect-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.35rem;
+  justify-content: center;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+.connect-card {
+  background: rgba(255, 255, 255, 0.94);
+  padding: 1.8rem 1.2rem;
+  border-radius: 20px;
+  width: 100%;
+  min-height: 230px;
+  text-align: center;
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
+  border: 1px solid rgba(99, 81, 206, 0.12);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.connect-card:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 20px 45px rgba(99, 81, 206, 0.16);
+  border-color: rgba(99, 81, 206, 0.35);
+}
+.connect-card img {
+  width: 64px;
+  height: 64px;
+  padding: 14px;
+  margin-bottom: 0.95rem;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(99, 81, 206, 0.12), rgba(79, 209, 197, 0.16));
+  object-fit: contain;
+}
+.connect-card h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0.15rem 0 0.45rem;
+  color: #172033;
+}
+.connect-card p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #5f6c82;
+}
 
 /* ----- About Section ----- */
 .home-about-section { padding: 4rem 2rem; background: #fff; }
@@ -52,12 +129,12 @@
 
 /* ----- Featured Industries ----- */
 .home-featured-industries .featured-industry-row { display: flex; gap: 1.5rem; margin-bottom: 2rem; align-items: center; }
-.industry-row-image img { width: 200px; border-radius: 8px; }
+.industry-row-image img { width: 350px; border-radius: 8px; }
 .industry-row-text h3 { margin: 0.5rem 0; }
 .industry-row-text p { margin: 0; }
 
 /* ----- Insights Section ----- */
-.home-insights-section { padding: 4rem 2rem; background: #f1f5f9; }
+.home-insights-section { padding: 2rem 0rem; background: #f1f5f9; }
 .insights-flex-container { display: flex; gap: 2rem; flex-wrap: wrap; }
 .insights-text-col { flex: 1; }
 .insights-media-col { flex: 1; }
@@ -71,7 +148,16 @@
   .home-hero__headline { font-size: 2.5rem; }
   .home-greenhouse { flex-direction: column; }
   .home-greenhouse .greenhouse-image { max-width: 100%; }
-  .home-connect-grid { flex-direction: column; align-items: center; }
+  .home-connect-section { padding: 4rem 1rem 3.5rem; }
+  .home-connect-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .home-featured-industries .featured-industry-row { flex-direction: column; align-items: center; }
   .insights-flex-container { flex-direction: column; }
+}
+
+@media (max-width: 600px) {
+  .home-connect-grid { grid-template-columns: 1fr; }
+  .connect-card { min-height: 200px; padding: 1.4rem 1rem; }
+  .connect-card img { width: 56px; height: 56px; }
+  .connect-card p { font-size: 0.9rem; }
+  .insights-flex-container{ flex-direction: column-reverse; }
 }

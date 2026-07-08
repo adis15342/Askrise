@@ -54,14 +54,14 @@ const ContactPage = () => {
       <section className="contact-details">
         <div className="contact-details__container">
           <div className="contact-detail-item">
-            <i className="bx bx-map"></i>
+            <i className="fa-solid fa-map-location-dot"></i>
             <div>
               <h3>Our Address</h3>
               <p>C-38A, UGF, Sewak Park, Uttam Nagar, New Delhi – 110059</p>
             </div>
           </div>
           <div className="contact-detail-item">
-            <i className="bx bx-phone"></i>
+            <i className="fa-solid fa-phone"></i>
             <div>
               <h3>Call Us</h3>
               <p>+91 9466773327</p>
@@ -69,14 +69,14 @@ const ContactPage = () => {
             </div>
           </div>
           <div className="contact-detail-item">
-            <i className="bx bx-envelope"></i>
+            <i className="fa-solid fa-envelope"></i>
             <div>
               <h3>Email Us</h3>
               <p>ASKRISECONSULTANTS@GMAIL.COM</p>
             </div>
           </div>
           <div className="contact-detail-item">
-            <i className="bx bx-time"></i>
+            <i className="fa-solid fa-clock"></i>
             <div>
               <h3>Opening Hours</h3>
               <p>Open 24*7</p>
