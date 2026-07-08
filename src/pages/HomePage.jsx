@@ -72,7 +72,7 @@ const HomePage = () => {
       {/* --------------------------------------------------- */}
       <section className="home-connect-section">
         <div className="home-section-banner">Why You Connect With Us</div>
-        <div className="home-connect-grid">
+        <div className="home-connect-grid container">
           <div className="connect-card">
             <img src={asset('refresh-page-option.png')} alt="Updates Icon" />
             <h3 style={{ fontSize: "1rem" }}>Latest Updates</h3>
