@@ -2,7 +2,6 @@ import fs from "fs";
 import { navigationData } from "../src/data/navigationData.js";
 
 const BASE_URLS = [
-  "https://askriseadvisors.in",
   "https://askriseconsultants.in",
 ];
 

@@ -133,9 +133,11 @@
   .home-greenhouse { flex-direction: column; }
   .home-greenhouse .greenhouse-image { max-width: 100%; }
   .home-connect-section { padding: 4rem 1rem 3.5rem; }
-  .home-connect-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  /* .home-connect-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } */
   .home-featured-industries .featured-industry-row { flex-direction: column; align-items: center; }
   .insights-flex-container { flex-direction: column; }
+  .home-connect-grid { flex-direction: column; }
+
 }
 
 @media (max-width: 600px) {
