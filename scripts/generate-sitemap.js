@@ -1,16 +1,61 @@
+// import fs from "fs";
+// import { navigationData } from "../src/data/navigationData.js";
+
+// const BASE_URLS = [
+//   "https://askriseconsultants.in",
+//   "https://askriseadvisors.in/",
+  
+
+// ];
+
+// const urls = [
+//   "/",
+//   "/about",
+//   "/news",
+//   "/contact",
+// ];
+
+// // Industry pages
+// navigationData.industries.forEach((category) => {
+//   category.items.forEach((item) => {
+//     urls.push(item.path);
+//   });
+// });
+
+// // Service pages
+// navigationData.services.forEach((category) => {
+//   category.items.forEach((item) => {
+//     urls.push(item.path);
+//   });
+// });
+
+// const xml = `<?xml version="1.0" encoding="UTF-8"?>
+// <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+// ${BASE_URLS.flatMap((baseUrl) =>
+//   urls.map(
+//     (url) => `
+//   <url>
+//     <loc>${baseUrl}${url}</loc>
+//     <changefreq>weekly</changefreq>
+//     <priority>${url === "/" ? "1.0" : "0.8"}</priority>
+//   </url>`
+//   )
+// ).join("")}
+// </urlset>`;
+
+// fs.writeFileSync("public/sitemap.xml", xml);
+
+// console.log(`✅ Sitemap generated with ${urls.length * BASE_URLS.length} URLs`);
+
 import fs from "fs";
 import { navigationData } from "../src/data/navigationData.js";
 
-const BASE_URLS = [
+const DOMAINS = [
   "https://askriseconsultants.in",
+  "https://askriseadvisors.in",
 ];
 
-const urls = [
-  "/",
-  "/about",
-  "/news",
-  "/contact",
-];
+const urls = ["/", "/about", "/news", "/contact"];
 
 // Industry pages
 navigationData.industries.forEach((category) => {
@@ -26,20 +71,26 @@ navigationData.services.forEach((category) => {
   });
 });
 
-const xml = `<?xml version="1.0" encoding="UTF-8"?>
+DOMAINS.forEach((domain) => {
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${BASE_URLS.flatMap((baseUrl) =>
-  urls.map(
-    (url) => `
+  ${urls
+    .map(
+      (url) => `
   <url>
-    <loc>${baseUrl}${url}</loc>
+    <loc>${domain}${url}</loc>
     <changefreq>weekly</changefreq>
     <priority>${url === "/" ? "1.0" : "0.8"}</priority>
   </url>`
-  )
-).join("")}
+    )
+    .join("")}
 </urlset>`;
 
-fs.writeFileSync("public/sitemap.xml", xml);
+  const fileName = domain.includes("consultants")
+    ? "public/sitemap-consultants.xml"
+    : "public/sitemap-advisors.xml";
 
-console.log(`✅ Sitemap generated with ${urls.length * BASE_URLS.length} URLs`);
+  fs.writeFileSync(fileName, xml);
+});
+
+console.log("✅ Separate sitemaps generated");
